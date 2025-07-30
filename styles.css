@@ -187,17 +187,6 @@ p {
   animation: fadeInUp 1s ease;
 }
 
-.hero-subtitle {
-  font-size: 1.5rem;
-  margin-bottom: 2rem;
-  opacity: 0.9;
-  animation: fadeInUp 1s ease 0.2s both;
-}
-
-.hero-cta {
-  animation: fadeInUp 1s ease 0.4s both;
-}
-
 .hero-background {
   position: absolute;
   top: 0;
@@ -218,7 +207,6 @@ p {
   height: 100%;
   object-fit: cover;
   object-position: center;
-  filter: brightness(0.7);
 }
 
 .hero-image::after {
@@ -228,7 +216,6 @@ p {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(135deg, rgba(102, 126, 234, 0.8) 0%, rgba(118, 75, 162, 0.8) 100%);
 }
 
 /* Bio Section */
@@ -316,6 +303,38 @@ p {
 .work-description p {
   font-size: 1.1rem;
   color: #666;
+}
+
+/* Under Construction Section */
+.under-construction {
+  padding: 80px 0;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  text-align: center;
+}
+
+.construction-content {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.construction-content i {
+  font-size: 3rem;
+  margin-bottom: 2rem;
+  opacity: 0.8;
+}
+
+.construction-content h2 {
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+  color: white;
+  font-weight: 500;
+}
+
+.construction-content p {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 300;
 }
 
 /* Contact Section */
@@ -459,7 +478,7 @@ p {
   }
 
   .hero-image img {
-    object-position: left 20%;
+    object-position: 30% center;
   }
 
   .hero-title {
@@ -496,6 +515,14 @@ p {
   h2 {
     font-size: 2rem;
   }
+
+  .construction-content h2 {
+    font-size: 1.8rem;
+  }
+
+  .construction-content p {
+    font-size: 1.1rem;
+  }
 }
 
 @media (max-width: 480px) {
@@ -509,7 +536,7 @@ p {
   }
 
   .hero-image img {
-    object-position: left 15%;
+    object-position: 25% center;
   }
 
   .hero-title {
