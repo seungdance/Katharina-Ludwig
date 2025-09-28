@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>INFERO — Katharina Ludwig</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Minimal icon navigation -->
+    <div class="nav-icon" onclick="toggleNav()">
+      <span>☰</span>
+    </div>
+
+    <!-- Navigation menu -->
+    <nav class="nav-menu" id="navMenu">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="calendar.html">Calendar</a></li>
+        <li><a href="production.html">Production</a></li>
+        <li><a href="dancework.html">Dance Work</a></li>
+        <li><a href="teaching.html">Teaching</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+    <main class="production-detail">
+      <!-- Hero Section -->
+      <section class="hero-section">
+        <img src="../assets/2_KatharinaLudwig_ZANT_©Flávia Samper.JPG" alt="INFERO Performance" />
+        <h1>INFERO</h1>
+      </section>
+
+      <!-- Production Info -->
+      <section class="production-info">
+        <div class="info-grid">
+          <div class="info-item">
+            <h3>Year</h3>
+            <p>2025</p>
+          </div>
+          <div class="info-item">
+            <h3>Venue</h3>
+            <p>ZANT Festival</p>
+          </div>
+          <div class="info-item">
+            <h3>Format</h3>
+            <p>Outdoor Performance</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Description -->
+      <section class="description-section">
+        <h2>Description</h2>
+        <p>A dynamic outdoor performance piece created for the ZANT Festival.</p>
+        <p>
+          INFERO explores themes of transformation and renewal, using the natural outdoor setting as both backdrop and collaborator in the
+          choreography.
+        </p>
+        <p>
+          The work examines the relationship between performer and environment, creating a powerful dialogue between human movement and the
+          surrounding landscape.
+        </p>
+      </section>
+
+      <!-- Credits -->
+      <section class="credits-section">
+        <h2>Credits</h2>
+        <div class="credits-grid">
+          <div class="credit-item">
+            <strong>Performance:</strong>
+            <br />
+            Katharina Ludwig
+          </div>
+          <div class="credit-item">
+            <strong>Photography:</strong>
+            <br />
+            ©Flávia Samper
+          </div>
+          <div class="credit-item">
+            <strong>Festival:</strong>
+            <br />
+            ZANT Festival
+          </div>
+        </div>
+      </section>
+
+      <!-- Back to Production -->
+      <section class="back-section">
+        <a href="production.html" class="back-button">← Back to Production</a>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2024 Katharina Ludwig</p>
+    </footer>
+
+    <script>
+      function toggleNav() {
+        const navMenu = document.getElementById("navMenu");
+        navMenu.classList.toggle("active");
+      }
+
+      // Close nav when clicking outside
+      document.addEventListener("click", function (event) {
+        const navIcon = document.querySelector(".nav-icon");
+        const navMenu = document.getElementById("navMenu");
+
+        if (!navIcon.contains(event.target) && !navMenu.contains(event.target)) {
+          navMenu.classList.remove("active");
+        }
+      });
+    </script>
+  </body>
+</html>

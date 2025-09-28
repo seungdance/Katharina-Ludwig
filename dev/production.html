@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Production — Katharina Ludwig</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Minimal icon navigation -->
+    <div class="nav-icon" onclick="toggleNav()">
+      <span>☰</span>
+    </div>
+
+    <!-- Navigation menu -->
+    <nav class="nav-menu" id="navMenu">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="calendar.html">Calendar</a></li>
+        <li><a href="production.html">Production</a></li>
+        <li><a href="dancework.html">Dance Work</a></li>
+        <li><a href="teaching.html">Teaching</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+    <main class="shattered-glass-container">
+      <!-- Glass Piece 1 -->
+      <div class="glass-piece piece-1" onclick="navigateToDetail('number52.html')">
+        <div class="glass-content">
+          <h2 class="work-title">NUMBER 52</h2>
+        </div>
+      </div>
+
+      <!-- Glass Piece 2 -->
+      <div class="glass-piece piece-2" onclick="navigateToDetail('double-standard.html')">
+        <div class="glass-content">
+          <h2 class="work-title">DOUBLE STANDARD</h2>
+        </div>
+      </div>
+
+      <!-- Glass Piece 3 -->
+      <div class="glass-piece piece-3" onclick="navigateToDetail('of-anxiety-x-discernment.html')">
+        <div class="glass-content">
+          <h2 class="work-title">OF ANXIETY X DISCERNMENT</h2>
+        </div>
+      </div>
+
+      <!-- Glass Piece 4 -->
+      <div class="glass-piece piece-4" onclick="navigateToDetail('out-of-balance.html')">
+        <div class="glass-content">
+          <h2 class="work-title">OUT OF BALANCE</h2>
+        </div>
+      </div>
+
+      <!-- Glass Piece 5 -->
+      <div class="glass-piece piece-5" onclick="navigateToDetail('enlight.html')">
+        <div class="glass-content">
+          <h2 class="work-title">ENLIGHT</h2>
+        </div>
+      </div>
+
+      <!-- Glass Piece 6 -->
+      <div class="glass-piece piece-6" onclick="navigateToDetail('the-tribe.html')">
+        <div class="glass-content">
+          <h2 class="work-title">THE TRIBE</h2>
+        </div>
+      </div>
+
+      <!-- Glass Piece 7 -->
+      <div class="glass-piece piece-7" onclick="navigateToDetail('infero.html')">
+        <div class="glass-content">
+          <h2 class="work-title">INFERO</h2>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <p>&copy; 2024 Katharina Ludwig</p>
+    </footer>
+    <script>
+      function toggleNav() {
+        const navMenu = document.getElementById("navMenu");
+        navMenu.classList.toggle("active");
+      }
+
+      // Close nav when clicking outside
+      document.addEventListener("click", function (event) {
+        const navIcon = document.querySelector(".nav-icon");
+        const navMenu = document.getElementById("navMenu");
+
+        if (!navIcon.contains(event.target) && !navMenu.contains(event.target)) {
+          navMenu.classList.remove("active");
+        }
+      });
+
+      // Navigate to detail page
+      function navigateToDetail(page) {
+        window.location.href = page;
+      }
+    </script>
+  </body>
+</html>

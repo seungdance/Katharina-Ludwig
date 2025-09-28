@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OF ANXIETY X DISCERNMENT — Katharina Ludwig</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Minimal icon navigation -->
+    <div class="nav-icon" onclick="toggleNav()">
+      <span>☰</span>
+    </div>
+
+    <!-- Navigation menu -->
+    <nav class="nav-menu" id="navMenu">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="calendar.html">Calendar</a></li>
+        <li><a href="production.html">Production</a></li>
+        <li><a href="dancework.html">Dance Work</a></li>
+        <li><a href="teaching.html">Teaching</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+    <main class="production-detail">
+      <!-- Hero Section -->
+      <section class="hero-section">
+        <img src="../assets/anxiety1.jpg" alt="OF ANXIETY X DISCERNMENT Performance" />
+        <h1>OF ANXIETY X DISCERNMENT</h1>
+      </section>
+
+      <!-- Production Info -->
+      <section class="production-info">
+        <div class="info-grid">
+          <div class="info-item">
+            <h3>Year</h3>
+            <p>2025</p>
+          </div>
+          <div class="info-item">
+            <h3>Status</h3>
+            <p>Work in Progress</p>
+          </div>
+          <div class="info-item">
+            <h3>Format</h3>
+            <p>Contemporary Dance</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Description -->
+      <section class="description-section">
+        <h2>Description</h2>
+        <p>A contemporary dance piece exploring the intersection of anxiety and discernment in modern life.</p>
+        <p>
+          This work delves into the complex emotional landscape where uncertainty meets clarity, examining how we navigate decisions and
+          judgments in an increasingly complex world.
+        </p>
+        <p>
+          Through movement, the piece investigates the tension between internal turmoil and external composure, creating a visceral
+          experience of the human condition.
+        </p>
+      </section>
+
+      <!-- Back to Production -->
+      <section class="back-section">
+        <a href="production.html" class="back-button">← Back to Production</a>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2024 Katharina Ludwig</p>
+    </footer>
+
+    <script>
+      function toggleNav() {
+        const navMenu = document.getElementById("navMenu");
+        navMenu.classList.toggle("active");
+      }
+
+      // Close nav when clicking outside
+      document.addEventListener("click", function (event) {
+        const navIcon = document.querySelector(".nav-icon");
+        const navMenu = document.getElementById("navMenu");
+
+        if (!navIcon.contains(event.target) && !navMenu.contains(event.target)) {
+          navMenu.classList.remove("active");
+        }
+      });
+    </script>
+  </body>
+</html>

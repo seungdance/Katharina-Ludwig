@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact — Katharina Ludwig</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Minimal icon navigation -->
+    <div class="nav-icon" onclick="toggleNav()">
+      <span>☰</span>
+    </div>
+
+    <!-- Navigation menu -->
+    <nav class="nav-menu" id="navMenu">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="calendar.html">Calendar</a></li>
+        <li><a href="production.html">Production</a></li>
+        <li><a href="dancework.html">Dance Work</a></li>
+        <li><a href="teaching.html">Teaching</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+    <main>
+      <section>
+        <h1>Contact</h1>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2024 Katharina Ludwig</p>
+    </footer>
+    <script>
+      function toggleNav() {
+        const navMenu = document.getElementById("navMenu");
+        navMenu.classList.toggle("active");
+      }
+
+      // Close nav when clicking outside
+      document.addEventListener("click", function (event) {
+        const navIcon = document.querySelector(".nav-icon");
+        const navMenu = document.getElementById("navMenu");
+
+        if (!navIcon.contains(event.target) && !navMenu.contains(event.target)) {
+          navMenu.classList.remove("active");
+        }
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Katharina Ludwig</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Minimal icon navigation -->
+    <div class="nav-icon" onclick="toggleNav()">
+      <span>☰</span>
+    </div>
+
+    <!-- Navigation menu -->
+    <nav class="nav-menu" id="navMenu">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="calendar.html">Calendar</a></li>
+        <li><a href="production.html">Production</a></li>
+        <li><a href="dancework.html">Dance Work</a></li>
+        <li><a href="teaching.html">Teaching</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+    <main>
+      <!-- Full-screen video background -->
+      <div class="video-hero">
+        <div class="video-container">
+          <iframe
+            src="https://player.vimeo.com/video/1119756899?h=78d9df9f4f&amp;badge=0&amp;autoplay=1&amp;autopause=0&amp;controls=0&amp;loop=1&amp;player_id=0&amp;app_id=58479"
+            frameborder="0"
+            allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            title="infero cut for website"></iframe>
+        </div>
+
+        <!-- Animated name overlay -->
+        <div class="name-overlay">
+          <a href="about.html" class="animated-name">Katharina Ludwig</a>
+        </div>
+      </div>
+    </main>
+    <script>
+      function toggleNav() {
+        const navMenu = document.getElementById("navMenu");
+        navMenu.classList.toggle("active");
+      }
+
+      // Close nav when clicking outside
+      document.addEventListener("click", function (event) {
+        const navIcon = document.querySelector(".nav-icon");
+        const navMenu = document.getElementById("navMenu");
+
+        if (!navIcon.contains(event.target) && !navMenu.contains(event.target)) {
+          navMenu.classList.remove("active");
+        }
+      });
+    </script>
+    <script src="https://player.vimeo.com/api/player.js"></script>
+  </body>
+</html>

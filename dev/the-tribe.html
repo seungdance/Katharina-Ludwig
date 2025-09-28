@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>THE TRIBE — Katharina Ludwig</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Minimal icon navigation -->
+    <div class="nav-icon" onclick="toggleNav()">
+      <span>☰</span>
+    </div>
+
+    <!-- Navigation menu -->
+    <nav class="nav-menu" id="navMenu">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="calendar.html">Calendar</a></li>
+        <li><a href="production.html">Production</a></li>
+        <li><a href="dancework.html">Dance Work</a></li>
+        <li><a href="teaching.html">Teaching</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+    <main class="production-detail">
+      <!-- Hero Section -->
+      <section class="hero-section">
+        <img src="../assets/IMG_6320.jpeg" alt="THE TRIBE Performance" />
+        <h1>THE TRIBE</h1>
+      </section>
+
+      <!-- Production Info -->
+      <section class="production-info">
+        <div class="info-grid">
+          <div class="info-item">
+            <h3>Year</h3>
+            <p>2025</p>
+          </div>
+          <div class="info-item">
+            <h3>Format</h3>
+            <p>Ensemble Performance</p>
+          </div>
+          <div class="info-item">
+            <h3>Performers</h3>
+            <p>5 Dancers</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Description -->
+      <section class="description-section">
+        <h2>Description</h2>
+        <p>A powerful ensemble piece exploring themes of unity, identity, and collective movement.</p>
+        <p>
+          Five dancers, clad in identical light-colored suits with headlamps, create a mysterious and futuristic atmosphere that examines
+          the dynamics of group behavior and individual expression within a collective.
+        </p>
+        <p>
+          The work investigates how individuals maintain their identity while being part of a larger group, using synchronized yet
+          individualistic movements to create a compelling narrative about belonging and autonomy.
+        </p>
+      </section>
+
+      <!-- Back to Production -->
+      <section class="back-section">
+        <a href="production.html" class="back-button">← Back to Production</a>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2024 Katharina Ludwig</p>
+    </footer>
+
+    <script>
+      function toggleNav() {
+        const navMenu = document.getElementById("navMenu");
+        navMenu.classList.toggle("active");
+      }
+
+      // Close nav when clicking outside
+      document.addEventListener("click", function (event) {
+        const navIcon = document.querySelector(".nav-icon");
+        const navMenu = document.getElementById("navMenu");
+
+        if (!navIcon.contains(event.target) && !navMenu.contains(event.target)) {
+          navMenu.classList.remove("active");
+        }
+      });
+    </script>
+  </body>
+</html>

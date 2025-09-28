@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Teaching — Katharina Ludwig</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Minimal icon navigation -->
+    <div class="nav-icon" onclick="toggleNav()">
+      <span>☰</span>
+    </div>
+
+    <!-- Navigation menu -->
+    <nav class="nav-menu" id="navMenu">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="calendar.html">Calendar</a></li>
+        <li><a href="production.html">Production</a></li>
+        <li><a href="dancework.html">Dance Work</a></li>
+        <li><a href="teaching.html">Teaching</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+    <main>
+      <section>
+        <div class="hero-section">
+          <img
+            src="../assets/For the beginning of the page_Katharina Ludwig ©Gwendoline Böttger.jpeg"
+            alt="Katharina Ludwig teaching dance" />
+          <h1>Teaching</h1>
+        </div>
+
+        <div class="description-video-section">
+          <div class="description-content">
+            <p>
+              Katharina is an educated dance pedagogue who regularly teaches hobby and vocational classes as well as training for
+              professional dancers. She teaches classes that are specifically tailored to the demands of Contemporary Dancers today. Her
+              teaching repertory includes Contemporary, Improvisation, Classical Ballet, Jazz, as well as Fitness and Mobility Classes. In
+              October 2023 Katharina completed the Pretraining of the GYROTONIC© method.
+            </p>
+
+            <p>
+              Studios that Katharina taught at include tanzplatz Vorbern, akar, ballsaal, Tanzschule Kreutzberg, tanzszene Bern, Unisport
+              Bern, Conservatoire de Fribourg, Next Step Freiburg, Studio Pro Arte and more…
+            </p>
+
+            <p>
+              Her teaching experience for professional dancers includes teaching at Tanzhaus Zurich, Tanzbüro Basel, TANZhAUS Bern, Tanznetz
+              Freiburg as well as for various professional dance companies.
+            </p>
+          </div>
+
+          <div class="video-wrapper">
+            <div class="video-container">
+              <iframe
+                src="https://player.vimeo.com/video/1119163640?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;loop=1"
+                frameborder="0"
+                allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                title="Teaching Trailer 1"></iframe>
+            </div>
+          </div>
+        </div>
+
+        <div class="image-description-section">
+          <div class="image-wrapper">
+            <img src="../assets/second teaching picture.jpg" alt="Katharina Ludwig teaching contemporary dance" />
+          </div>
+
+          <div class="description-text">
+            <p>
+              Katharina's contemporary dance training combines fixed movement sequences with improvisation exercises based on contemporary
+              technique and floorwork. After a warm-up that builds the dancers' strength and endurance, the training progresses to floor
+              work. Afterwards, the dancers move through the space, standing or on the floor, with sequences that combine flowing movements
+              with powerful, dynamic elements. In addition to its physicality, the class is based on play, groove and the joy of movement.
+              An emphasis lies on establishing a connection between dance and music. Through different rhythmic exercises the training
+              playfully expands the dancer's own movement vocabulary. The class offers a variety of dance material that moves the body as a
+              whole and encourages the dancers to deepen both their technical skills as well as their artistic expressiveness.
+            </p>
+          </div>
+        </div>
+
+        <section class="teaching-calendar">
+          <h2>Teaching Calendar</h2>
+
+          <h3>Regular Classes</h3>
+
+          <div class="weekday-section">
+            <div class="weekday-heading">
+              <h4>Wednesdays</h4>
+            </div>
+            <div class="class-list">
+              <ul>
+                <li>Ballet from 11 years on: 15:50 – 16:50</li>
+                <li>Ballet from 13 years on: 16:50 – 17:50</li>
+                <li>Ballet from 15 years on: 18:00 – 19:15</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="weekday-section">
+            <div class="weekday-heading">
+              <h4>Thursdays</h4>
+            </div>
+            <div class="class-list">
+              <ul>
+                <li>
+                  <strong>NEW!</strong>
+                  Contemporary for adults: 19:10 - 20:40
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="info-section">
+            <p>
+              Registration and more infos at the website of
+              <a href="#">Tanzplatz VORBERN HERE</a>
+              .
+            </p>
+          </div>
+
+          <div class="professional-training">
+            <h3>Training for Professional Dancers</h3>
+            <p>15.06.-18.06.2025 @Tanzhaus Zurich</p>
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <script>
+      function toggleNav() {
+        const navMenu = document.getElementById("navMenu");
+        navMenu.classList.toggle("active");
+      }
+
+      // Close nav when clicking outside
+      document.addEventListener("click", function (event) {
+        const navIcon = document.querySelector(".nav-icon");
+        const navMenu = document.getElementById("navMenu");
+
+        if (!navIcon.contains(event.target) && !navMenu.contains(event.target)) {
+          navMenu.classList.remove("active");
+        }
+      });
+    </script>
+  </body>
+</html>

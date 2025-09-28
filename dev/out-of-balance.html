@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OUT OF BALANCE — Katharina Ludwig</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Minimal icon navigation -->
+    <div class="nav-icon" onclick="toggleNav()">
+      <span>☰</span>
+    </div>
+
+    <!-- Navigation menu -->
+    <nav class="nav-menu" id="navMenu">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="calendar.html">Calendar</a></li>
+        <li><a href="production.html">Production</a></li>
+        <li><a href="dancework.html">Dance Work</a></li>
+        <li><a href="teaching.html">Teaching</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+    <main class="production-detail">
+      <!-- Hero Section -->
+      <section class="hero-section">
+        <img src="../assets/Out of Balance.jpg" alt="OUT OF BALANCE Performance" />
+        <h1>OUT OF BALANCE</h1>
+      </section>
+
+      <!-- Production Info -->
+      <section class="production-info">
+        <div class="info-grid">
+          <div class="info-item">
+            <h3>Year</h3>
+            <p>2025</p>
+          </div>
+          <div class="info-item">
+            <h3>Format</h3>
+            <p>Ensemble Performance</p>
+          </div>
+          <div class="info-item">
+            <h3>Performers</h3>
+            <p>3 Dancers</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Description -->
+      <section class="description-section">
+        <h2>Description</h2>
+        <p>A dynamic ensemble piece exploring themes of equilibrium and disruption.</p>
+        <p>
+          Three performers navigate the delicate balance between stability and chaos, using white boxes as both props and metaphors for the
+          structures we build and break in our lives.
+        </p>
+        <p>
+          The work examines how we maintain our center while the world around us shifts and changes, creating a powerful visual metaphor for
+          contemporary existence.
+        </p>
+      </section>
+
+      <!-- Back to Production -->
+      <section class="back-section">
+        <a href="production.html" class="back-button">← Back to Production</a>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2024 Katharina Ludwig</p>
+    </footer>
+
+    <script>
+      function toggleNav() {
+        const navMenu = document.getElementById("navMenu");
+        navMenu.classList.toggle("active");
+      }
+
+      // Close nav when clicking outside
+      document.addEventListener("click", function (event) {
+        const navIcon = document.querySelector(".nav-icon");
+        const navMenu = document.getElementById("navMenu");
+
+        if (!navIcon.contains(event.target) && !navMenu.contains(event.target)) {
+          navMenu.classList.remove("active");
+        }
+      });
+    </script>
+  </body>
+</html>
