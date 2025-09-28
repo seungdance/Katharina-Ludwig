@@ -1836,6 +1836,33 @@ a:hover {
 
 /* Mobile Responsive for Detail Pages */
 @media (max-width: 768px) {
+  /* Hero Section Mobile Optimization */
+  .hero-section {
+    height: 100vh;
+    position: relative;
+  }
+
+  .hero-section img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .hero-section h1 {
+    position: absolute;
+    top: 10%;
+    left: 30%;
+    transform: translate(-50%, -50%);
+    font-size: 1.8rem;
+    text-align: left;
+    width: auto;
+    max-width: none;
+    line-height: 1.1;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
+    z-index: 10;
+    color: white;
+  }
+
   .production-detail {
     padding: 0 1rem;
   }
@@ -1895,7 +1922,7 @@ a:hover {
 
   /* Image Gallery Mobile Styles */
   .gallery-grid {
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: 0;
   }
 
@@ -1948,17 +1975,22 @@ a:hover {
     text-align: center;
   }
 
-  /* Magazine Layout Mobile Styles */
+  /* Magazine Layout Mobile Styles - Complete Redesign */
   .magazine-layout {
-    padding: 0 1rem;
+    padding: 0;
   }
 
   .content-block {
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
     gap: 2rem;
-    margin: 3rem 0;
-    padding: 0;
+    margin: 2rem 0;
+    padding: 0 1rem;
     min-height: auto;
+  }
+
+  .content-block.reverse {
+    flex-direction: column;
   }
 
   .content-block.reverse .image-content {
@@ -1971,39 +2003,70 @@ a:hover {
     justify-self: stretch;
     margin-right: 0;
     margin-left: 0;
+    width: 100%;
   }
 
   .image-content img,
   .content-block.reverse .image-content img {
     width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 0;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   }
 
   .text-content {
-    padding: 1rem 0;
+    padding: 0;
+    order: 1;
   }
 
   .text-content h2 {
-    font-size: 2rem;
+    font-size: 1.8rem;
     margin-bottom: 1.5rem;
+    text-align: center;
   }
 
   .text-content h3 {
     font-size: 1.3rem;
+    text-align: center;
   }
 
   .text-content p {
     font-size: 16px;
     line-height: 1.7;
+    text-align: justify;
+    margin-bottom: 1.2rem;
   }
 
   .text-content blockquote {
     font-size: 15px;
     padding: 1.5rem;
     margin: 1.5rem 0;
+    text-align: justify;
+  }
+
+  /* Production Info Mobile Styles */
+  .production-info-text {
+    margin-bottom: 3rem;
+    text-align: center;
+  }
+
+  .production-info-text p {
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 1rem;
   }
 
   .fullwidth-block {
     margin: 2rem 0;
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+  }
+
+  .fullwidth-block img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
   }
 
   .overlay-text {
@@ -2030,18 +2093,31 @@ a:hover {
     padding-left: 0;
   }
 
+  .timeline-date {
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .timeline-text {
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
   .calendar-item {
     flex-direction: column;
     align-items: flex-start;
     gap: 0.5rem;
+    padding: 0.8rem 0;
   }
 
   .calendar-item .date {
     flex: none;
+    font-size: 15px;
   }
 
   .calendar-item .venue {
     text-align: left;
+    font-size: 14px;
   }
 
   /* Production Info Mobile Styles */
