@@ -32,7 +32,7 @@ html {
 body {
   font-family: "Orbitron", sans-serif;
   line-height: 1.6;
-  color: #333333;
+  color: #2c2c2c;
   background: #f4efe8;
   overflow-x: hidden;
 }
@@ -154,26 +154,28 @@ main {
 }
 
 .about-container h1 {
-  font-family: Georgia, serif;
+  font-family: "Black Ops One", sans-serif;
   font-size: 3rem;
   font-weight: 400;
   color: #2c2c2c;
-  margin-bottom: 1rem;
-  letter-spacing: 0.1em;
+  margin-top: 2rem;
+  margin-bottom: 3rem;
+  letter-spacing: 0.05em;
   text-align: center;
 }
 
 .hero-subtitle {
-  font-family: "Times New Roman", Times, serif;
+  font-family: "Orbitron", sans-serif;
   font-size: 1.2rem;
   color: #666;
   margin-bottom: 0.5rem;
   font-style: italic;
   text-align: center;
+  white-space: nowrap;
 }
 
 .hero-location {
-  font-family: "Times New Roman", Times, serif;
+  font-family: "Orbitron", sans-serif;
   font-size: 1rem;
   color: #999;
   margin-bottom: 3rem;
@@ -181,9 +183,9 @@ main {
 }
 
 .about-container p {
-  font-family: "Times New Roman", Times, serif;
+  font-family: "Orbitron", sans-serif;
   font-size: 16px;
-  line-height: 1.8;
+  line-height: 1.6;
   color: #2c2c2c;
   margin-bottom: 1.5rem;
   text-align: justify;
@@ -194,9 +196,9 @@ main {
 
 /* Links */
 a {
-  color: #333333;
+  color: #2c2c2c;
   text-decoration: underline;
-  font-family: "Cormorant Garamond", serif;
+  font-family: "Orbitron", sans-serif;
 }
 
 a:hover {
@@ -218,6 +220,21 @@ a:hover {
 
   .about-video-hero {
     height: 100vh;
+  }
+
+  .about-video-hero .video-container iframe {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 145%;
+    height: 145%;
+    min-width: 145%;
+    min-height: 145%;
+    transform: translate(-50%, -50%);
+    border: none;
+    object-fit: cover;
+    object-position: center;
+    transform-origin: center center;
   }
 
   .about-content {
