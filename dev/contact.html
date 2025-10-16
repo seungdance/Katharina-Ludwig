@@ -26,14 +26,43 @@
     </nav>
 
     <main>
-      <section>
-        <h1>Contact</h1>
+      <!-- Hero Section with Contact Overlay -->
+      <section class="hero">
+        <img
+          src="https://res.cloudinary.com/dxefd3n1k/image/upload/v1758702876/KatharinaLudwig_ZANT__Fl%C3%A1via_Samper_zbxvxh.jpg"
+          alt="Katharina Ludwig"
+          class="hero-image" />
+
+        <!-- Contact Overlay (Desktop only) -->
+        <div class="contact-overlay">
+          <div class="contact-info">
+            <div class="contact-item">
+              <h3>Email</h3>
+              <a href="mailto:ludwigkatharina@proton.me">ludwigkatharina@proton.me</a>
+            </div>
+            <div class="contact-item">
+              <h3>Instagram</h3>
+              <a href="https://www.instagram.com/kathastrophhe/" target="_blank" rel="noopener noreferrer">@kathastrophhe</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact Section (Mobile only) -->
+      <section class="contact-section mobile-only">
+        <div class="contact-info">
+          <div class="contact-item">
+            <h3>Email</h3>
+            <a href="mailto:ludwigkatharina@proton.me">ludwigkatharina@proton.me</a>
+          </div>
+          <div class="contact-item">
+            <h3>Instagram</h3>
+            <a href="https://www.instagram.com/kathastrophhe/" target="_blank" rel="noopener noreferrer">@kathastrophhe</a>
+          </div>
+        </div>
       </section>
     </main>
 
-    <footer>
-      <p>&copy; 2024 Katharina Ludwig</p>
-    </footer>
     <script>
       function toggleNav() {
         const navMenu = document.getElementById("navMenu");

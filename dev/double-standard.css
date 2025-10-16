@@ -1,0 +1,670 @@
+/* Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Orbitron:wght@400;500;700&display=swap");
+
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Remove any default borders or outlines */
+* {
+  border: none;
+  outline: none;
+  box-shadow: none;
+}
+
+/* Remove developer tools highlighting */
+*:focus,
+*:active,
+*:hover {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* Smooth scrolling and performance optimization */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 0;
+}
+
+body {
+  font-family: "Orbitron", sans-serif;
+  line-height: 1.6;
+  color: #333333;
+  background: #f4efe8;
+  overflow-x: hidden;
+}
+
+/* Minimal icon navigation */
+.nav-icon {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+  width: 40px;
+  height: 40px;
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.nav-icon:hover {
+  background: rgba(0, 0, 0, 1);
+  transform: scale(1.1);
+}
+
+.nav-icon span {
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* Navigation menu */
+.nav-menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 200px;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.95);
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
+  z-index: 999;
+  padding: 80px 20px 20px;
+}
+
+.nav-menu.active {
+  transform: translateX(0);
+}
+
+.nav-menu ul {
+  list-style: none;
+}
+
+.nav-menu li {
+  margin-bottom: 20px;
+}
+
+.nav-menu a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  transition: color 0.3s ease;
+}
+
+.nav-menu a:hover {
+  color: #ccc;
+}
+
+/* Full-width images */
+img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border: none;
+  outline: none;
+}
+
+/* Hero Section Animation */
+@keyframes basketballBounce {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.3);
+    filter: contrast(0) brightness(0);
+  }
+  60% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.3);
+    filter: contrast(0) brightness(0);
+  }
+  65% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.2);
+    filter: contrast(1) brightness(1);
+  }
+  70% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(0.9);
+  }
+  75% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.1);
+  }
+  80% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(0.95);
+  }
+  85% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.05);
+  }
+  90% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(0.98);
+  }
+  95% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.02);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+.hero-section {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  margin-left: calc(-50vw + 50%);
+  padding: 0;
+  border: none;
+  outline: none;
+  line-height: 0;
+  display: block;
+  background-color: #f4efe8;
+  transform: scale(1);
+  overflow: hidden;
+}
+
+.hero-section img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+  background-color: #f4efe8;
+  transform: scale(1);
+}
+
+.hero-section h1 {
+  position: absolute;
+  top: 25%;
+  left: 25%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  font-size: 3rem;
+  font-weight: 300;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  z-index: 10;
+  font-family: "Black Ops One", sans-serif;
+  animation: basketballBounce 1.2s ease-out forwards;
+  opacity: 0;
+}
+
+/* Content styling */
+main {
+  max-width: none;
+  margin: 0;
+  padding: 0;
+}
+
+section {
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-family: "Black Ops One", sans-serif;
+  font-size: 2.5rem;
+  font-weight: 400;
+  margin-bottom: 2rem;
+  text-align: center;
+  padding: 2rem 1rem;
+  color: #000000;
+  letter-spacing: 0.05em;
+}
+
+h2 {
+  font-family: "Black Ops One", sans-serif;
+  font-size: 2rem;
+  font-weight: 400;
+  margin: 3rem 0 1.5rem;
+  text-align: center;
+  color: #000000;
+  letter-spacing: 0.05em;
+}
+
+h3 {
+  font-family: "Black Ops One", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin: 2rem 0 1rem;
+  text-align: center;
+  color: #000000;
+  letter-spacing: 0.05em;
+}
+
+p {
+  margin-bottom: 1.5rem;
+  padding: 0 2rem;
+  font-size: 16px;
+  line-height: 1.6;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: "Orbitron", sans-serif;
+  color: #333333;
+}
+
+/* Production Detail Pages */
+.production-detail {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Production Info */
+.production-info {
+  margin: 3rem 0;
+  padding: 2rem;
+  background-color: transparent;
+  border-radius: 8px;
+  box-shadow: none;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+}
+
+.info-item {
+  text-align: center;
+  padding: 1rem;
+  background-color: transparent;
+  border-radius: 4px;
+}
+
+.info-item h3 {
+  font-family: "Black Ops One", sans-serif;
+  font-size: 1rem;
+  color: #000000;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.info-item p {
+  font-family: "Orbitron", sans-serif;
+  font-size: 14px;
+  color: #2c2c2c;
+  margin: 0;
+  padding: 0;
+}
+
+/* Credits Section */
+.credits-section {
+  margin: 4rem 0;
+  padding: 2rem;
+  background-color: transparent;
+  border-radius: 8px;
+  box-shadow: none;
+}
+
+.credits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.credit-item {
+  padding: 1.5rem;
+  background-color: transparent;
+  border-radius: 4px;
+  font-family: "Orbitron", sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #2c2c2c;
+}
+
+.credit-item strong {
+  color: #000000;
+  font-weight: 600;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+/* Setting Section */
+.setting-section {
+  margin: 4rem 0;
+  padding: 2rem;
+  background-color: transparent;
+  border-radius: 8px;
+  box-shadow: none;
+}
+
+.setting-content {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.setting-content p {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 16px;
+  line-height: 1.8;
+  color: #2c2c2c;
+  margin-bottom: 2rem;
+}
+
+/* Story Section */
+.story-section {
+  margin: 4rem 0;
+  padding: 2rem;
+  background-color: transparent;
+  border-radius: 8px;
+  box-shadow: none;
+}
+
+.story-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.story-column p {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #2c2c2c;
+  margin-bottom: 0;
+  text-align: left;
+  padding: 0;
+}
+
+/* Scroll to Top Button */
+.scroll-to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 50px;
+  height: 50px;
+  background-color: #000000;
+  color: #f4efe8;
+  border: none;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.scroll-to-top.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.scroll-to-top:hover {
+  background-color: #333333;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Additional Images Styling */
+.additional-image {
+  margin: 3rem 0;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  overflow: hidden;
+  position: relative;
+}
+
+.additional-image img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  background-color: #f4efe8;
+}
+
+.additional-image:not(:first-of-type)::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(244, 239, 232, 0.3);
+  pointer-events: none;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  /* Hero Section Mobile Optimization */
+  .hero-section {
+    height: 100vh;
+    position: relative;
+  }
+
+  .hero-section img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .hero-section h1 {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3.2rem !important;
+    text-align: center;
+    width: 90%;
+    max-width: 300px;
+    line-height: 1.1;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
+    z-index: 10;
+    color: white;
+  }
+
+  .production-detail {
+    padding: 0 1rem;
+  }
+
+  .info-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .credits-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .story-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .nav-icon {
+    top: 15px;
+    right: 15px;
+    width: 35px;
+    height: 35px;
+  }
+
+  .nav-menu {
+    width: 100%;
+  }
+
+  h1 {
+    font-size: 2rem;
+    padding: 1.5rem 1rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  p {
+    padding: 0 1rem;
+  }
+
+  .production-info,
+  .credits-section,
+  .setting-section,
+  .story-section {
+    margin: 2rem 0;
+    padding: 1rem;
+  }
+
+  .additional-image {
+    margin: 2rem 0;
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-left: 0;
+  }
+
+  /* Mobile-specific image adjustments */
+  .additional-image img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  /* Mobile typography adjustments */
+  .info-item h3 {
+    font-size: 0.9rem;
+  }
+
+  .info-item p {
+    font-size: 13px;
+  }
+
+  .credit-item {
+    padding: 1rem;
+    font-size: 13px;
+  }
+
+  .setting-content p {
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  .story-column p {
+    font-size: 13px;
+    line-height: 1.5;
+  }
+}
+
+/* Extra small screens */
+@media (max-width: 480px) {
+  .hero-section h1 {
+    font-size: 2.8rem !important;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 85%;
+    max-width: 250px;
+    text-align: center;
+  }
+
+  .production-detail {
+    padding: 0 0.5rem;
+  }
+
+  .production-info,
+  .credits-section,
+  .setting-section,
+  .story-section {
+    padding: 0.5rem;
+    margin: 1.5rem 0;
+  }
+
+  .info-item,
+  .credit-item {
+    padding: 0.8rem;
+  }
+
+  .info-item h3 {
+    font-size: 0.8rem;
+  }
+
+  .info-item p {
+    font-size: 12px;
+  }
+
+  .credit-item {
+    font-size: 12px;
+  }
+
+  .setting-content p {
+    font-size: 14px;
+  }
+
+  .story-column p {
+    font-size: 12px;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+    padding: 1rem 0.5rem;
+  }
+
+  h2 {
+    font-size: 1.3rem;
+  }
+
+  p {
+    padding: 0 0.5rem;
+  }
+
+  .additional-image {
+    margin: 1.5rem 0;
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-left: 0;
+  }
+
+  .scroll-to-top {
+    bottom: 1.5rem;
+    right: 1.5rem;
+    width: 45px;
+    height: 45px;
+    font-size: 1.3rem;
+  }
+
+  .nav-icon {
+    top: 10px;
+    right: 10px;
+    width: 30px;
+    height: 30px;
+  }
+
+  .nav-icon span {
+    font-size: 16px;
+  }
+}
+
+/* Prevent horizontal scrolling globally */
+html,
+body {
+  overflow-x: hidden;
+}

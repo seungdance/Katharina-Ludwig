@@ -152,6 +152,88 @@ footer p {
   margin: 0;
 }
 
+/* Hero Section */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f4efe8;
+}
+
+.hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Contact Overlay */
+.contact-overlay {
+  position: absolute;
+  top: 100px;
+  right: 200px;
+  width: auto;
+  height: auto;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  background: none;
+}
+
+/* Contact Section */
+.contact-section {
+  padding: 3rem 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Mobile-only contact section - hidden on desktop */
+.mobile-only {
+  display: none;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  z-index: 10;
+}
+
+.contact-item {
+  text-align: center;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 0;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(15px);
+}
+
+.contact-item h3 {
+  font-family: "Black Ops One", sans-serif;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: #ffffff;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+}
+
+.contact-item a {
+  font-family: "Orbitron", sans-serif;
+  font-size: 1rem;
+  color: #ffffff;
+  text-decoration: none;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+  transition: color 0.3s ease;
+}
+
+.contact-item a:hover {
+  color: #f0f0f0;
+  text-decoration: underline;
+}
+
 /* Links */
 a {
   color: #333333;
@@ -172,6 +254,45 @@ a:hover {
 
   p {
     padding: 0 1rem;
+  }
+
+  .hero {
+    height: 60vh;
+  }
+
+  .hero-image {
+    object-position: 10% center;
+  }
+
+  /* Hide overlay on mobile */
+  .contact-overlay {
+    display: none;
+  }
+
+  /* Show mobile-only contact section */
+  .mobile-only {
+    display: block;
+  }
+
+  .contact-section {
+    padding: 2rem 1rem;
+  }
+
+  .contact-item {
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.5);
+    color: #333333;
+  }
+
+  .contact-item h3 {
+    font-size: 1rem;
+    color: #000000;
+  }
+
+  .contact-item a {
+    font-size: 0.9rem;
+    color: #333333;
+    text-shadow: none;
   }
 
   .nav-icon {

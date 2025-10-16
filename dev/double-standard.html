@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>DOUBLE STANDARD — Katharina Ludwig</title>
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="double-standard.css" />
   </head>
   <body>
     <!-- Minimal icon navigation -->
@@ -28,7 +28,7 @@
     <main class="production-detail">
       <!-- Hero Section -->
       <section class="hero-section">
-        <img src="../assets/Double Standard.jpg" alt="DOUBLE STANDARD Performance" />
+        <img src="https://res.cloudinary.com/dxefd3n1k/image/upload/v1758702920/DS_1_k6w3ue.jpg" alt="DOUBLE STANDARD Performance" />
         <h1>DOUBLE STANDARD</h1>
       </section>
 
@@ -49,6 +49,13 @@
           </div>
         </div>
       </section>
+
+      <!-- Additional Image 1 -->
+      <div class="additional-image">
+        <img
+          src="https://res.cloudinary.com/dxefd3n1k/image/upload/v1758702918/Bildschirmfoto_2025-03-26_um_11.33.37_hn45td.jpg"
+          alt="DOUBLE STANDARD Performance" />
+      </div>
 
       <!-- Credits -->
       <section class="credits-section">
@@ -73,6 +80,13 @@
         </div>
       </section>
 
+      <!-- Additional Image 2 -->
+      <div class="additional-image">
+        <img
+          src="https://res.cloudinary.com/dxefd3n1k/image/upload/v1758702921/capture000016_eqroik.jpg"
+          alt="DOUBLE STANDARD Performance" />
+      </div>
+
       <!-- Setting the Scene -->
       <section class="setting-section">
         <h2>Setting the Scene</h2>
@@ -96,6 +110,13 @@
           </p>
         </div>
       </section>
+
+      <!-- Additional Image 3 -->
+      <div class="additional-image">
+        <img
+          src="https://res.cloudinary.com/dxefd3n1k/image/upload/v1758702919/capture000007_ih75dh.jpg"
+          alt="DOUBLE STANDARD Performance" />
+      </div>
 
       <!-- V and K Story -->
       <section class="story-section">
@@ -185,15 +206,16 @@
         </div>
       </section>
 
-      <!-- Back to Production -->
-      <section class="back-section">
-        <a href="production.html" class="back-button">← Back to Production</a>
-      </section>
+      <!-- Additional Image 4 -->
+      <div class="additional-image">
+        <img
+          src="https://res.cloudinary.com/dxefd3n1k/image/upload/v1758702920/capture000011_o3abny.jpg"
+          alt="DOUBLE STANDARD Performance" />
+      </div>
     </main>
 
-    <footer>
-      <p>&copy; 2024 Katharina Ludwig</p>
-    </footer>
+    <!-- Scroll to Top Button -->
+    <button class="scroll-to-top" id="scrollToTop" onclick="scrollToTop()">↑</button>
 
     <script>
       function toggleNav() {
@@ -208,6 +230,24 @@
 
         if (!navIcon.contains(event.target) && !navMenu.contains(event.target)) {
           navMenu.classList.remove("active");
+        }
+      });
+
+      // Scroll to Top functionality
+      function scrollToTop() {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth",
+        });
+      }
+
+      // Show/hide scroll to top button based on scroll position
+      window.addEventListener("scroll", function () {
+        const scrollToTopBtn = document.getElementById("scrollToTop");
+        if (window.pageYOffset > 300) {
+          scrollToTopBtn.classList.add("show");
+        } else {
+          scrollToTopBtn.classList.remove("show");
         }
       });
     </script>
