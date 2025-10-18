@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ENLIGHT — Katharina Ludwig</title>
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="enlight.css" />
   </head>
   <body>
     <!-- Minimal icon navigation -->
@@ -32,47 +32,84 @@
         <h1>ENLIGHT</h1>
       </section>
 
-      <!-- Production Info -->
-      <section class="production-info">
-        <div class="info-grid">
-          <div class="info-item">
-            <h3>Year</h3>
-            <p>2025</p>
+      <!-- Magazine Layout -->
+      <section class="magazine-layout">
+        <!-- Row 1: Info + Image -->
+        <div class="magazine-row">
+          <div class="content-block info-block">
+            <div class="info-item">
+              <h3>Duration</h3>
+              <p>11 min</p>
+            </div>
+            <div class="info-item">
+              <h3>Format</h3>
+              <p>Solo</p>
+            </div>
+            <div class="info-item">
+              <h3>Year</h3>
+              <p>2019</p>
+            </div>
           </div>
-          <div class="info-item">
-            <h3>Format</h3>
-            <p>Contemporary Dance</p>
+          <div class="content-block image-block">
+            <img
+              src="https://res.cloudinary.com/dxefd3n1k/image/upload/v1758702980/IMG_8359_p4qigx.jpg"
+              alt="ENLIGHT Performance Image 1" />
           </div>
-          <div class="info-item">
-            <h3>Technique</h3>
-            <p>Long Exposure Photography</p>
+        </div>
+
+        <!-- Row 2: Image + Image -->
+        <div class="magazine-row">
+          <div class="content-block image-block">
+            <img
+              src="https://res.cloudinary.com/dxefd3n1k/image/upload/v1758702979/IMG_8357_edzftp.jpg"
+              alt="ENLIGHT Performance Image 2" />
+          </div>
+          <div class="content-block image-block">
+            <img
+              src="https://res.cloudinary.com/dxefd3n1k/image/upload/v1758702978/IMG_2600_uqb9lq.jpg"
+              alt="ENLIGHT Performance Image 3" />
+          </div>
+        </div>
+
+        <!-- Row 3: Image + Info -->
+        <div class="magazine-row">
+          <div class="content-block image-block">
+            <img
+              src="https://res.cloudinary.com/dxefd3n1k/image/upload/v1758702977/IMG_1949_pbq3sc.jpg"
+              alt="ENLIGHT Performance Image 4" />
+          </div>
+          <div class="content-block info-block">
+            <div class="info-item">
+              <h3>Choreography & Performance</h3>
+              <p>Katharina Ludwig</p>
+            </div>
+            <div class="info-item">
+              <h3>Developed & Performed</h3>
+              <p>
+                Tanzwuchs#3, autumn 2019
+                <br />
+                Südufer Freiburg
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
-      <!-- Description -->
-      <section class="description-section">
-        <h2>Description</h2>
-        <p>An experimental dance piece that explores the intersection of movement and light.</p>
-        <p>
-          Using long exposure photography techniques, ENLIGHT captures the ephemeral nature of dance, transforming performers into luminous
-          streaks of energy.
-        </p>
-        <p>
-          The work examines how light can reveal the hidden patterns and rhythms of human movement, creating a mesmerizing visual experience
-          that blurs the line between performance and photography.
-        </p>
-      </section>
-
-      <!-- Back to Production -->
-      <section class="back-section">
-        <a href="production.html" class="back-button">← Back to Production</a>
+      <!-- Trailer Section -->
+      <section class="trailer-section">
+        <div class="trailer-container">
+          <h2>Trailer</h2>
+          <div class="video-wrapper">
+            <iframe
+              src="https://www.youtube.com/embed/Mcm18qrUUEw?si=M_3mesDa_hdc-o8G"
+              title="ENLIGHT Trailer"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen></iframe>
+          </div>
+        </div>
       </section>
     </main>
-
-    <footer>
-      <p>&copy; 2024 Katharina Ludwig</p>
-    </footer>
 
     <script>
       function toggleNav() {

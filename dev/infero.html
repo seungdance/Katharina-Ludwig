@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>INFERO — Katharina Ludwig</title>
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="infero.css" />
   </head>
   <body>
     <!-- Minimal icon navigation -->
@@ -25,76 +25,82 @@
       </ul>
     </nav>
 
-    <main class="production-detail">
+    <main class="infero-page">
       <!-- Hero Section -->
-      <section class="hero-section">
-        <img src="../assets/2_KatharinaLudwig_ZANT_©Flávia Samper.JPG" alt="INFERO Performance" />
-        <h1>INFERO</h1>
-      </section>
-
-      <!-- Production Info -->
-      <section class="production-info">
-        <div class="info-grid">
-          <div class="info-item">
-            <h3>Year</h3>
-            <p>2025</p>
-          </div>
-          <div class="info-item">
-            <h3>Venue</h3>
-            <p>ZANT Festival</p>
-          </div>
-          <div class="info-item">
-            <h3>Format</h3>
-            <p>Outdoor Performance</p>
-          </div>
+      <section class="hero">
+        <div class="hero-content">
+          <h1>INFERO</h1>
+          <p class="hero-subtitle">Solo • 8 minutes</p>
+          <p class="hero-description">Choreography and Performance: Katharina Ludwig</p>
+        </div>
+        <div class="video-wrapper">
+          <iframe
+            src="https://www.youtube.com/embed/mISVXZnoKmc?si=JP2Y99Ry8NutXdcV"
+            title="INFERO"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
         </div>
       </section>
 
-      <!-- Description -->
-      <section class="description-section">
-        <h2>Description</h2>
-        <p>A dynamic outdoor performance piece created for the ZANT Festival.</p>
-        <p>
-          INFERO explores themes of transformation and renewal, using the natural outdoor setting as both backdrop and collaborator in the
-          choreography.
-        </p>
-        <p>
-          The work examines the relationship between performer and environment, creating a powerful dialogue between human movement and the
-          surrounding landscape.
-        </p>
-      </section>
+      <!-- Content Grid -->
+      <div class="content-grid">
+        <!-- Left Column -->
+        <div class="left-column">
+          <section class="concept">
+            <h2>Concept</h2>
+            <p>
+              Translated from Latin,
+              <em>Infero</em>
+              means "to fall into something, to attack, sacrifice or offer". The essential theme I dealt with during the creation is
+              sacrifice. The sacrifice of oneself for something. To what extend can someone sacrifice themselves and what rituals and phases
+              are attended by it?
+            </p>
+            <p>
+              Understanding, questioning, rejection, action and finally acceptance are states which are investigated and presented during
+              the solo.
+            </p>
+          </section>
 
-      <!-- Credits -->
-      <section class="credits-section">
-        <h2>Credits</h2>
-        <div class="credits-grid">
-          <div class="credit-item">
-            <strong>Performance:</strong>
-            <br />
-            Katharina Ludwig
-          </div>
-          <div class="credit-item">
-            <strong>Photography:</strong>
-            <br />
-            ©Flávia Samper
-          </div>
-          <div class="credit-item">
-            <strong>Festival:</strong>
-            <br />
-            ZANT Festival
-          </div>
+          <section class="performances">
+            <h2>Performances</h2>
+            <div class="performance-list">
+              <div class="performance-item">
+                <span class="year">2019</span>
+                <span class="venue">raw&polished Nuremberg</span>
+              </div>
+              <div class="performance-item">
+                <span class="year">2019</span>
+                <span class="venue">Lange Nacht der kurzen Stücke Karlsruhe</span>
+              </div>
+              <div class="performance-item">
+                <span class="year">2018</span>
+                <span class="venue">Solo competition of Theater tanzspeicher Würzburg</span>
+              </div>
+            </div>
+          </section>
         </div>
-      </section>
 
-      <!-- Back to Production -->
-      <section class="back-section">
-        <a href="production.html" class="back-button">← Back to Production</a>
-      </section>
+        <!-- Right Column -->
+        <div class="right-column">
+          <section class="press">
+            <h2>Press</h2>
+            <blockquote>
+              <p>
+                "But one piece stood out: 'Infero' by the Freiburg-based dancer and choreographer Katharina Ludwig. In German, 'Infero'
+                means something like 'I carry in' or 'I sacrifice'. The title lacks a grammatical object to make it unambiguous, but
+                Ludwig's dedication to dance can be felt at every moment. She picks up speed in short movements. The movements become
+                larger, the impression of rapture increases, yet her dance seems so contradictory, due to an initially tense and stretched
+                upright posture, to which arms and legs flow round movements parallel to the plane of the floor. Rigidity and slackness
+                fight against each other here, but in a confidently controlled and highly expressive manner. Katharina Ludwig's contribution
+                alone would have been worth a visit to the 'Lange Nacht der Kurzen Stücke'."
+              </p>
+              <footer>— Jens Wehn, BNN 12.11.2019</footer>
+            </blockquote>
+          </section>
+        </div>
+      </div>
     </main>
-
-    <footer>
-      <p>&copy; 2024 Katharina Ludwig</p>
-    </footer>
 
     <script>
       function toggleNav() {
