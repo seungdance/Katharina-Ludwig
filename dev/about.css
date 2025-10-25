@@ -1,5 +1,5 @@
 /* Google Fonts */
-@import url("https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Orbitron:wght@400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap");
 
 /* Reset and base styles */
 * {
@@ -30,76 +30,11 @@ html {
 }
 
 body {
-  font-family: "Orbitron", sans-serif;
+  font-family: "Josefin Sans", sans-serif;
   line-height: 1.6;
-  color: #2c2c2c;
+  color: #000000;
   background: #f4efe8;
   overflow-x: hidden;
-}
-
-/* Minimal icon navigation */
-.nav-icon {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  z-index: 1000;
-  width: 40px;
-  height: 40px;
-  background: rgba(0, 0, 0, 0.8);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.nav-icon:hover {
-  background: rgba(0, 0, 0, 1);
-  transform: scale(1.1);
-}
-
-.nav-icon span {
-  color: white;
-  font-size: 18px;
-  font-weight: bold;
-}
-
-/* Navigation menu */
-.nav-menu {
-  position: fixed;
-  top: 0;
-  right: 0;
-  width: 200px;
-  height: 100vh;
-  background: rgba(0, 0, 0, 0.95);
-  transform: translateX(100%);
-  transition: transform 0.3s ease;
-  z-index: 999;
-  padding: 80px 20px 20px;
-}
-
-.nav-menu.active {
-  transform: translateX(0);
-}
-
-.nav-menu ul {
-  list-style: none;
-}
-
-.nav-menu li {
-  margin-bottom: 20px;
-}
-
-.nav-menu a {
-  color: white;
-  text-decoration: none;
-  font-size: 16px;
-  transition: color 0.3s ease;
-}
-
-.nav-menu a:hover {
-  color: #ccc;
 }
 
 /* Content styling */
@@ -154,7 +89,7 @@ main {
 }
 
 .about-container h1 {
-  font-family: "Black Ops One", sans-serif;
+  font-family: "Josefin Sans", sans-serif;
   font-size: 3rem;
   font-weight: 400;
   color: #2c2c2c;
@@ -165,7 +100,7 @@ main {
 }
 
 .hero-subtitle {
-  font-family: "Orbitron", sans-serif;
+  font-family: "Josefin Sans", sans-serif;
   font-size: 1.2rem;
   color: #666;
   margin-bottom: 0.5rem;
@@ -175,7 +110,7 @@ main {
 }
 
 .hero-location {
-  font-family: "Orbitron", sans-serif;
+  font-family: "Josefin Sans", sans-serif;
   font-size: 1rem;
   color: #999;
   margin-bottom: 3rem;
@@ -183,10 +118,10 @@ main {
 }
 
 .about-container p {
-  font-family: "Orbitron", sans-serif;
+  font-family: "Josefin Sans", sans-serif;
   font-size: 16px;
   line-height: 1.6;
-  color: #2c2c2c;
+  color: #333333;
   margin-bottom: 1.5rem;
   text-align: justify;
   max-width: 800px;
@@ -198,7 +133,7 @@ main {
 a {
   color: #2c2c2c;
   text-decoration: underline;
-  font-family: "Orbitron", sans-serif;
+  font-family: "Josefin Sans", sans-serif;
 }
 
 a:hover {
@@ -207,17 +142,6 @@ a:hover {
 
 /* Mobile Responsive */
 @media (max-width: 768px) {
-  .nav-icon {
-    top: 15px;
-    right: 15px;
-    width: 35px;
-    height: 35px;
-  }
-
-  .nav-menu {
-    width: 100%;
-  }
-
   .about-video-hero {
     height: 100vh;
   }
@@ -235,6 +159,25 @@ a:hover {
     object-fit: cover;
     object-position: center;
     transform-origin: center center;
+  }
+
+  /* Ensure navigation is above everything on mobile */
+  .nav-icon {
+    z-index: 9999 !important;
+    pointer-events: auto !important;
+  }
+
+  /* Prevent video hero from blocking navigation clicks */
+  .about-video-hero {
+    pointer-events: none;
+  }
+
+  .about-video-hero .video-container {
+    pointer-events: none;
+  }
+
+  .about-video-hero .video-container iframe {
+    pointer-events: none;
   }
 
   .about-content {
@@ -260,6 +203,28 @@ a:hover {
   .about-container p {
     font-size: 15px;
     margin-bottom: 1.2rem;
+  }
+}
+
+/* Extra small screens */
+@media (max-width: 480px) {
+  /* Ensure navigation is above everything on small mobile */
+  .nav-icon {
+    z-index: 9999 !important;
+    pointer-events: auto !important;
+  }
+
+  /* Prevent video hero from blocking navigation clicks */
+  .about-video-hero {
+    pointer-events: none;
+  }
+
+  .about-video-hero .video-container {
+    pointer-events: none;
+  }
+
+  .about-video-hero .video-container iframe {
+    pointer-events: none;
   }
 }
 

@@ -4,12 +4,25 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>OF ANXIETY X DISCERNMENT — Katharina Ludwig</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="common-navigation.css" />
     <link rel="stylesheet" href="of-anxiety-x-discernment.css" />
   </head>
   <body>
-    <!-- Minimal icon navigation -->
+    <!-- Common Navigation Component -->
     <div class="nav-icon" onclick="toggleNav()">
-      <span>☰</span>
+      <div class="menu-icon">
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+      </div>
     </div>
 
     <!-- Navigation menu -->
@@ -18,7 +31,18 @@
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="calendar.html">Calendar</a></li>
-        <li><a href="production.html">Production</a></li>
+        <li class="dropdown">
+          <a href="choreographic-work.html">Choreographic Work</a>
+          <div class="dropdown-content">
+            <a href="number52.html">NUMBER 52</a>
+            <a href="double-standards.html">DOUBLE STANDARDS</a>
+            <a href="of-anxiety-x-discernment.html">OF ANXIETY X DISCERNMENT</a>
+            <a href="out-of-balance.html">OUT OF BALANCE</a>
+            <a href="enlight.html">ENLIGHT</a>
+            <a href="the-tribe.html">THE TRIBE</a>
+            <a href="infero.html">INFERO</a>
+          </div>
+        </li>
         <li><a href="dancework.html">Dance Work</a></li>
         <li><a href="teaching.html">Teaching</a></li>
         <li><a href="contact.html">Contact</a></li>
@@ -120,21 +144,6 @@
       </section>
     </main>
 
-    <script>
-      function toggleNav() {
-        const navMenu = document.getElementById("navMenu");
-        navMenu.classList.toggle("active");
-      }
-
-      // Close nav when clicking outside
-      document.addEventListener("click", function (event) {
-        const navIcon = document.querySelector(".nav-icon");
-        const navMenu = document.getElementById("navMenu");
-
-        if (!navIcon.contains(event.target) && !navMenu.contains(event.target)) {
-          navMenu.classList.remove("active");
-        }
-      });
-    </script>
+    <script src="common-navigation.js"></script>
   </body>
 </html>

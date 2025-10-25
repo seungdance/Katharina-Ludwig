@@ -1,0 +1,211 @@
+/* Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap");
+
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Remove any default borders or outlines */
+* {
+  border: none;
+  outline: none;
+  box-shadow: none;
+}
+
+/* Remove developer tools highlighting */
+*:focus,
+*:active,
+*:hover {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* Smooth scrolling and performance optimization */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 0;
+}
+
+body {
+  font-family: "Manrope", "Exo 2", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  line-height: 1.6;
+  color: #333333;
+  background: #f4efe8;
+  overflow-x: hidden;
+}
+
+/* Full-width images */
+img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border: none;
+  outline: none;
+}
+
+/* Content styling */
+main {
+  max-width: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Full-screen video hero section */
+.video-hero {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.video-hero .video-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  background-color: #000;
+}
+
+.video-hero .video-container iframe {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100vw;
+  height: 56.25vw; /* 16:9 aspect ratio */
+  min-height: 100vh;
+  min-width: 177.78vh; /* 16:9 aspect ratio */
+  transform: translate(-50%, -50%);
+  border: none;
+}
+
+/* Name overlay */
+.name-overlay {
+  position: absolute;
+  top: 60px;
+  left: 60px;
+  right: 80px; /* 햄버거 메뉴 영역 피하기 */
+  z-index: 10;
+  text-align: left;
+  width: auto;
+  max-width: calc(100% - 140px); /* 햄버거 메뉴와 여백 고려 */
+}
+
+.animated-name {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 1.8rem;
+  font-weight: 300;
+  color: white;
+  text-decoration: none;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+  letter-spacing: 0.1em;
+  transition: all 0.3s ease;
+  display: block;
+  opacity: 1;
+}
+
+.animated-name:hover {
+  color: #f0f0f0;
+  text-shadow: 3px 3px 12px rgba(0, 0, 0, 0.9);
+  transform: scale(1.05);
+}
+
+/* Creative Animation keyframes - Removed */
+
+/* Links */
+a {
+  color: #333333;
+  text-decoration: underline;
+  font-family: "Cormorant Garamond", serif;
+}
+
+a:hover {
+  color: #000000;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  /* Mobile video hero adjustments */
+  .video-hero {
+    height: 100vh;
+  }
+
+  .name-overlay {
+    top: 40px;
+    left: 40px;
+    right: 80px; /* 햄버거 메뉴 영역 피하기 */
+    width: auto;
+    max-width: calc(100% - 120px); /* 햄버거 메뉴와 여백 고려 */
+  }
+
+  /* Ensure navigation is above everything on mobile */
+  .nav-icon {
+    z-index: 9999 !important;
+    pointer-events: auto !important;
+  }
+
+  /* Prevent video hero from blocking navigation clicks */
+  .video-hero {
+    pointer-events: none;
+  }
+
+  .video-hero .video-container {
+    pointer-events: none;
+  }
+
+  .video-hero .video-container iframe {
+    pointer-events: none;
+  }
+
+  .animated-name {
+    font-size: 1.4rem;
+    letter-spacing: 0.05em;
+  }
+}
+
+/* Extra small screens */
+@media (max-width: 480px) {
+  .name-overlay {
+    top: 30px;
+    left: 30px;
+    right: 70px; /* 햄버거 메뉴 영역 피하기 */
+    width: auto;
+    max-width: calc(100% - 100px); /* 햄버거 메뉴와 여백 고려 */
+  }
+
+  .animated-name {
+    font-size: 1.2rem;
+    letter-spacing: 0.02em;
+  }
+
+  /* Ensure navigation is above everything on small mobile */
+  .nav-icon {
+    z-index: 9999 !important;
+    pointer-events: auto !important;
+  }
+
+  /* Prevent video hero from blocking navigation clicks */
+  .video-hero {
+    pointer-events: none;
+  }
+
+  .video-hero .video-container {
+    pointer-events: none;
+  }
+
+  .video-hero .video-container iframe {
+    pointer-events: none;
+  }
+
+/* Prevent horizontal scrolling globally */
+html,
+body {
+  overflow-x: hidden;
+}

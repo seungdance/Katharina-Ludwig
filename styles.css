@@ -10,7 +10,7 @@ html {
 }
 
 body {
-  font-family: "Montserrat", sans-serif;
+  font-family: "Josefin Sans", sans-serif;
   line-height: 1.6;
   color: #333;
   overflow-x: hidden;
@@ -29,7 +29,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Cormorant Garamond", serif;
+  font-family: "Josefin Sans", sans-serif;
   font-weight: 600;
   line-height: 1.2;
 }
@@ -108,7 +108,7 @@ p {
 }
 
 .nav-logo a {
-  font-family: "Cormorant Garamond", serif;
+  font-family: "Josefin Sans", sans-serif;
   font-size: 1.8rem;
   font-weight: 600;
   color: #333;

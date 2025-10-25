@@ -1,0 +1,657 @@
+/* Choreographic Work Page Styles */
+html,
+body {
+  overflow-x: hidden;
+  width: 100vw;
+}
+
+body {
+  background: 
+    /* Soft gradient overlay */ linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.3) 0%,
+      rgba(248, 249, 250, 0.4) 50%,
+      rgba(240, 242, 245, 0.3) 100%
+    ),
+    /* Base subtle gradient */ linear-gradient(45deg, #f8f9fa 0%, #e9ecef 100%);
+  background-size: 100% 100%, 100% 100%;
+  font-family: "Poppins", "Inter", "Helvetica Neue", Arial, sans-serif;
+  font-weight: 300;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  min-height: 100%;
+  overflow-x: hidden;
+  position: relative;
+  color: #1e1e1e;
+  text-shadow: 0 1px 3px rgba(255, 255, 255, 0.7);
+}
+
+/* Bauhaus Geometric Background */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    /* Large geometric shapes - Layer 1 */ linear-gradient(
+      45deg,
+      rgba(220, 38, 38, 0.6) 0%,
+      rgba(220, 38, 38, 0.6) 30%,
+      transparent 30%,
+      transparent 70%,
+      rgba(220, 38, 38, 0.6) 70%,
+      rgba(220, 38, 38, 0.6) 100%
+    ),
+    linear-gradient(
+      -45deg,
+      rgba(251, 146, 60, 0.5) 0%,
+      rgba(251, 146, 60, 0.5) 25%,
+      transparent 25%,
+      transparent 75%,
+      rgba(251, 146, 60, 0.5) 75%,
+      rgba(251, 146, 60, 0.5) 100%
+    ),
+    linear-gradient(
+      135deg,
+      rgba(59, 130, 246, 0.6) 0%,
+      rgba(59, 130, 246, 0.6) 35%,
+      transparent 35%,
+      transparent 65%,
+      rgba(59, 130, 246, 0.6) 65%,
+      rgba(59, 130, 246, 0.6) 100%
+    ),
+    linear-gradient(
+      -135deg,
+      rgba(251, 191, 36, 0.5) 0%,
+      rgba(251, 191, 36, 0.5) 40%,
+      transparent 40%,
+      transparent 60%,
+      rgba(251, 191, 36, 0.5) 60%,
+      rgba(251, 191, 36, 0.5) 100%
+    ),
+    linear-gradient(
+      90deg,
+      rgba(34, 197, 94, 0.5) 0%,
+      rgba(34, 197, 94, 0.5) 20%,
+      transparent 20%,
+      transparent 80%,
+      rgba(34, 197, 94, 0.5) 80%,
+      rgba(34, 197, 94, 0.5) 100%
+    ),
+    linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.5) 0%,
+      rgba(0, 0, 0, 0.5) 15%,
+      transparent 15%,
+      transparent 85%,
+      rgba(0, 0, 0, 0.5) 85%,
+      rgba(0, 0, 0, 0.5) 100%
+    );
+  background-size: 300px 300px, 250px 250px, 350px 350px, 280px 280px, 400px 400px, 320px 320px;
+  background-position: 0% 0%, 20% 20%, 40% 40%, 60% 60%, 80% 80%, 100% 100%;
+  z-index: -2;
+  pointer-events: none;
+  opacity: 1;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    /* Medium geometric shapes - Layer 2 */ radial-gradient(circle at 20% 20%, rgba(220, 38, 38, 0.4) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(251, 146, 60, 0.3) 0%, transparent 50%),
+    radial-gradient(circle at 20% 80%, rgba(59, 130, 246, 0.4) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(251, 191, 36, 0.3) 0%, transparent 50%),
+    radial-gradient(circle at 50% 10%, rgba(34, 197, 94, 0.3) 0%, transparent 50%),
+    radial-gradient(circle at 10% 50%, rgba(0, 0, 0, 0.3) 0%, transparent 50%),
+    radial-gradient(circle at 90% 50%, rgba(220, 38, 38, 0.3) 0%, transparent 50%),
+    radial-gradient(circle at 50% 90%, rgba(59, 130, 246, 0.3) 0%, transparent 50%),
+    /* Small geometric patterns */
+      linear-gradient(30deg, rgba(251, 191, 36, 0.3) 0%, rgba(251, 191, 36, 0.3) 50%, transparent 50%, transparent 100%),
+    linear-gradient(-30deg, rgba(34, 197, 94, 0.3) 0%, rgba(34, 197, 94, 0.3) 50%, transparent 50%, transparent 100%),
+    linear-gradient(60deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.3) 50%, transparent 50%, transparent 100%),
+    linear-gradient(-60deg, rgba(220, 38, 38, 0.3) 0%, rgba(220, 38, 38, 0.3) 50%, transparent 50%, transparent 100%);
+  background-size: 200px 200px, 180px 180px, 220px 220px, 160px 160px, 240px 240px, 140px 140px, 260px 260px, 120px 120px, 100px 100px,
+    80px 80px, 90px 90px, 110px 110px;
+  background-position: 10% 10%, 30% 30%, 50% 50%, 70% 70%, 90% 90%, 15% 15%, 85% 85%, 5% 5%, 25% 25%, 45% 45%, 65% 65%, 75% 75%;
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* Geometric Animation Keyframes */
+@keyframes geometricFloat1 {
+  0%,
+  100% {
+    transform: translateY(0) translateX(0) rotate(0deg);
+    opacity: 0.8;
+  }
+  25% {
+    transform: translateY(-10px) translateX(5px) rotate(1deg);
+    opacity: 0.9;
+  }
+  50% {
+    transform: translateY(-5px) translateX(-8px) rotate(-0.5deg);
+    opacity: 0.7;
+  }
+  75% {
+    transform: translateY(8px) translateX(3px) rotate(0.8deg);
+    opacity: 0.85;
+  }
+}
+
+@keyframes geometricFloat2 {
+  0%,
+  100% {
+    transform: translateY(0) translateX(0) scale(1);
+    opacity: 0.6;
+  }
+  33% {
+    transform: translateY(-15px) translateX(-5px) scale(1.05);
+    opacity: 0.8;
+  }
+  66% {
+    transform: translateY(10px) translateX(8px) scale(0.95);
+    opacity: 0.7;
+  }
+}
+
+/* Main content */
+main {
+  padding: 60px 20px 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+  height: calc(100vh - 80px);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 1;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: none;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05);
+  color: #1e1e1e;
+  text-shadow: 0 1px 3px rgba(255, 255, 255, 0.7);
+}
+
+.page-title {
+  text-align: center;
+  margin-bottom: 30px;
+  flex-shrink: 0;
+}
+
+.page-title h1 {
+  font-size: 2.5rem;
+  font-weight: 400;
+  color: #1e1e1e;
+  margin: 0;
+  letter-spacing: 0.5px;
+  text-shadow: 0 2px 6px rgba(255, 255, 255, 0.7);
+}
+
+/* Add 3D depth to the grid */
+.works-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 30px;
+  flex: 1;
+  align-items: stretch;
+  perspective: 1200px;
+  transform-style: preserve-3d;
+}
+
+/* Premium Luxury Tech Cards */
+.work-card {
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 0;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.5);
+  transition: all 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  transform-style: preserve-3d;
+}
+
+.work-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 40%;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0.05) 100%);
+  border-radius: 0;
+  z-index: 1;
+  opacity: 0.8;
+}
+
+.work-card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.05));
+  border-radius: 0;
+  z-index: 2;
+  opacity: 0;
+  transition: opacity 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.work-card:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.15), 0 4px 12px rgba(255, 255, 255, 0.4);
+}
+
+.work-card:hover::after {
+  opacity: 1;
+}
+
+/* Subtle Metallic Overlay */
+.work-card-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.03) 50%, rgba(0, 0, 0, 0.02) 100%);
+  opacity: 0;
+  transition: opacity 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
+  border-radius: 0;
+  z-index: 4;
+}
+
+.work-card:hover .work-card-overlay {
+  opacity: 1;
+}
+
+.work-card-image {
+  width: 100%;
+  height: 60%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  flex-shrink: 0;
+  z-index: 3;
+  border-radius: 0;
+  overflow: hidden;
+}
+
+/* Premium Text Styling */
+.work-card-content {
+  padding: 24px;
+  text-align: center;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* background: rgba(255, 255, 255, 0.55); */
+  /* backdrop-filter: blur(8px); */
+  /* border-top: 1px solid rgba(255, 255, 255, 0.4); */
+  background: transparent;
+  backdrop-filter: none;
+  border-top: none;
+  position: relative;
+  z-index: 3;
+}
+
+.work-card-title {
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: #2a2a2a;
+  margin: 0 0 8px 0;
+  letter-spacing: 0.5px;
+  line-height: 1.3;
+  text-shadow: 0 1px 4px rgba(255, 255, 255, 0.8);
+  transition: color 0.3s ease-in-out, text-shadow 0.3s ease-in-out;
+}
+
+.work-card-title:hover {
+  color: #000;
+  text-shadow: 0 2px 8px rgba(255, 255, 255, 0.9);
+  transition: all 0.3s ease-in-out;
+}
+
+.work-card-year {
+  font-size: 0.85rem;
+  color: #2a2a2a;
+  font-weight: 400;
+  margin: 0;
+  letter-spacing: 0.3px;
+  text-shadow: 0 1px 4px rgba(255, 255, 255, 0.8);
+}
+
+/* Responsive design */
+@media (max-width: 1200px) {
+  .works-grid {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+  }
+
+  .page-title h1 {
+    font-size: 2.2rem;
+  }
+
+  /* Adjust geometric background for smaller screens */
+  body::before {
+    background-size: 200px 200px, 180px 180px, 250px 250px, 200px 200px, 300px 300px, 250px 250px;
+  }
+
+  body::after {
+    background-size: 150px 150px, 130px 130px, 170px 170px, 120px 120px, 180px 180px, 100px 100px, 200px 200px, 90px 90px, 80px 80px,
+      60px 60px, 70px 70px, 85px 85px;
+  }
+}
+
+@media (max-width: 900px) {
+  .works-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+  }
+
+  .page-title h1 {
+    font-size: 2rem;
+  }
+
+  main {
+    padding: 50px 15px 15px;
+  }
+
+  /* Further reduce geometric background complexity for tablets */
+  body::before {
+    background-size: 150px 150px, 130px 130px, 180px 180px, 150px 150px, 200px 200px, 180px 180px;
+  }
+
+  body::after {
+    background-size: 120px 120px, 100px 100px, 140px 140px, 90px 90px, 150px 150px, 80px 80px, 160px 160px, 70px 70px, 60px 60px, 50px 50px,
+      55px 55px, 65px 65px;
+  }
+}
+
+/* 중간 크기 화면 (태블릿)에서 깨지는 문제 방지 */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .works-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2열 레이아웃으로 조정 */
+    gap: 24px;
+  }
+
+  .work-card {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 0;
+  }
+
+  .work-card-image {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    display: block;
+    border-radius: 0;
+  }
+
+  .work-card-content {
+    position: relative;
+    z-index: 5;
+    padding: 1rem 0 1.2rem;
+    text-align: center;
+    background: transparent;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .work-card * {
+    z-index: 5;
+  }
+}
+
+@media (max-width: 768px) {
+  .page-title h1 {
+    font-size: 1.8rem;
+  }
+
+  .works-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 1.5rem;
+    padding: 0;
+    margin: 0;
+    padding-bottom: 2rem; /* 그리드 내부 여유 공간 */
+  }
+
+  .work-card {
+    width: calc(100% - 32px);
+    max-width: 500px;
+    border-radius: 0;
+    overflow: hidden;
+    margin: 0 auto;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(10px);
+    flex-direction: column;
+    padding: 0;
+  }
+
+  .work-card-image {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 0;
+    margin: 0;
+    overflow: hidden;
+  }
+
+  .work-card-content {
+    padding: 1rem 0 1.2rem;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.55);
+    backdrop-filter: blur(8px);
+    border-top: 1px solid rgba(255, 255, 255, 0.4);
+  }
+
+  .work-card-title {
+    font-size: 1rem;
+  }
+
+  .work-card-year {
+    font-size: 0.85rem;
+  }
+
+  main {
+    padding: 40px 16px 16px;
+    padding-bottom: 80px; /* 마지막 카드와 화면 하단 사이에 여백 추가 */
+  }
+
+  /* Fix geometric background to prevent scrolling movement */
+  body::before {
+    position: fixed;
+    background-size: 100px 100px, 90px 90px, 120px 120px, 100px 100px, 140px 140px, 120px 120px;
+    animation-duration: 10s;
+  }
+
+  body::after {
+    position: fixed;
+    background-size: 80px 80px, 70px 70px, 90px 90px, 60px 60px, 100px 100px, 50px 50px, 110px 110px, 45px 45px, 40px 40px, 35px 35px,
+      38px 38px, 42px 42px;
+    animation-duration: 15s;
+  }
+}
+
+@media (max-width: 480px) {
+  .page-title h1 {
+    font-size: 1.5rem;
+  }
+
+  .work-card-content {
+    padding: 15px;
+    background: transparent;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .work-card-title {
+    font-size: 1rem;
+    letter-spacing: 1.5px;
+  }
+
+  .work-card-year {
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
+  }
+}
+
+/* Hamburger menu icon styles */
+.nav-icon {
+  color: #333 !important;
+  background: none !important;
+  background-color: transparent !important;
+  border-radius: 0;
+  box-shadow: none;
+  backdrop-filter: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  height: auto;
+  border: none;
+  padding: 0;
+}
+
+.nav-icon:hover {
+  background-color: transparent !important;
+  transform: scale(1.05);
+  box-shadow: none;
+}
+
+/* Dot Grid Menu Icon */
+.menu-icon {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 2px;
+  width: 16px;
+  height: 16px;
+}
+
+.dot {
+  width: 3px;
+  height: 3px;
+  background-color: #333;
+  border-radius: 50%;
+  transition: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+  opacity: 0.7;
+}
+
+/* Hover animation - dots spread out */
+.nav-icon:hover .dot:nth-child(1) {
+  transform: translate(-2px, -2px);
+  opacity: 1;
+}
+
+.nav-icon:hover .dot:nth-child(2) {
+  transform: translateY(-2px);
+  opacity: 1;
+}
+
+.nav-icon:hover .dot:nth-child(3) {
+  transform: translate(2px, -2px);
+  opacity: 1;
+}
+
+.nav-icon:hover .dot:nth-child(4) {
+  transform: translateX(-2px);
+  opacity: 1;
+}
+
+.nav-icon:hover .dot:nth-child(5) {
+  opacity: 1;
+}
+
+.nav-icon:hover .dot:nth-child(6) {
+  transform: translateX(2px);
+  opacity: 1;
+}
+
+.nav-icon:hover .dot:nth-child(7) {
+  transform: translate(-2px, 2px);
+  opacity: 1;
+}
+
+.nav-icon:hover .dot:nth-child(8) {
+  transform: translateY(2px);
+  opacity: 1;
+}
+
+.nav-icon:hover .dot:nth-child(9) {
+  transform: translate(2px, 2px);
+  opacity: 1;
+}
+
+/* Active state - dots form X pattern */
+.nav-icon.active .dot:nth-child(1) {
+  transform: translate(-3px, -3px);
+  opacity: 1;
+}
+
+.nav-icon.active .dot:nth-child(2) {
+  opacity: 0;
+}
+
+.nav-icon.active .dot:nth-child(3) {
+  transform: translate(3px, -3px);
+  opacity: 1;
+}
+
+.nav-icon.active .dot:nth-child(4) {
+  opacity: 0;
+}
+
+.nav-icon.active .dot:nth-child(5) {
+  opacity: 1;
+}
+
+.nav-icon.active .dot:nth-child(6) {
+  opacity: 0;
+}
+
+.nav-icon.active .dot:nth-child(7) {
+  transform: translate(-3px, 3px);
+  opacity: 1;
+}
+
+.nav-icon.active .dot:nth-child(8) {
+  opacity: 0;
+}
+
+.nav-icon.active .dot:nth-child(9) {
+  transform: translate(3px, 3px);
+  opacity: 1;
+}

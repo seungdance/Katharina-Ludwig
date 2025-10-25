@@ -2,14 +2,28 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="format-detection" content="telephone=no" />
     <title>NUMBER 52 — Katharina Ludwig</title>
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="common-navigation.css" />
+    <link rel="stylesheet" href="number52.css" />
   </head>
   <body>
-    <!-- Minimal icon navigation -->
+    <!-- Common Navigation Component -->
     <div class="nav-icon" onclick="toggleNav()">
-      <span>☰</span>
+      <div class="menu-icon">
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+      </div>
     </div>
 
     <!-- Navigation menu -->
@@ -18,7 +32,18 @@
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="calendar.html">Calendar</a></li>
-        <li><a href="production.html">Production</a></li>
+        <li class="dropdown">
+          <a href="choreographic-work.html">Choreographic Work</a>
+          <div class="dropdown-content">
+            <a href="number52.html">NUMBER 52</a>
+            <a href="double-standards.html">DOUBLE STANDARDS</a>
+            <a href="of-anxiety-x-discernment.html">OF ANXIETY X DISCERNMENT</a>
+            <a href="out-of-balance.html">OUT OF BALANCE</a>
+            <a href="enlight.html">ENLIGHT</a>
+            <a href="the-tribe.html">THE TRIBE</a>
+            <a href="infero.html">INFERO</a>
+          </div>
+        </li>
         <li><a href="dancework.html">Dance Work</a></li>
         <li><a href="teaching.html">Teaching</a></li>
         <li><a href="contact.html">Contact</a></li>
@@ -31,69 +56,26 @@
         <img
           src="https://res.cloudinary.com/dxefd3n1k/image/upload/v1758702882/N52.6_Katharina_Ludwig_Nik_Spoerri_WEB_nbea8p.jpg"
           alt="NUMBER 52 Performance" />
-        <h1>NUMBER 52</h1>
+        <!-- Work Information Text -->
+        <div class="work-info-text">
+          <div class="work-title">NUMBER 52</div>
+          <div class="work-type">SOLO</div>
+          <div class="work-length">15 min</div>
+          <div class="work-premiere">2025/2026</div>
+        </div>
       </section>
 
-      <!-- Magazine Content Blocks -->
-      <article class="magazine-content">
-        <!-- Block 1: Text Left, Image Right -->
-        <div class="content-block">
-          <div class="text-content">
-            <div class="production-info-text">
-              <p>
-                <strong>YEAR</strong>
-                2025/2026
-              </p>
-              <p>
-                <strong>DURATION</strong>
-                Solo (15 min, full evening September 2026)
-              </p>
-              <p>
-                <strong>CONCEPT/PERFORMANCE</strong>
-                Katharina Ludwig
-              </p>
-              <p>
-                <strong>DRAMATURGY</strong>
-                Angela Demattè
-              </p>
-              <p>
-                <strong>MUSIC</strong>
-                Gabriella Plumettaz
-              </p>
-              <p>
-                <strong>SONGS</strong>
-                Coming - Stratton (Edit Gabriella Plumettaz), NUMBER 52 - Gabriella Plumettaz
-              </p>
-            </div>
+      <!-- New Structured Content -->
+      <article class="structured-content">
+        <!-- Description Section -->
+        <section class="description-section">
+          <div class="section-content">
             <p>A solo about dance, expectation and the art of remaining true to oneself</p>
             <p>
               With wit, self-irony and precise movement, NUMBER 52 looks at the often absurd aspects of the dance world: auditions, project
               work, idealised demands - and the constant balancing act between adaptation and authenticity.
             </p>
             <p>The performer takes the audience on a personal, humorous journey through her experiences as a contemporary dancer.</p>
-          </div>
-          <div class="image-content">
-            <img
-              src="https://res.cloudinary.com/dxefd3n1k/image/upload/v1758702880/klein_IMG_6404Number52_KatharinaLudwig__Laura_Baude_laugaze_imagesN52_KatharinaLudwig__Laura_Baude_Kopie_a0jkrq.jpg"
-              alt="Katharina Ludwig" />
-          </div>
-        </div>
-
-        <!-- Block 2: Full-width Image with Text Overlay -->
-        <div class="fullwidth-block">
-          <img
-            src="https://res.cloudinary.com/dxefd3n1k/image/upload/v1758702880/N52.5_Katharina_Ludwig_Nik_Spoerri_WEB_si9oce.jpg"
-            alt="Katharina Ludwig" />
-        </div>
-
-        <!-- Block 3: Image Left, Text Right -->
-        <div class="content-block reverse">
-          <div class="image-content">
-            <img
-              src="https://res.cloudinary.com/dxefd3n1k/image/upload/v1758702880/N52.2_Katharina_Ludwig_Nik_Spoerri_WEB_mku5qw.jpg"
-              alt="Katharina Ludwig" />
-          </div>
-          <div class="text-content">
             <p>
               Inspired by stand-up comedy, the stage space becomes a narrative space - full of movement, reflection and surprising twists
               and turns.
@@ -103,51 +85,120 @@
               keep going and not to lose the joy of movement. A tribute to the versatility and resilience of dancers - and to dance itself.
             </p>
           </div>
-        </div>
+        </section>
 
-        <!-- Block 4: Full-width Image -->
-        <div class="fullwidth-block">
-          <img
-            src="https://res.cloudinary.com/dxefd3n1k/image/upload/v1758702879/kleinIMG_6407Number52_KatharinaLudwig__Laura_Baude_laugaze_imagesN52_KatharinaLudwig__Laura_Baude_Kopie_f0tibo.jpg"
-            alt="Katharina Ludwig" />
-        </div>
-
-        <!-- Block 5: Text Left, Image Right -->
-        <div class="content-block">
-          <div class="text-content">
-            <h2>Award</h2>
-            <h3>Price Awarded Dancer 2025</h3>
-            <p>at SoloDuo Competition, Barnes Crossing Cologne, May 2025</p>
-            <blockquote>
-              <strong>Laudatio of the Jury</strong>
-              Katharina shows great versatility as a dancer and performer. She combines different dance styles ranging from ballet to
-              breaking, displays great qualities as a stand-up comedian and handles text well. The jury applauds her ability to deliver a
-              strong critique towards the dance field as an industry while keeping the performance light-hearted and witty.
-            </blockquote>
+        <!-- Trailer Section -->
+        <section class="trailer-section">
+          <div class="section-content">
+            <div class="video-container">
+              <div style="padding: 56.25% 0 0 0; position: relative">
+                <iframe
+                  src="https://player.vimeo.com/video/1088297495?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+                  frameborder="0"
+                  allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  style="position: absolute; top: 0; left: 0; width: 100%; height: 100%"
+                  title="Trailer NUMBER 52"></iframe>
+              </div>
+              <script src="https://player.vimeo.com/api/player.js"></script>
+            </div>
           </div>
-          <div class="image-content">
-            <img
-              src="https://res.cloudinary.com/dxefd3n1k/image/upload/v1758702878/KatharinaLudwig_ZANT__Fl%C3%A1via_Samper_1_co3j9y.jpg"
-              alt="Katharina Ludwig" />
-          </div>
-        </div>
+        </section>
 
-        <!-- Block 6: Full-width Image -->
-        <div class="fullwidth-block">
-          <img
-            src="https://res.cloudinary.com/dxefd3n1k/image/upload/v1758702879/N52.4_Katharina_Ludwig_Nik_Spoerri_WEB_yogxyf.jpg"
-            alt="Katharina Ludwig" />
-        </div>
-
-        <!-- Block 7: Image Left, Text Right -->
-        <div class="content-block reverse">
-          <div class="image-content">
-            <img
-              src="https://res.cloudinary.com/dxefd3n1k/image/upload/v1758702879/N52.3_Katharina_Ludwig_Nik_Spoerri_WEB_btweff.jpg"
-              alt="Katharina Ludwig" />
+        <!-- Credits Section -->
+        <section class="credits-section">
+          <div class="section-content">
+            <div class="credits-grid">
+              <div class="credits-column">
+                <h3>Artist Credits</h3>
+                <div class="credit-item">
+                  <strong>CONCEPT/PERFORMANCE</strong>
+                  <span>Katharina Ludwig</span>
+                </div>
+                <div class="credit-item">
+                  <strong>DRAMATURGY</strong>
+                  <span>Angela Demattè</span>
+                </div>
+                <div class="credit-item">
+                  <strong>MUSIC</strong>
+                  <span>Gabriella Plumettaz</span>
+                </div>
+                <div class="credit-item">
+                  <strong>SONGS</strong>
+                  <span>Coming - Stratton (Edit Gabriella Plumettaz), NUMBER 52 - Gabriella Plumettaz</span>
+                </div>
+              </div>
+              <div class="credits-column">
+                <h3>Production Credits</h3>
+                <div class="credit-item">
+                  <strong>SHORT PIECE</strong>
+                  <span>15 min performed and developed during INKUBATOR at Fabriktheater Zurich, January 2025</span>
+                </div>
+                <div class="credit-item">
+                  <strong>RESEARCH</strong>
+                  <span>20 min during the ATLAS program at Impulstanz Festival Vienna 2025</span>
+                </div>
+                <div class="credit-item">
+                  <strong>WORK-IN-PROGRESS</strong>
+                  <span>30 minutes on 27th and 28th of October at Tojo Theatre in the frame of BETA Stage Festival</span>
+                </div>
+                <div class="credit-item">
+                  <strong>PREMIERE</strong>
+                  <span>Evening-length version will premiere 11th of September 2026 at TANZhAUS Bern, Switzerland</span>
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="text-content">
-            <h2>Development Timeline</h2>
+        </section>
+
+        <!-- Press & Award Section -->
+        <section class="press-award-section">
+          <div class="section-content">
+            <div class="award-item">
+              <h3>Price Awarded Dancer 2025</h3>
+              <p>at SoloDuo Competition, Barnes Crossing Cologne, May 2025</p>
+              <blockquote>
+                <strong>Laudatio of the Jury</strong>
+                Katharina shows great versatility as a dancer and performer. She combines different dance styles ranging from ballet to
+                breaking, displays great qualities as a stand-up comedian and handles text well. The jury applauds her ability to deliver a
+                strong critique towards the dance field as an industry while keeping the performance light-hearted and witty.
+              </blockquote>
+            </div>
+          </div>
+        </section>
+
+        <!-- Some Photos Section -->
+        <section class="some-photos-section">
+          <div class="section-content">
+            <div class="photos-grid custom-layout">
+              <div class="photo-item tall">
+                <img
+                  src="https://res.cloudinary.com/dxefd3n1k/image/upload/v1758702880/klein_IMG_6404Number52_KatharinaLudwig__Laura_Baude_laugaze_imagesN52_KatharinaLudwig__Laura_Baude_Kopie_a0jkrq.jpg"
+                  alt="Katharina Ludwig" />
+              </div>
+              <div class="photo-item short">
+                <img
+                  src="https://res.cloudinary.com/dxefd3n1k/image/upload/v1758702880/N52.5_Katharina_Ludwig_Nik_Spoerri_WEB_si9oce.jpg"
+                  alt="Katharina Ludwig" />
+              </div>
+              <div class="photo-item tall">
+                <img
+                  src="https://res.cloudinary.com/dxefd3n1k/image/upload/v1758702880/N52.2_Katharina_Ludwig_Nik_Spoerri_WEB_mku5qw.jpg"
+                  alt="Katharina Ludwig" />
+              </div>
+              <div class="photo-item short">
+                <img
+                  src="https://res.cloudinary.com/dxefd3n1k/image/upload/v1758702879/kleinIMG_6407Number52_KatharinaLudwig__Laura_Baude_laugaze_imagesN52_KatharinaLudwig__Laura_Baude_Kopie_f0tibo.jpg"
+                  alt="Katharina Ludwig" />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Development Timeline + Performance Calendar -->
+        <section class="timeline-calendar-section">
+          <div class="section-content">
+            <h2>Timeline</h2>
             <div class="timeline-minimal">
               <div class="timeline-item">
                 <div class="timeline-dot"></div>
@@ -194,206 +245,142 @@
                 </div>
               </div>
             </div>
-          </div>
-        </div>
 
-        <!-- Block 8: Full-width Image -->
-        <div class="fullwidth-block">
-          <img
-            src="https://res.cloudinary.com/dxefd3n1k/image/upload/v1758702879/klein_IMG_6408Number52_KatharinaLudwig__Laura_Baude_laugaze_imagesN52_KatharinaLudwig__Laura_Baude_ol6id2.jpg"
-            alt="Katharina Ludwig" />
-        </div>
-
-        <!-- Block 9: Text Left, Image Right -->
-        <div class="content-block">
-          <div class="text-content">
-            <h2>Performance Calendar</h2>
             <div class="calendar-list">
               <div class="calendar-item">
-                <span class="date">17.- 19.01.2025</span>
-                <span class="venue">INKUBATOR, Fabriktheater Zürich, CH</span>
+                <span class="date">05.12.2025</span>
+                <span class="venue">Residency Showing, Dansomètre Vevey, CH</span>
               </div>
               <div class="calendar-item">
-                <span class="date">02.04.2025</span>
-                <span class="venue">Sauser & Bärlauch ThiK Theater im Kornhaus Baden, CH</span>
+                <span class="date">26.-28.01.2026</span>
+                <span class="venue">20 min Showcase at Internationale Kulturbörse Freiburg, D</span>
               </div>
               <div class="calendar-item">
-                <span class="date">18.04.2025</span>
-                <span class="venue">Open Stage Nouveau Monde, Fribourg, CH</span>
+                <span class="date">6. - 7.03.2026</span>
+                <span class="venue">10 min Open Stage at THAT'S FINTATAINEMENT at Sous-Sol Bern and The Millers, Zürich</span>
               </div>
               <div class="calendar-item">
-                <span class="date">17.05.2025</span>
-                <span class="venue">Open Stage Tanzfest Bern, PROGR Innenhof, CH</span>
+                <span class="date">27.-28.03.2026</span>
+                <span class="venue">30 min Version at BETA Stage Festival, Tojo Theater, Bern</span>
               </div>
               <div class="calendar-item">
-                <span class="date">24.05.2025</span>
-                <span class="venue">Soloduo Festival von barnescrossing + friends, Köln, D</span>
+                <span class="date">6.-10.05.2026</span>
+                <span class="venue">Outdoor version at TANZFEST Schweiz, National Tour through Switzerland</span>
               </div>
               <div class="calendar-item">
-                <span class="date">06.07.2025</span>
-                <span class="venue">ZANT Festival Roxy Ulm, D</span>
+                <span class="date">10.07.2026</span>
+                <span class="venue">Residency Showing, Dampfzentrale Bern</span>
               </div>
               <div class="calendar-item">
-                <span class="date">11.08.2025</span>
-                <span class="venue">ATLAS Showings, Impulstanzfestival, Wien, AT</span>
+                <span class="date">11.-13.09.2026</span>
+                <span class="venue">Premiere evening-length version, TANZHAUS Bern</span>
               </div>
             </div>
           </div>
-          <div class="image-content">
-            <img
-              src="https://res.cloudinary.com/dxefd3n1k/image/upload/v1758702879/klein_IMG_6393Number52_KatharinaLudwig__Laura_Baude_laugaze_imagesN52_KatharinaLudwig__Laura_Baude_Kopie_hrsczg.jpg"
-              alt="Katharina Ludwig" />
-          </div>
-        </div>
+        </section>
 
-        <!-- Block 10: Full-width Image -->
-        <div class="fullwidth-block">
-          <img
-            src="https://res.cloudinary.com/dxefd3n1k/image/upload/v1758702878/klein_Number52_KatharinaLudwig__Laura_Baude_laugaze_kkwrjo.jpg"
-            alt="Katharina Ludwig" />
-        </div>
-
-        <!-- Additional Images Gallery -->
-        <div class="image-gallery">
-          <div class="gallery-grid">
-            <div class="gallery-item">
-              <img
-                src="https://res.cloudinary.com/dxefd3n1k/image/upload/v1758702878/klein_IMG_6402Number52_KatharinaLudwig__Laura_Baude_laugaze_imagesN52_KatharinaLudwig__Laura_Baude_Kopie_u6qayb.jpg"
-                alt="Katharina Ludwig" />
-            </div>
-            <div class="gallery-item">
-              <img
-                src="https://res.cloudinary.com/dxefd3n1k/image/upload/v1758702876/KatharinaLudwig_ZANT__Fl%C3%A1via_Samper_zbxvxh.jpg"
-                alt="Katharina Ludwig" />
-            </div>
-            <div class="gallery-item">
-              <img
-                src="https://res.cloudinary.com/dxefd3n1k/image/upload/v1758702876/IMG_6588N52_KatharinaLudwig_ZANT__Fl%C3%A1via_Samper_vltwcg.jpg"
-                alt="Katharina Ludwig" />
-            </div>
-            <div class="gallery-item">
-              <img
-                src="https://res.cloudinary.com/dxefd3n1k/image/upload/v1758702876/IMG_6578N52_KatharinaLudwig_ZANT__Fl%C3%A1via_Samper_sy3mph.jpg"
-                alt="Katharina Ludwig" />
-            </div>
-            <div class="gallery-item">
-              <img
-                src="https://res.cloudinary.com/dxefd3n1k/image/upload/v1758702876/IMG_6586N52_KatharinaLudwig_ZANT__Fl%C3%A1via_Samper_bt63ol.jpg"
-                alt="Katharina Ludwig" />
-            </div>
-            <div class="gallery-item">
-              <img
-                src="https://res.cloudinary.com/dxefd3n1k/image/upload/v1758702874/IMG_6574N52_KatharinaLudwig_ZANT__Fl%C3%A1via_Samper_vnypud.jpg"
-                alt="Katharina Ludwig" />
-            </div>
-            <div class="gallery-item">
-              <img
-                src="https://res.cloudinary.com/dxefd3n1k/image/upload/v1758702874/IMG_4587N52_KatharinaLudwig__Samuel_Sch%C3%A4r_kypuff.jpg"
-                alt="Katharina Ludwig" />
-            </div>
-            <div class="gallery-item">
-              <img
-                src="https://res.cloudinary.com/dxefd3n1k/image/upload/v1758702873/IMG_4582N52_KatharinaLudwig__Samuel_Sch%C3%A4r_hq6eib.jpg"
-                alt="Katharina Ludwig" />
-            </div>
-            <div class="gallery-item">
-              <img
-                src="https://res.cloudinary.com/dxefd3n1k/image/upload/v1758702873/IMG_4590N52_KatharinaLudwig__Samuel_Sch%C3%A4r_axrs98.jpg"
-                alt="Katharina Ludwig" />
-            </div>
-            <div class="gallery-item">
-              <img
-                src="https://res.cloudinary.com/dxefd3n1k/image/upload/v1758702873/IMG_4580N52_KatharinaLudwig__Samuel_Sch%C3%A4r_fvfr0m.jpg"
-                alt="Katharina Ludwig" />
-            </div>
-            <div class="gallery-item">
-              <img
-                src="https://res.cloudinary.com/dxefd3n1k/image/upload/v1758702873/IMG_4579N52_KatharinaLudwig__Samuel_Sch%C3%A4r_pv1iz9.jpg"
-                alt="Katharina Ludwig" />
-            </div>
-            <div class="gallery-item">
-              <img
-                src="https://res.cloudinary.com/dxefd3n1k/image/upload/v1758702872/IMG_4575N52_KatharinaLudwig__Samuel_Sch%C3%A4r_b10xag.jpg"
-                alt="Katharina Ludwig" />
+        <!-- More Photos Section -->
+        <section class="more-photos-section">
+          <div class="section-content">
+            <div class="photos-grid large">
+              <div class="photo-item">
+                <img
+                  src="https://res.cloudinary.com/dxefd3n1k/image/upload/v1758702878/KatharinaLudwig_ZANT__Fl%C3%A1via_Samper_1_co3j9y.jpg"
+                  alt="Katharina Ludwig" />
+              </div>
+              <div class="photo-item">
+                <img
+                  src="https://res.cloudinary.com/dxefd3n1k/image/upload/v1758702879/N52.4_Katharina_Ludwig_Nik_Spoerri_WEB_yogxyf.jpg"
+                  alt="Katharina Ludwig" />
+              </div>
+              <div class="photo-item">
+                <img
+                  src="https://res.cloudinary.com/dxefd3n1k/image/upload/v1758702879/N52.3_Katharina_Ludwig_Nik_Spoerri_WEB_btweff.jpg"
+                  alt="Katharina Ludwig" />
+              </div>
+              <div class="photo-item">
+                <img
+                  src="https://res.cloudinary.com/dxefd3n1k/image/upload/v1758702879/klein_IMG_6408Number52_KatharinaLudwig__Laura_Baude_laugaze_imagesN52_KatharinaLudwig__Laura_Baude_ol6id2.jpg"
+                  alt="Katharina Ludwig" />
+              </div>
+              <div class="photo-item">
+                <img
+                  src="https://res.cloudinary.com/dxefd3n1k/image/upload/v1758702879/klein_IMG_6393Number52_KatharinaLudwig__Laura_Baude_laugaze_imagesN52_KatharinaLudwig__Laura_Baude_Kopie_hrsczg.jpg"
+                  alt="Katharina Ludwig" />
+              </div>
+              <div class="photo-item">
+                <img
+                  src="https://res.cloudinary.com/dxefd3n1k/image/upload/v1758702878/klein_Number52_KatharinaLudwig__Laura_Baude_laugaze_kkwrjo.jpg"
+                  alt="Katharina Ludwig" />
+              </div>
             </div>
           </div>
-        </div>
+        </section>
 
-        <!-- Video Grid Section -->
-        <div class="video-grid-section">
-          <div class="video-grid">
-            <div class="video-item">
+        <!-- Videos Section -->
+        <section class="videos-section">
+          <h2>Videos</h2>
+          <div class="section-content">
+            <!-- Full Performance Video -->
+            <div class="video-container">
               <div style="padding: 56.25% 0 0 0; position: relative">
                 <iframe
-                  src="https://player.vimeo.com/video/1088297495?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+                  src="https://player.vimeo.com/video/1057199854?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;controls=1&amp;responsive=1&amp;playsinline=1&amp;autoplay=0&amp;muted=0"
                   frameborder="0"
-                  allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
-                  referrerpolicy="strict-origin-when-cross-origin"
-                  style="position: absolute; top: 0; left: 0; width: 100%; height: 100%"
-                  title="Trailer NUMBER 52"></iframe>
-              </div>
-              <script src="https://player.vimeo.com/api/player.js"></script>
-            </div>
-            <div class="video-item">
-              <div style="padding: 56.25% 0 0 0; position: relative">
-                <iframe
-                  src="https://player.vimeo.com/video/1057199854?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
-                  frameborder="0"
-                  allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                   referrerpolicy="strict-origin-when-cross-origin"
                   style="position: absolute; top: 0; left: 0; width: 100%; height: 100%"
                   title="NUMBER 52 at Inkubator Zurich 2025"></iframe>
+                <div class="video-overlay">
+                  <p>Full performance of the short piece at INKUBATOR Zurich (15 min)</p>
+                </div>
               </div>
               <script src="https://player.vimeo.com/api/player.js"></script>
             </div>
-            <div class="video-item">
+
+            <!-- ATLAS Performance Video -->
+            <div class="video-container">
               <div style="padding: 56.25% 0 0 0; position: relative">
                 <iframe
-                  src="https://player.vimeo.com/video/1109649250?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+                  src="https://player.vimeo.com/video/1109649250?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;controls=1&amp;responsive=1&amp;playsinline=1&amp;autoplay=0&amp;muted=0"
                   frameborder="0"
-                  allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                   referrerpolicy="strict-origin-when-cross-origin"
                   style="position: absolute; top: 0; left: 0; width: 100%; height: 100%"
                   title="NUMBER 52 Showing ATLAS Impulstanz Vienna 2025"></iframe>
+                <div class="video-overlay">
+                  <p>Showing at ATLAS, Impulstanz Vienna (20 min)</p>
+                </div>
               </div>
               <script src="https://player.vimeo.com/api/player.js"></script>
             </div>
-            <div class="video-item">
+
+            <!-- SoloDuo Competition Video -->
+            <div class="video-container">
               <div style="padding: 56.25% 0 0 0; position: relative">
                 <iframe
-                  src="https://player.vimeo.com/video/1105705592?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+                  src="https://player.vimeo.com/video/1105705592?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;controls=1&amp;responsive=1&amp;playsinline=1&amp;autoplay=0&amp;muted=0"
                   frameborder="0"
-                  allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                   referrerpolicy="strict-origin-when-cross-origin"
                   style="position: absolute; top: 0; left: 0; width: 100%; height: 100%"
                   title="NUMBER 52 at SoloDuo Competition 2025 (7 min version)"></iframe>
+                <div class="video-overlay">
+                  <p>Performance at SoloDuo Competition, Cologne (8 min version)</p>
+                </div>
               </div>
               <script src="https://player.vimeo.com/api/player.js"></script>
             </div>
           </div>
-        </div>
+        </section>
       </article>
     </main>
 
     <!-- Scroll to Top Button -->
     <button class="scroll-to-top" id="scrollToTop" onclick="scrollToTop()">↑</button>
 
+    <script src="common-navigation.js"></script>
     <script>
-      function toggleNav() {
-        const navMenu = document.getElementById("navMenu");
-        navMenu.classList.toggle("active");
-      }
-
-      // Close nav when clicking outside
-      document.addEventListener("click", function (event) {
-        const navIcon = document.querySelector(".nav-icon");
-        const navMenu = document.getElementById("navMenu");
-
-        if (!navIcon.contains(event.target) && !navMenu.contains(event.target)) {
-          navMenu.classList.remove("active");
-        }
-      });
-
       // Scroll to top functionality
       function scrollToTop() {
         window.scrollTo({
@@ -410,6 +397,51 @@
         } else {
           scrollToTopBtn.classList.remove("show");
         }
+      });
+
+      // Hide video overlays when videos start playing
+      document.addEventListener("DOMContentLoaded", function () {
+        const videoContainers = document.querySelectorAll(".video-container");
+
+        videoContainers.forEach(function (container) {
+          const iframe = container.querySelector("iframe");
+          const overlay = container.querySelector(".video-overlay");
+
+          if (iframe && overlay) {
+            // Create Vimeo player instance with mobile-friendly settings
+            const player = new Vimeo.Player(iframe, {
+              responsive: true,
+              playsinline: true,
+              controls: true,
+              autopause: false,
+              autoplay: false,
+              muted: false,
+              quality: "auto",
+            });
+
+            // Hide overlay when video starts playing
+            player.on("play", function () {
+              overlay.style.opacity = "0";
+              overlay.style.transition = "opacity 0.3s ease";
+            });
+
+            // Show overlay when video is paused or ended
+            player.on("pause", function () {
+              overlay.style.opacity = "1";
+            });
+
+            player.on("ended", function () {
+              overlay.style.opacity = "1";
+            });
+
+            // Handle mobile touch events
+            overlay.addEventListener("click", function () {
+              player.play().catch(function (error) {
+                console.log("Playback failed:", error);
+              });
+            });
+          }
+        });
       });
     </script>
   </body>
