@@ -181,6 +181,74 @@ main {
   font-weight: 400;
 }
 
+/* Credits Section */
+.credits-section h2 {
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.credits-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.credits-grid-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.credits-column h3 {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  color: #000000;
+}
+
+.credits-column-center {
+  text-align: center;
+  max-width: 600px;
+}
+
+.credits-column-center h3 {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  color: #000000;
+}
+
+.credit-item {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2rem;
+  padding: 0;
+}
+
+.credits-column-center .credit-item {
+  align-items: center;
+}
+
+.credit-item strong {
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 600;
+  color: #000000;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+  letter-spacing: 0.05em;
+}
+
+.credit-item span {
+  font-family: "Josefin Sans", sans-serif;
+  color: #333333;
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
 /* Trailer Section */
 .trailer-section h2 {
   margin-bottom: 2rem;
@@ -267,7 +335,7 @@ main {
 }
 
 .award-item {
-  max-width: 800px;
+  max-width: 1000px;
   margin: 0 auto;
   text-align: center;
 }
@@ -419,6 +487,15 @@ p {
 
   .photos-grid.large {
     grid-template-columns: 1fr;
+  }
+
+  .credits-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .credits-grid-center {
+    justify-content: center;
   }
 
   h2 {
