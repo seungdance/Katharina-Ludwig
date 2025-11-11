@@ -49,30 +49,27 @@
       </ul>
     </nav>
 
-    <main class="infero-page">
+    <main class="magazine-layout">
       <!-- Hero Section -->
-      <section class="hero">
-        <div class="hero-content">
-          <h1>INFERO</h1>
-          <p class="hero-subtitle">Solo • 8 minutes</p>
-          <p class="hero-description">Choreography and Performance: Katharina Ludwig</p>
-        </div>
-        <div class="video-wrapper">
-          <iframe
-            src="https://www.youtube.com/embed/mISVXZnoKmc?si=JP2Y99Ry8NutXdcV"
-            title="INFERO"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen></iframe>
+      <section class="hero-section">
+        <img
+          src="https://res.cloudinary.com/dxefd3n1k/image/upload/v1761163162/firstpicture_uidife.jpg"
+          alt="INFERO Performance" />
+        <!-- Work Information Text -->
+        <div class="work-info-text">
+          <div class="work-title">INFERO</div>
+          <div class="work-type">SOLO</div>
+          <div class="work-length">8 min</div>
+          <div class="work-premiere">2018/2019</div>
         </div>
       </section>
 
-      <!-- Content Grid -->
-      <div class="content-grid">
-        <!-- Left Column -->
-        <div class="left-column">
-          <section class="concept">
-            <h2>Concept</h2>
+      <!-- New Structured Content -->
+      <article class="structured-content">
+        <!-- Description Section -->
+        <section class="description-section">
+          <div class="section-content">
+            <p>Choreography and Performance: Katharina Ludwig</p>
             <p>
               Translated from Latin,
               <em>Infero</em>
@@ -84,9 +81,53 @@
               Understanding, questioning, rejection, action and finally acceptance are states which are investigated and presented during
               the solo.
             </p>
-          </section>
+          </div>
+        </section>
 
-          <section class="performances">
+        <!-- Photos Section -->
+        <section class="some-photos-section">
+          <div class="section-content">
+            <div class="photos-grid">
+              <div class="photo-item">
+                <img
+                  src="https://res.cloudinary.com/dxefd3n1k/image/upload/v1761163168/web_20191108_H074_Katharina_Ludwig_Infero_h7biif.jpg"
+                  alt="INFERO Performance" />
+              </div>
+              <div class="photo-item">
+                <img
+                  src="https://res.cloudinary.com/dxefd3n1k/image/upload/v1761163165/web_20191108_H072_Katharina_Ludwig_Infero_etbawm.jpg"
+                  alt="INFERO Performance" />
+              </div>
+              <div class="photo-item">
+                <img
+                  src="https://res.cloudinary.com/dxefd3n1k/image/upload/v1761163163/Infero_si7w8e.jpg"
+                  alt="INFERO Performance" />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Video Section -->
+        <section class="trailer-section">
+          <div class="section-content">
+            <h2>Performance Video</h2>
+            <div class="video-container">
+              <div style="padding: 56.25% 0 0 0; position: relative">
+                <iframe
+                  src="https://www.youtube.com/embed/mISVXZnoKmc?si=JP2Y99Ry8NutXdcV"
+                  title="INFERO"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen
+                  style="position: absolute; top: 0; left: 0; width: 100%; height: 100%"></iframe>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Performances Section -->
+        <section class="description-section">
+          <div class="section-content">
             <h2>Performances</h2>
             <div class="performance-list">
               <div class="performance-item">
@@ -102,28 +143,30 @@
                 <span class="venue">Solo competition of Theater tanzspeicher Würzburg</span>
               </div>
             </div>
-          </section>
-        </div>
+          </div>
+        </section>
 
-        <!-- Right Column -->
-        <div class="right-column">
-          <section class="press">
+        <!-- Press Section -->
+        <section class="press-award-section">
+          <div class="section-content">
             <h2>Press</h2>
-            <blockquote>
-              <p>
-                "But one piece stood out: 'Infero' by the Freiburg-based dancer and choreographer Katharina Ludwig. In German, 'Infero'
-                means something like 'I carry in' or 'I sacrifice'. The title lacks a grammatical object to make it unambiguous, but
-                Ludwig's dedication to dance can be felt at every moment. She picks up speed in short movements. The movements become
-                larger, the impression of rapture increases, yet her dance seems so contradictory, due to an initially tense and stretched
-                upright posture, to which arms and legs flow round movements parallel to the plane of the floor. Rigidity and slackness
-                fight against each other here, but in a confidently controlled and highly expressive manner. Katharina Ludwig's contribution
-                alone would have been worth a visit to the 'Lange Nacht der Kurzen Stücke'."
-              </p>
-              <footer>— Jens Wehn, BNN 12.11.2019</footer>
-            </blockquote>
-          </section>
-        </div>
-      </div>
+            <div class="award-item">
+              <blockquote>
+                <p>
+                  "But one piece stood out: 'Infero' by the Freiburg-based dancer and choreographer Katharina Ludwig. In German, 'Infero'
+                  means something like 'I carry in' or 'I sacrifice'. The title lacks a grammatical object to make it unambiguous, but
+                  Ludwig's dedication to dance can be felt at every moment. She picks up speed in short movements. The movements become
+                  larger, the impression of rapture increases, yet her dance seems so contradictory, due to an initially tense and stretched
+                  upright posture, to which arms and legs flow round movements parallel to the plane of the floor. Rigidity and slackness
+                  fight against each other here, but in a confidently controlled and highly expressive manner. Katharina Ludwig's contribution
+                  alone would have been worth a visit to the 'Lange Nacht der Kurzen Stücke'."
+                </p>
+                <footer>— Jens Wehn, BNN 12.11.2019</footer>
+              </blockquote>
+            </div>
+          </div>
+        </section>
+      </article>
     </main>
 
     <script src="common-navigation.js"></script>

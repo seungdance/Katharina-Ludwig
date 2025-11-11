@@ -168,9 +168,12 @@ main {
 }
 
 .description-section p {
-  max-width: 800px;
+  max-width: 1000px;
   margin: 0 auto 1.5rem;
   text-align: justify;
+  font-size: 18px;
+  letter-spacing: 0.1em;
+  line-height: 1.8;
 }
 
 /* Trailer Section */
@@ -426,13 +429,14 @@ h6 {
 p {
   margin-bottom: 1.5rem;
   padding: 0 2rem;
-  font-size: 16px;
-  line-height: 1.6;
-  max-width: 800px;
+  font-size: 18px;
+  line-height: 1.8;
+  max-width: 1000px;
   margin-left: auto;
   margin-right: auto;
   font-family: "Josefin Sans", sans-serif;
   color: #333333;
+  letter-spacing: 0.1em;
 }
 
 ul {
@@ -891,6 +895,13 @@ a:hover {
 
   p {
     padding: 0 1rem;
+    font-size: 16px;
+    letter-spacing: 0.08em;
+  }
+
+  .description-section p {
+    font-size: 17px;
+    letter-spacing: 0.08em;
   }
 
   ul {

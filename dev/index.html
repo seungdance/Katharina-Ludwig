@@ -57,7 +57,7 @@
       <div class="video-hero">
         <div class="video-container">
           <iframe
-            src="https://player.vimeo.com/video/1119756899?h=78d9df9f4f&amp;badge=0&amp;autoplay=1&amp;autopause=0&amp;controls=0&amp;loop=1&amp;player_id=0&amp;app_id=58479"
+            src="https://player.vimeo.com/video/1119756899?h=78d9df9f4f&amp;badge=0&amp;autoplay=1&amp;autopause=0&amp;controls=0&amp;loop=1&amp;background=1&amp;player_id=0&amp;app_id=58479"
             frameborder="0"
             allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
             referrerpolicy="strict-origin-when-cross-origin"
@@ -66,11 +66,78 @@
 
         <!-- Animated name overlay -->
         <div class="name-overlay">
-          <a href="about.html" class="animated-name">Katharina Ludwig</a>
+          <a href="about.html" class="animated-name">KATHARINA LUDWIG</a>
         </div>
       </div>
     </main>
     <script src="common-navigation.js"></script>
     <script src="https://player.vimeo.com/api/player.js"></script>
+    <script>
+      // Wait for Vimeo Player API to load
+      window.addEventListener("load", function () {
+        const iframe = document.querySelector(".video-container iframe");
+        const videoContainer = document.querySelector(".video-container");
+
+        if (iframe && typeof Vimeo !== "undefined") {
+          const player = new Vimeo.Player(iframe);
+          let videoReady = false;
+
+          // Wait for video to be ready
+          player
+            .ready()
+            .then(function () {
+              // Wait for video to actually start playing
+              player
+                .play()
+                .then(function () {
+                  // Video is playing, now fade it in smoothly
+                  setTimeout(function () {
+                    if (!videoReady) {
+                      videoReady = true;
+                      videoContainer.classList.add("video-loaded");
+                    }
+                  }, 800);
+                })
+                .catch(function (playError) {
+                  // If play fails, still show video after delay
+                  console.log("Play error (may be autoplay restriction):", playError);
+                  setTimeout(function () {
+                    if (!videoReady) {
+                      videoReady = true;
+                      videoContainer.classList.add("video-loaded");
+                    }
+                  }, 2000);
+                });
+
+              // Also listen for play event as backup
+              player.on("play", function () {
+                setTimeout(function () {
+                  if (!videoReady) {
+                    videoReady = true;
+                    videoContainer.classList.add("video-loaded");
+                  }
+                }, 800);
+              });
+            })
+            .catch(function (error) {
+              // If there's an error, still show the video after a timeout
+              console.error("Vimeo player error:", error);
+              setTimeout(function () {
+                if (!videoReady) {
+                  videoReady = true;
+                  videoContainer.classList.add("video-loaded");
+                }
+              }, 3000);
+            });
+        } else {
+          // Fallback: show video after timeout if API doesn't load
+          setTimeout(function () {
+            if (videoContainer) {
+              videoContainer.classList.add("video-loaded");
+            }
+          }, 3000);
+        }
+      });
+    </script>
   </body>
 </html>
