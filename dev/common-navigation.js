@@ -40,52 +40,46 @@ document.addEventListener("keydown", function (event) {
   }
 });
 
-// Mobile dropdown functionality
+// Dropdown toggle functionality
 document.addEventListener("DOMContentLoaded", function () {
   const dropdowns = document.querySelectorAll(".dropdown");
 
   dropdowns.forEach(function (dropdown) {
-    const dropdownLink = dropdown.querySelector("a");
+    const dropdownToggle = dropdown.querySelector(".dropdown-toggle");
     const dropdownContent = dropdown.querySelector(".dropdown-content");
 
-    // Check if it's mobile (touch device)
-    function isMobile() {
-      return window.innerWidth <= 768 || "ontouchstart" in window;
-    }
+    if (dropdownToggle) {
+      // Handle click on toggle button
+      dropdownToggle.addEventListener("click", function (e) {
+        e.preventDefault();
+        e.stopPropagation();
 
-    if (isMobile()) {
-      let clickTimeout;
-      let clickCount = 0;
+        // Close other dropdowns
+        dropdowns.forEach(function (otherDropdown) {
+          if (otherDropdown !== dropdown) {
+            otherDropdown.classList.remove("open");
+          }
+        });
 
-      // Mobile: Handle click events
-      dropdownLink.addEventListener("click", function (e) {
-        clickCount++;
-
-        if (clickCount === 1) {
-          // First click: prevent default and show dropdown
-          e.preventDefault();
-
-          // Close other dropdowns
-          dropdowns.forEach(function (otherDropdown) {
-            if (otherDropdown !== dropdown) {
-              otherDropdown.classList.remove("mobile-open");
-            }
-          });
-
-          // Toggle current dropdown
-          dropdown.classList.toggle("mobile-open");
-
-          // Reset click count after 300ms
-          clickTimeout = setTimeout(function () {
-            clickCount = 0;
-          }, 300);
-        } else if (clickCount === 2) {
-          // Second click: navigate to page
-          clearTimeout(clickTimeout);
-          clickCount = 0;
-          window.location.href = dropdownLink.href;
-        }
+        // Toggle current dropdown
+        dropdown.classList.toggle("open");
       });
     }
+
+    // Prevent dropdown from closing when clicking inside dropdown content
+    if (dropdownContent) {
+      dropdownContent.addEventListener("click", function (e) {
+        e.stopPropagation();
+      });
+    }
+  });
+
+  // Close dropdowns when clicking outside
+  document.addEventListener("click", function (event) {
+    dropdowns.forEach(function (dropdown) {
+      if (!dropdown.contains(event.target)) {
+        dropdown.classList.remove("open");
+      }
+    });
   });
 });

@@ -76,6 +76,31 @@ p {
   color: #333333;
 }
 
+/* Construction message styling */
+.construction-message {
+  text-align: center;
+  padding: 3rem 2rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.construction-text {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 300;
+  color: #666666;
+  margin-bottom: 1rem;
+  font-style: italic;
+}
+
+.construction-subtext {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 1rem;
+  font-weight: 300;
+  color: #999999;
+  margin-bottom: 0;
+}
+
 /* Footer */
 footer {
   background-color: #f4efe8;
@@ -126,42 +151,6 @@ a:hover {
     padding: 0 1rem;
   }
 
-  footer {
-    padding: 1.5rem 1rem;
-  }
-
-  footer p {
-    font-size: 13px;
-  }
-}
-
-/* Construction message styling */
-.construction-message {
-  text-align: center;
-  padding: 3rem 2rem;
-  max-width: 600px;
-  margin: 0 auto;
-}
-
-.construction-text {
-  font-family: "Josefin Sans", sans-serif;
-  font-size: 1.5rem;
-  font-weight: 300;
-  color: #666666;
-  margin-bottom: 1rem;
-  font-style: italic;
-}
-
-.construction-subtext {
-  font-family: "Josefin Sans", sans-serif;
-  font-size: 1rem;
-  font-weight: 300;
-  color: #999999;
-  margin-bottom: 0;
-}
-
-/* Mobile Responsive */
-@media (max-width: 768px) {
   .construction-message {
     padding: 2rem 1rem;
   }
@@ -173,6 +162,14 @@ a:hover {
   .construction-subtext {
     font-size: 0.9rem;
   }
+
+  footer {
+    padding: 1.5rem 1rem;
+  }
+
+  footer p {
+    font-size: 13px;
+  }
 }
 
 /* Prevent horizontal scrolling globally */
@@ -180,3 +177,4 @@ html,
 body {
   overflow-x: hidden;
 }
+
