@@ -1,0 +1,182 @@
+/* Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap");
+
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Remove any default borders or outlines */
+* {
+  border: none;
+  outline: none;
+  box-shadow: none;
+}
+
+/* Remove developer tools highlighting */
+*:focus,
+*:active,
+*:hover {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* Smooth scrolling and performance optimization */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 0;
+}
+
+body {
+  font-family: "Josefin Sans", sans-serif;
+  line-height: 1.6;
+  color: #333333;
+  background: #f4efe8;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Content styling */
+main {
+  max-width: none;
+  margin: 0;
+  padding: 0;
+  flex: 1;
+}
+
+section {
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 2.5rem;
+  font-weight: 400;
+  margin-bottom: 2rem;
+  text-align: center;
+  padding: 2rem 1rem;
+  color: #000000;
+  letter-spacing: 0.05em;
+}
+
+p {
+  margin-bottom: 1.5rem;
+  padding: 0 2rem;
+  font-size: 16px;
+  line-height: 1.6;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: "Josefin Sans", sans-serif;
+  color: #333333;
+}
+
+/* Footer */
+footer {
+  background-color: #f4efe8;
+  padding: 2rem;
+  text-align: center;
+  margin-top: auto;
+  width: 100%;
+  border-top: none !important;
+}
+
+footer p {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 14px;
+  color: #666;
+  margin: 0.5rem 0;
+  line-height: 1.6;
+}
+
+footer p:first-child {
+  margin-top: 0;
+}
+
+footer p:last-child {
+  margin-bottom: 0;
+  font-size: 13px;
+  color: #999;
+}
+
+/* Links */
+a {
+  color: #333333;
+  text-decoration: underline;
+  font-family: "Cormorant Garamond", serif;
+}
+
+a:hover {
+  color: #000000;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2rem;
+    padding: 1.5rem 1rem;
+  }
+
+  p {
+    padding: 0 1rem;
+  }
+
+  footer {
+    padding: 1.5rem 1rem;
+  }
+
+  footer p {
+    font-size: 13px;
+  }
+}
+
+/* Construction message styling */
+.construction-message {
+  text-align: center;
+  padding: 3rem 2rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.construction-text {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 300;
+  color: #666666;
+  margin-bottom: 1rem;
+  font-style: italic;
+}
+
+.construction-subtext {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 1rem;
+  font-weight: 300;
+  color: #999999;
+  margin-bottom: 0;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .construction-message {
+    padding: 2rem 1rem;
+  }
+
+  .construction-text {
+    font-size: 1.25rem;
+  }
+
+  .construction-subtext {
+    font-size: 0.9rem;
+  }
+}
+
+/* Prevent horizontal scrolling globally */
+html,
+body {
+  overflow-x: hidden;
+}

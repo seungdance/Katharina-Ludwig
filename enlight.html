@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ENLIGHT — KATHARINA LUDWIG</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="common-navigation.css" />
+    <link rel="stylesheet" href="enlight.css" />
+  </head>
+  <body>
+    <!-- Common Navigation Component -->
+    <div class="nav-icon" onclick="toggleNav()">
+      <div class="menu-icon">
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+      </div>
+    </div>
+
+    <!-- Navigation menu -->
+    <nav class="nav-menu" id="navMenu">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="calendar.html">Calendar</a></li>
+        <li class="dropdown">
+          <div class="dropdown-header">
+            <a href="choreographic-work.html">Choreographic Work</a>
+            <button class="dropdown-toggle" aria-label="Toggle dropdown"></button>
+          </div>
+          <div class="dropdown-content">
+            <a href="number52.html">NUMBER 52</a>
+            <a href="double-standards.html">DOUBLE STANDARDS</a>
+            <a href="of-anxiety-x-discernment.html">OF ANXIETY X DISCERNMENT</a>
+            <a href="out-of-balance.html">OUT OF BALANCE</a>
+            <a href="enlight.html">ENLIGHT</a>
+            <a href="the-tribe.html">THE TRIBE</a>
+            <a href="infero.html">INFERO</a>
+          </div>
+        </li>
+        <li><a href="dancework.html">Dance Work</a></li>
+        <li><a href="teaching.html">Teaching</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+    <main class="magazine-layout">
+      <!-- Hero Section -->
+      <section class="hero-section">
+        <img src="../assets/IMG_8358.jpeg" alt="ENLIGHT Performance" />
+        <!-- Work Information Text -->
+        <div class="work-info-text">
+          <div class="work-title">ENLIGHT</div>
+          <div class="work-type">SOLO</div>
+          <div class="work-length">11 min</div>
+          <div class="work-premiere">2019</div>
+        </div>
+      </section>
+
+      <!-- New Structured Content -->
+      <article class="structured-content">
+        <!-- Photos Section -->
+        <section class="some-photos-section">
+          <div class="section-content">
+            <div class="photos-grid">
+              <div class="photo-item">
+                <img
+                  src="https://res.cloudinary.com/dxefd3n1k/image/upload/v1758702980/IMG_8359_p4qigx.jpg"
+                  alt="ENLIGHT Performance Image 1" />
+              </div>
+              <div class="photo-item">
+                <img
+                  src="https://res.cloudinary.com/dxefd3n1k/image/upload/v1758702979/IMG_8357_edzftp.jpg"
+                  alt="ENLIGHT Performance Image 2" />
+              </div>
+              <div class="photo-item">
+                <img
+                  src="https://res.cloudinary.com/dxefd3n1k/image/upload/v1758702978/IMG_2600_uqb9lq.jpg"
+                  alt="ENLIGHT Performance Image 3" />
+              </div>
+              <div class="photo-item">
+                <img
+                  src="https://res.cloudinary.com/dxefd3n1k/image/upload/v1758702977/IMG_1949_pbq3sc.jpg"
+                  alt="ENLIGHT Performance Image 4" />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Credits Section -->
+        <section class="credits-section">
+          <div class="section-content">
+            <div class="credits-grid">
+              <div class="credits-column">
+                <h3>Artist Credits</h3>
+                <div class="credit-item">
+                  <strong>CHOREOGRAPHY & PERFORMANCE</strong>
+                  <span>Katharina Ludwig</span>
+                </div>
+              </div>
+              <div class="credits-column">
+                <h3>Production Credits</h3>
+                <div class="credit-item">
+                  <strong>DEVELOPED & PERFORMED</strong>
+                  <span>Tanzwuchs#3, autumn 2019, Südufer Freiburg</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Trailer Section -->
+        <section class="trailer-section">
+          <div class="section-content">
+            <h2>Trailer</h2>
+            <div class="video-container">
+              <div style="padding: 56.25% 0 0 0; position: relative">
+                <iframe
+                  src="https://www.youtube.com/embed/Mcm18qrUUEw?si=M_3mesDa_hdc-o8G"
+                  title="ENLIGHT Trailer"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowfullscreen
+                  style="position: absolute; top: 0; left: 0; width: 100%; height: 100%"></iframe>
+              </div>
+            </div>
+          </div>
+        </section>
+      </article>
+    </main>
+
+    <script src="common-navigation.js"></script>
+  </body>
+</html>

@@ -1,0 +1,267 @@
+/* Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap");
+
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Remove any default borders or outlines */
+* {
+  border: none;
+  outline: none;
+  box-shadow: none;
+}
+
+/* Remove developer tools highlighting */
+*:focus,
+*:active,
+*:hover {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* Smooth scrolling and performance optimization */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 0;
+}
+
+body {
+  font-family: "Manrope", "Exo 2", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  line-height: 1.6;
+  color: #333333;
+  background: #f4efe8;
+  overflow-x: hidden;
+}
+
+/* Full-width images */
+img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border: none;
+  outline: none;
+}
+
+/* Content styling */
+main {
+  max-width: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Full-screen video hero section */
+.video-hero {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.video-hero .video-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  background-color: #000;
+  opacity: 0;
+  transition: opacity 2.5s ease-in-out;
+}
+
+.video-hero .video-container.video-loaded {
+  opacity: 1;
+}
+
+.video-hero .video-container iframe {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100vw;
+  height: 56.25vw; /* 16:9 aspect ratio */
+  min-height: 100vh;
+  min-width: 177.78vh; /* 16:9 aspect ratio */
+  transform: translate(-50%, -50%);
+  border: none;
+  /* Hide Vimeo loading spinner */
+  pointer-events: none;
+}
+
+.video-hero .video-container.video-loaded iframe {
+  pointer-events: auto;
+}
+
+/* Name overlay - centered */
+.name-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  text-align: center;
+  width: auto;
+  pointer-events: none;
+}
+
+.animated-name {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 4rem;
+  font-weight: 300;
+  color: white;
+  text-decoration: none;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+  letter-spacing: 0.3em;
+  transition: all 0.3s ease;
+  display: inline-block;
+  opacity: 0;
+  position: relative;
+  pointer-events: auto;
+  
+  /* Water writing animation */
+  animation: waterWrite 3s ease-in-out forwards;
+  animation-delay: 0.5s;
+}
+
+/* Water writing effect - text appears as if written in water */
+@keyframes waterWrite {
+  0% {
+    opacity: 0;
+    filter: blur(10px);
+    transform: scale(0.8);
+    text-shadow: 
+      0 0 20px rgba(255, 255, 255, 0.3),
+      2px 2px 8px rgba(0, 0, 0, 0.8);
+  }
+  30% {
+    opacity: 0.3;
+    filter: blur(8px);
+    transform: scale(0.9);
+    text-shadow: 
+      0 0 15px rgba(255, 255, 255, 0.4),
+      2px 2px 8px rgba(0, 0, 0, 0.8);
+  }
+  60% {
+    opacity: 0.7;
+    filter: blur(4px);
+    transform: scale(0.95);
+    text-shadow: 
+      0 0 10px rgba(255, 255, 255, 0.5),
+      2px 2px 8px rgba(0, 0, 0, 0.8);
+  }
+  100% {
+    opacity: 1;
+    filter: blur(0px);
+    transform: scale(1);
+    text-shadow: 
+      0 0 5px rgba(255, 255, 255, 0.6),
+      2px 2px 8px rgba(0, 0, 0, 0.8);
+  }
+}
+
+.animated-name:hover {
+  color: #f0f0f0;
+  text-shadow: 
+    0 0 8px rgba(255, 255, 255, 0.7),
+    3px 3px 12px rgba(0, 0, 0, 0.9);
+  transform: scale(1.05);
+}
+
+/* Creative Animation keyframes - Removed */
+
+/* Links */
+a {
+  color: #333333;
+  text-decoration: underline;
+  font-family: "Cormorant Garamond", serif;
+}
+
+a:hover {
+  color: #000000;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  /* Mobile video hero adjustments */
+  .video-hero {
+    height: 100vh;
+  }
+
+  .name-overlay {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: auto;
+    max-width: 90%;
+  }
+
+  /* Ensure navigation is above everything on mobile */
+  .nav-icon {
+    z-index: 9999 !important;
+    pointer-events: auto !important;
+  }
+
+  /* Prevent video hero from blocking navigation clicks */
+  .video-hero {
+    pointer-events: none;
+  }
+
+  .video-hero .video-container {
+    pointer-events: none;
+  }
+
+  .video-hero .video-container iframe {
+    pointer-events: none;
+  }
+
+  .animated-name {
+    font-size: 2.5rem;
+    letter-spacing: 0.35em;
+  }
+}
+
+/* Extra small screens */
+@media (max-width: 480px) {
+  .name-overlay {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: auto;
+    max-width: 85%;
+  }
+
+  .animated-name {
+    font-size: 1.8rem;
+    letter-spacing: 0.3em;
+  }
+
+  /* Ensure navigation is above everything on small mobile */
+  .nav-icon {
+    z-index: 9999 !important;
+    pointer-events: auto !important;
+  }
+
+  /* Prevent video hero from blocking navigation clicks */
+  .video-hero {
+    pointer-events: none;
+  }
+
+  .video-hero .video-container {
+    pointer-events: none;
+  }
+
+  .video-hero .video-container iframe {
+    pointer-events: none;
+  }
+
+/* Prevent horizontal scrolling globally */
+html,
+body {
+  overflow-x: hidden;
+}

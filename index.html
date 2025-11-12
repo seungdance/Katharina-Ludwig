@@ -1,174 +1,146 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Katharina Ludwig - Choreographer & Dancer</title>
+    <title>KATHARINA LUDWIG</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="styles.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet" />
+    <link rel="stylesheet" href="common-navigation.css" />
+    <link rel="stylesheet" href="index.css" />
   </head>
   <body>
-    <!-- Navigation -->
-    <nav class="navbar">
-      <div class="nav-container">
-        <div class="nav-logo">
-          <a href="#home">KL</a>
-        </div>
-        <ul class="nav-menu">
-          <li class="nav-item">
-            <a href="#home" class="nav-link">Home</a>
-          </li>
-          <li class="nav-item">
-            <a href="#bio" class="nav-link">Bio</a>
-          </li>
-          <li class="nav-item">
-            <a href="#work" class="nav-link">Work</a>
-          </li>
-          <li class="nav-item">
-            <a href="#contact" class="nav-link">Contact</a>
-          </li>
-        </ul>
-        <div class="hamburger">
-          <span class="bar"></span>
-          <span class="bar"></span>
-          <span class="bar"></span>
-        </div>
+    <!-- Common Navigation Component -->
+    <div class="nav-icon" onclick="toggleNav()">
+      <div class="menu-icon">
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
       </div>
+    </div>
+
+    <!-- Navigation menu -->
+    <nav class="nav-menu" id="navMenu">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="calendar.html">Calendar</a></li>
+        <li class="dropdown">
+          <div class="dropdown-header">
+            <a href="choreographic-work.html">Choreographic Work</a>
+            <button class="dropdown-toggle" aria-label="Toggle dropdown"></button>
+          </div>
+          <div class="dropdown-content">
+            <a href="number52.html">NUMBER 52</a>
+            <a href="double-standards.html">DOUBLE STANDARDS</a>
+            <a href="of-anxiety-x-discernment.html">OF ANXIETY X DISCERNMENT</a>
+            <a href="out-of-balance.html">OUT OF BALANCE</a>
+            <a href="enlight.html">ENLIGHT</a>
+            <a href="the-tribe.html">THE TRIBE</a>
+            <a href="infero.html">INFERO</a>
+          </div>
+        </li>
+        <li><a href="dancework.html">Dance Work</a></li>
+        <li><a href="teaching.html">Teaching</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
     </nav>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-      <div class="hero-content">
-        <h1 class="hero-title">Katharina Ludwig</h1>
-      </div>
-      <div class="hero-background">
-        <div class="hero-image">
-          <img src="assets/1_KatharinaLudwig_ZANT_©Flávia Samper.JPG" alt="Katharina Ludwig performing" />
-        </div>
-      </div>
-    </section>
-
-    <!-- Bio Section -->
-    <section id="bio" class="bio">
-      <div class="container">
-        <div class="bio-content">
-          <div class="bio-text">
-            <h2>About Katharina</h2>
-            <p>
-              Born in Munich in 1997, Katharina completed her training at the Iwanson School of Contemporary Dance in Munich in 2018. In
-              2024, she completed her master's degree in Movement Research at the Anton Bruckner University in Linz with a master's thesis
-              on the exploration of a feminist dance practice.
-            </p>
-            <p>
-              Currently living in Bern, Katharina works as a freelance dancer, choreographer and dance teacher. She has been creating her
-              own works since 2018 and has already choreographed several short pieces that have been shown and awarded internationally. Her
-              works have been praised by the press as expressive, funny, critical, intelligent, with an astonishing stage presence and
-              technical skills.
-            </p>
-            <p>
-              In 2019, she choreographed a piece for five dancers for the trinational project ARTIL in Ukraine, Poland and Austria. In 2025,
-              she was selected as an ATLAS artist for the Impulstanz Festival in Vienna. Her short piece NUMBER 52 was awarded the prize for
-              'Best Performer' at the SoloDuo Festival 2025 in Barnes Crossing Cologne.
-            </p>
-            <p>
-              As a dancer, Katharina has worked with Joshua Monten, Wim Vandekeybus, Simone Elliot, Emese Nagy, Sade Mamedova, Emi Miyoshi,
-              Nunzio Impellizeri and Karolin Stächele, among others. As a dance pedagogue, she regularly teaches training for professional
-              dancers, as well as hobby classes. Katharina volunteers as a board member of the BETA Association of Bernese Dance
-              Professionals for the independent dance scene.
-            </p>
-          </div>
-          <div class="bio-gallery">
-            <div class="gallery-grid">
-              <div class="gallery-item">
-                <img src="assets/2_KatharinaLudwig_ZANT_©Flávia Samper.JPG" alt="Katharina Ludwig performance" />
-              </div>
-              <div class="gallery-item">
-                <img src="assets/IMG_6578N52_KatharinaLudwi g_ZANT_©Flávia Samper.JPG" alt="Katharina Ludwig in motion" />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Work Section -->
-    <section id="work" class="work">
-      <div class="container">
-        <h2>Choreography Reel</h2>
+    <main>
+      <!-- Full-screen video background -->
+      <div class="video-hero">
         <div class="video-container">
-          <div style="padding: 56.25% 0 0 0; position: relative">
-            <iframe
-              src="https://player.vimeo.com/video/1092182077?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
-              frameborder="0"
-              allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
-              referrerpolicy="strict-origin-when-cross-origin"
-              style="position: absolute; top: 0; left: 0; width: 100%; height: 100%"
-              title="Choreography Reel"></iframe>
-          </div>
-          <script src="https://player.vimeo.com/api/player.js"></script>
+          <iframe
+            src="https://player.vimeo.com/video/1119756899?h=78d9df9f4f&amp;badge=0&amp;autoplay=1&amp;autopause=0&amp;controls=0&amp;loop=1&amp;background=1&amp;player_id=0&amp;app_id=58479"
+            frameborder="0"
+            allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            title="infero cut for website"></iframe>
+        </div>
+
+        <!-- Animated name overlay -->
+        <div class="name-overlay">
+          <a href="about.html" class="animated-name">KATHARINA LUDWIG</a>
         </div>
       </div>
-    </section>
+    </main>
+    <script src="common-navigation.js"></script>
+    <script src="https://player.vimeo.com/api/player.js"></script>
+    <script>
+      // Wait for Vimeo Player API to load
+      window.addEventListener("load", function () {
+        const iframe = document.querySelector(".video-container iframe");
+        const videoContainer = document.querySelector(".video-container");
 
-    <!-- Under Construction Section -->
-    <section class="under-construction">
-      <div class="container">
-        <div class="construction-content">
-          <i class="fas fa-tools"></i>
-          <h2>This website is currently under construction</h2>
-          <p>and will be online in September 2025</p>
-        </div>
-      </div>
-    </section>
+        if (iframe && typeof Vimeo !== "undefined") {
+          const player = new Vimeo.Player(iframe);
+          let videoReady = false;
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-      <div class="container">
-        <h2>Get In Touch</h2>
-        <div class="contact-content">
-          <div class="contact-info">
-            <p>For collaborations, performances, or inquiries about Katharina's work, please reach out through the following channels:</p>
-            <div class="contact-methods">
-              <div class="contact-method">
-                <i class="fas fa-envelope"></i>
-                <a href="mailto:ludwigkatharina@web.de">ludwigkatharina@web.de</a>
-              </div>
-              <div class="contact-method">
-                <i class="fab fa-instagram"></i>
-                <a href="https://www.instagram.com/kathastrophhe/" target="_blank">@kathastrophhe</a>
-              </div>
-            </div>
-          </div>
-          <div class="contact-form">
-            <form id="contactForm">
-              <div class="form-group">
-                <input type="text" id="name" placeholder="Your Name" required />
-              </div>
-              <div class="form-group">
-                <input type="email" id="email" placeholder="Your Email" required />
-              </div>
-              <div class="form-group">
-                <textarea id="message" placeholder="Your Message" rows="5" required></textarea>
-              </div>
-              <button type="submit" class="btn btn-primary">Send Message</button>
-            </form>
-          </div>
-        </div>
-      </div>
-    </section>
+          // Wait for video to be ready
+          player
+            .ready()
+            .then(function () {
+              // Wait for video to actually start playing
+              player
+                .play()
+                .then(function () {
+                  // Video is playing, now fade it in smoothly
+                  setTimeout(function () {
+                    if (!videoReady) {
+                      videoReady = true;
+                      videoContainer.classList.add("video-loaded");
+                    }
+                  }, 800);
+                })
+                .catch(function (playError) {
+                  // If play fails, still show video after delay
+                  console.log("Play error (may be autoplay restriction):", playError);
+                  setTimeout(function () {
+                    if (!videoReady) {
+                      videoReady = true;
+                      videoContainer.classList.add("video-loaded");
+                    }
+                  }, 2000);
+                });
 
-    <!-- Footer -->
-    <footer class="footer">
-      <div class="container">
-        <div class="footer-bottom">
-          <p>&copy; 2025 Katharina Ludwig. All rights reserved.</p>
-        </div>
-      </div>
-    </footer>
-
-    <script src="script.js"></script>
+              // Also listen for play event as backup
+              player.on("play", function () {
+                setTimeout(function () {
+                  if (!videoReady) {
+                    videoReady = true;
+                    videoContainer.classList.add("video-loaded");
+                  }
+                }, 800);
+              });
+            })
+            .catch(function (error) {
+              // If there's an error, still show the video after a timeout
+              console.error("Vimeo player error:", error);
+              setTimeout(function () {
+                if (!videoReady) {
+                  videoReady = true;
+                  videoContainer.classList.add("video-loaded");
+                }
+              }, 3000);
+            });
+        } else {
+          // Fallback: show video after timeout if API doesn't load
+          setTimeout(function () {
+            if (videoContainer) {
+              videoContainer.classList.add("video-loaded");
+            }
+          }, 3000);
+        }
+      });
+    </script>
   </body>
 </html>

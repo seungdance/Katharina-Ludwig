@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en" style="scroll-behavior: smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CHOREOGRAPHIC WORK — KATHARINA LUDWIG</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&family=Inter:wght@300;400;500&display=swap"
+      rel="stylesheet" />
+    <link rel="stylesheet" href="common-navigation.css" />
+    <link rel="stylesheet" href="choreographic-work-clean.css" />
+  </head>
+  <body>
+    <!-- Common Navigation Component -->
+    <div class="nav-icon" onclick="toggleNav()">
+      <div class="menu-icon">
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+      </div>
+    </div>
+
+    <nav class="nav-menu" id="navMenu">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="calendar.html">Calendar</a></li>
+        <li class="dropdown">
+          <div class="dropdown-header">
+            <a href="choreographic-work.html">Choreographic Work</a>
+            <button class="dropdown-toggle" aria-label="Toggle dropdown"></button>
+          </div>
+          <div class="dropdown-content">
+            <a href="number52.html">NUMBER 52</a>
+            <a href="double-standards.html">DOUBLE STANDARDS</a>
+            <a href="of-anxiety-x-discernment.html">OF ANXIETY X DISCERNMENT</a>
+            <a href="out-of-balance.html">OUT OF BALANCE</a>
+            <a href="enlight.html">ENLIGHT</a>
+            <a href="the-tribe.html">THE TRIBE</a>
+            <a href="infero.html">INFERO</a>
+          </div>
+        </li>
+        <li><a href="dancework.html">Dance Work</a></li>
+        <li><a href="teaching.html">Teaching</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+    <main>
+      <div class="page-title">
+        <h1>CHOREOGRAPHIC WORK</h1>
+      </div>
+
+      <div class="works-grid">
+        <!-- Work 1 -->
+        <div class="work-card" onclick="navigateToDetail('number52.html')">
+          <div
+            class="work-card-image"
+            style="background-image: url('../assets/1_first picture_N52.1 Katharina Ludwig©Nik Spoerri_WEB.jpg')">
+            <div class="work-card-overlay"></div>
+          </div>
+          <div class="work-card-content">
+            <h3 class="work-card-title">NUMBER 52</h3>
+            <p class="work-card-year">2025-2026</p>
+          </div>
+        </div>
+
+        <!-- Work 2 -->
+        <div class="work-card" onclick="navigateToDetail('double-standards.html')">
+          <div
+            class="work-card-image"
+            style="background-image: url('https://res.cloudinary.com/dxefd3n1k/image/upload/v1758702920/DS_1_k6w3ue.jpg')">
+            <div class="work-card-overlay"></div>
+          </div>
+          <div class="work-card-content">
+            <h3 class="work-card-title">DOUBLE STANDARDS</h3>
+            <p class="work-card-year">2025-2026</p>
+          </div>
+        </div>
+
+        <!-- Work 3 -->
+        <div class="work-card" onclick="navigateToDetail('of-anxiety-x-discernment.html')">
+          <div class="work-card-image" style="background-image: url('../assets/anxiety1.jpg')">
+            <div class="work-card-overlay"></div>
+          </div>
+          <div class="work-card-content">
+            <h3 class="work-card-title">OF ANXIETY X DISCERNMENT</h3>
+            <p class="work-card-year">2022</p>
+          </div>
+        </div>
+
+        <!-- Work 4 -->
+        <div class="work-card" onclick="navigateToDetail('out-of-balance.html')">
+          <div
+            class="work-card-image"
+            style="
+              background-image: url('https://res.cloudinary.com/dxefd3n1k/image/upload/v1758703044/AD_3_Sharing_5d9660_JenniferRohrbacher_va7vsy.jpg');
+            ">
+            <div class="work-card-overlay"></div>
+          </div>
+          <div class="work-card-content">
+            <h3 class="work-card-title">OUT OF BALANCE</h3>
+            <p class="work-card-year">2020</p>
+          </div>
+        </div>
+
+        <!-- Work 5 -->
+        <div class="work-card" onclick="navigateToDetail('enlight.html')">
+          <div
+            class="work-card-image"
+            style="background-image: url('https://res.cloudinary.com/dxefd3n1k/image/upload/v1758702977/IMG_1949_pbq3sc.jpg')">
+            <div class="work-card-overlay"></div>
+          </div>
+          <div class="work-card-content">
+            <h3 class="work-card-title">ENLIGHT</h3>
+            <p class="work-card-year">2019</p>
+          </div>
+        </div>
+
+        <!-- Work 6 -->
+        <div class="work-card" onclick="navigateToDetail('the-tribe.html')">
+          <div class="work-card-image" style="background-image: url('../assets/IMG_6320.jpeg')">
+            <div class="work-card-overlay"></div>
+          </div>
+          <div class="work-card-content">
+            <h3 class="work-card-title">THE TRIBE</h3>
+            <p class="work-card-year">2019</p>
+          </div>
+        </div>
+
+        <!-- Work 7 -->
+        <div class="work-card" onclick="navigateToDetail('infero.html')">
+          <div
+            class="work-card-image"
+            style="background-image: url('https://res.cloudinary.com/dxefd3n1k/image/upload/v1761163162/firstpicture_uidife.jpg')">
+            <div class="work-card-overlay"></div>
+          </div>
+          <div class="work-card-content">
+            <h3 class="work-card-title">INFERO</h3>
+            <p class="work-card-year">2018</p>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script src="common-navigation.js"></script>
+  </body>
+</html>

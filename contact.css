@@ -1,0 +1,246 @@
+/* Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap");
+
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Remove any default borders or outlines */
+* {
+  border: none;
+  outline: none;
+  box-shadow: none;
+}
+
+/* Remove developer tools highlighting */
+*:focus,
+*:active,
+*:hover {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* Smooth scrolling and performance optimization */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 0;
+}
+
+body {
+  font-family: "Josefin Sans", sans-serif;
+  line-height: 1.6;
+  color: #333333;
+  background: #f4efe8;
+  overflow-x: hidden;
+}
+
+/* Content styling */
+main {
+  max-width: none;
+  margin: 0;
+  padding: 0;
+}
+
+section {
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 2.5rem;
+  font-weight: 400;
+  margin-bottom: 2rem;
+  text-align: center;
+  padding: 2rem 1rem;
+  color: #000000;
+  letter-spacing: 0.05em;
+}
+
+p {
+  margin-bottom: 1.5rem;
+  padding: 0 2rem;
+  font-size: 16px;
+  line-height: 1.6;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: "Josefin Sans", sans-serif;
+  color: #333333;
+}
+
+/* Footer */
+footer {
+  background-color: #f4efe8;
+  padding: 2rem;
+  text-align: center;
+  border-top: 1px solid #e0e0e0;
+}
+
+footer p {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 14px;
+  color: #666;
+  margin: 0;
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f4efe8;
+}
+
+.hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Contact Overlay */
+.contact-overlay {
+  position: absolute;
+  top: 100px;
+  right: 200px;
+  width: auto;
+  height: auto;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  background: none;
+}
+
+/* Contact Section */
+.contact-section {
+  padding: 3rem 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Mobile-only contact section - hidden on desktop */
+.mobile-only {
+  display: none;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  z-index: 10;
+}
+
+.contact-item {
+  text-align: center;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 0;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(15px);
+}
+
+.contact-item h3 {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: #ffffff;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+}
+
+.contact-item a {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 1rem;
+  color: #ffffff;
+  text-decoration: none;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+  transition: color 0.3s ease;
+}
+
+.contact-item a:hover {
+  color: #f0f0f0;
+  text-decoration: underline;
+}
+
+/* Links */
+a {
+  color: #333333;
+  text-decoration: underline;
+  font-family: "Cormorant Garamond", serif;
+}
+
+a:hover {
+  color: #000000;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2rem;
+    padding: 1.5rem 1rem;
+  }
+
+  p {
+    padding: 0 1rem;
+  }
+
+  .hero {
+    height: 60vh;
+  }
+
+  .hero-image {
+    object-position: 10% center;
+  }
+
+  /* Hide overlay on mobile */
+  .contact-overlay {
+    display: none;
+  }
+
+  /* Show mobile-only contact section */
+  .mobile-only {
+    display: block;
+  }
+
+  .contact-section {
+    padding: 2rem 1rem;
+  }
+
+  .contact-item {
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.5);
+    color: #333333;
+  }
+
+  .contact-item h3 {
+    font-size: 1rem;
+    color: #000000;
+  }
+
+  .contact-item a {
+    font-size: 0.9rem;
+    color: #333333;
+    text-shadow: none;
+  }
+
+  footer {
+    padding: 1.5rem 1rem;
+  }
+
+  footer p {
+    font-size: 13px;
+  }
+}
+
+/* Prevent horizontal scrolling globally */
+html,
+body {
+  overflow-x: hidden;
+}

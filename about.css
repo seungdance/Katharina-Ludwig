@@ -1,0 +1,235 @@
+/* Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap");
+
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Remove any default borders or outlines */
+* {
+  border: none;
+  outline: none;
+  box-shadow: none;
+}
+
+/* Remove developer tools highlighting */
+*:focus,
+*:active,
+*:hover {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* Smooth scrolling and performance optimization */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 0;
+}
+
+body {
+  font-family: "Josefin Sans", sans-serif;
+  line-height: 1.6;
+  color: #000000;
+  background: #f4efe8;
+  overflow-x: hidden;
+}
+
+/* Content styling */
+main {
+  max-width: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* About Page Styles */
+.about-video-hero {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-video-hero .video-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  background-color: #000;
+}
+
+.about-video-hero .video-container iframe {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100vw;
+  height: 56.25vw; /* 16:9 aspect ratio */
+  min-height: 100vh;
+  min-width: 177.78vh; /* 16:9 aspect ratio */
+  transform: translate(-50%, -50%);
+  border: none;
+}
+
+.about-content {
+  background-color: #fff;
+  padding: 4rem 0;
+}
+
+.about-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.about-container h1 {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 3rem;
+  font-weight: 400;
+  color: #2c2c2c;
+  margin-top: 2rem;
+  margin-bottom: 3rem;
+  letter-spacing: 0.05em;
+  text-align: center;
+}
+
+.hero-subtitle {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 0.5rem;
+  font-style: italic;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.hero-location {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 1rem;
+  color: #999;
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.about-container p {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #333333;
+  margin-bottom: 1.5rem;
+  text-align: justify;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Links */
+a {
+  color: #2c2c2c;
+  text-decoration: underline;
+  font-family: "Josefin Sans", sans-serif;
+}
+
+a:hover {
+  color: #000000;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .about-video-hero {
+    height: 100vh;
+  }
+
+  .about-video-hero .video-container iframe {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 145%;
+    height: 145%;
+    min-width: 145%;
+    min-height: 145%;
+    transform: translate(-50%, -50%);
+    border: none;
+    object-fit: cover;
+    object-position: center;
+    transform-origin: center center;
+  }
+
+  /* Ensure navigation is above everything on mobile */
+  .nav-icon {
+    z-index: 9999 !important;
+    pointer-events: auto !important;
+  }
+
+  /* Prevent video hero from blocking navigation clicks */
+  .about-video-hero {
+    pointer-events: none;
+  }
+
+  .about-video-hero .video-container {
+    pointer-events: none;
+  }
+
+  .about-video-hero .video-container iframe {
+    pointer-events: none;
+  }
+
+  .about-content {
+    padding: 2rem 0;
+  }
+
+  .about-container {
+    padding: 0 1rem;
+  }
+
+  .about-container h1 {
+    font-size: 2.2rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+
+  .hero-location {
+    margin-bottom: 2rem;
+  }
+
+  .about-container p {
+    font-size: 15px;
+    margin-bottom: 1.2rem;
+  }
+}
+
+/* Extra small screens */
+@media (max-width: 480px) {
+  /* Ensure navigation is above everything on small mobile */
+  .nav-icon {
+    z-index: 9999 !important;
+    pointer-events: auto !important;
+  }
+
+  /* Prevent video hero from blocking navigation clicks */
+  .about-video-hero {
+    pointer-events: none;
+  }
+
+  .about-video-hero .video-container {
+    pointer-events: none;
+  }
+
+  .about-video-hero .video-container iframe {
+    pointer-events: none;
+  }
+}
+
+/* Prevent horizontal scrolling globally */
+html,
+body {
+  overflow-x: hidden;
+}
