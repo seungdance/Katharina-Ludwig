@@ -33,7 +33,7 @@ body {
   font-family: "Josefin Sans", sans-serif;
   line-height: 1.6;
   color: #333333;
-  background: #f4efe8;
+  background: #ffffff;
   overflow-x: hidden;
   display: flex;
   flex-direction: column;
@@ -78,12 +78,15 @@ p {
 
 /* Footer */
 footer {
-  background-color: #f4efe8;
+  background-color: #ffffff;
   padding: 2rem;
   text-align: center;
   margin-top: auto;
   width: 100%;
   border-top: none !important;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 footer p {
@@ -92,16 +95,13 @@ footer p {
   color: #666;
   margin: 0.5rem 0;
   line-height: 1.6;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-footer p:first-child {
-  margin-top: 0;
-}
-
-footer p:last-child {
-  margin-bottom: 0;
-  font-size: 13px;
-  color: #999;
+footer p {
+  margin: 0;
 }
 
 /* Links */
@@ -135,43 +135,91 @@ a:hover {
   }
 }
 
-/* Construction message styling */
-.construction-message {
-  text-align: center;
-  padding: 3rem 2rem;
-  max-width: 600px;
+/* Events container styling */
+.events-container {
+  max-width: 800px;
   margin: 0 auto;
+  padding: 2rem;
 }
 
-.construction-text {
-  font-family: "Josefin Sans", sans-serif;
-  font-size: 1.5rem;
-  font-weight: 300;
-  color: #666666;
-  margin-bottom: 1rem;
-  font-style: italic;
+.event-card {
+  background: #ffffff;
+  border: none;
+  border-radius: 0;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: none;
 }
 
-.construction-subtext {
+.event-label {
   font-family: "Josefin Sans", sans-serif;
   font-size: 1rem;
-  font-weight: 300;
-  color: #999999;
-  margin-bottom: 0;
+  font-weight: 400;
+  color: #666666;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.event-title {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 1.75rem;
+  font-weight: 400;
+  color: #000000;
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.05em;
+}
+
+.event-details {
+  margin-bottom: 1.5rem;
+}
+
+.event-date,
+.event-location {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 1rem;
+  color: #333333;
+  margin-bottom: 0.75rem;
+  line-height: 1.6;
+}
+
+.event-date strong,
+.event-location strong {
+  font-weight: 400;
+  color: #000000;
+  text-transform: lowercase;
+}
+
+.event-link {
+  display: inline-block;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 1rem;
+  color: #333333;
+  text-decoration: underline;
+  transition: color 0.3s ease;
+}
+
+.event-link:hover {
+  color: #000000;
 }
 
 /* Mobile Responsive */
 @media (max-width: 768px) {
-  .construction-message {
-    padding: 2rem 1rem;
+  .events-container {
+    padding: 1rem;
   }
 
-  .construction-text {
-    font-size: 1.25rem;
+  .event-card {
+    padding: 1.5rem;
   }
 
-  .construction-subtext {
-    font-size: 0.9rem;
+  .event-title {
+    font-size: 1.5rem;
+  }
+
+  .event-date,
+  .event-location {
+    font-size: 0.95rem;
   }
 }
 
