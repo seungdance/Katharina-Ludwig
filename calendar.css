@@ -151,6 +151,14 @@ a:hover {
   box-shadow: none;
 }
 
+.event-image {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin-bottom: 1.5rem;
+}
+
 .event-label {
   font-family: "Josefin Sans", sans-serif;
   font-size: 1rem;
