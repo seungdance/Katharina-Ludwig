@@ -38,7 +38,7 @@
   justify-content: center;
   width: auto;
   height: auto;
-  font-family: "Josefin Sans", sans-serif;
+  font-family: "League Spartan", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   font-size: 14px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -144,7 +144,7 @@
   right: -280px;
   width: 280px;
   height: 100vh;
-  background: linear-gradient(145deg, #e4ffe9 0%, #b8f0c5 50%, #8ad8a3 100%);
+  background: linear-gradient(145deg, #f5f5f5 0%, #dcdcdc 100%);
   backdrop-filter: blur(15px);
   transition: right 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
   z-index: 999;
@@ -175,9 +175,10 @@
   padding: 15px 25px;
   color: #000000;
   text-decoration: none;
-  font-family: "Manrope", "Exo 2", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: "League Spartan", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   font-size: 16px;
   font-weight: 400;
+  text-transform: uppercase;
   transition: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
   border-left: 3px solid transparent;
 }
@@ -267,8 +268,9 @@
 .dropdown-content a {
   display: block;
   padding: 12px 15px;
-  font-family: "Manrope", "Exo 2", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: "League Spartan", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   font-size: 14px;
+  text-transform: uppercase;
   color: #333333;
   text-decoration: none;
   transition: all 0.3s ease;
@@ -335,8 +337,9 @@ footer p:last-child {
 }
 
 .nav-menu-footer a {
-  font-family: "Manrope", "Exo 2", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: "League Spartan", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   font-size: 13px;
+  text-transform: uppercase;
   color: #666;
   text-decoration: none;
   transition: color 0.3s ease;
