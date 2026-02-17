@@ -111,66 +111,26 @@ main {
 }
 
 .animated-name {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: "League Spartan", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   font-size: 4rem;
-  font-weight: 300;
+  font-weight: 500;
   color: white;
   text-decoration: none;
-  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
-  letter-spacing: 0.3em;
-  transition: all 0.3s ease;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  transition: none;
   display: inline-block;
-  opacity: 0;
+  opacity: 1;
   position: relative;
   pointer-events: auto;
-  
-  /* Water writing animation */
-  animation: waterWrite 3s ease-in-out forwards;
-  animation-delay: 0.5s;
-}
-
-/* Water writing effect - text appears as if written in water */
-@keyframes waterWrite {
-  0% {
-    opacity: 0;
-    filter: blur(10px);
-    transform: scale(0.8);
-    text-shadow: 
-      0 0 20px rgba(255, 255, 255, 0.3),
-      2px 2px 8px rgba(0, 0, 0, 0.8);
-  }
-  30% {
-    opacity: 0.3;
-    filter: blur(8px);
-    transform: scale(0.9);
-    text-shadow: 
-      0 0 15px rgba(255, 255, 255, 0.4),
-      2px 2px 8px rgba(0, 0, 0, 0.8);
-  }
-  60% {
-    opacity: 0.7;
-    filter: blur(4px);
-    transform: scale(0.95);
-    text-shadow: 
-      0 0 10px rgba(255, 255, 255, 0.5),
-      2px 2px 8px rgba(0, 0, 0, 0.8);
-  }
-  100% {
-    opacity: 1;
-    filter: blur(0px);
-    transform: scale(1);
-    text-shadow: 
-      0 0 5px rgba(255, 255, 255, 0.6),
-      2px 2px 8px rgba(0, 0, 0, 0.8);
-  }
+  text-shadow: none;
+  animation: none;
 }
 
 .animated-name:hover {
-  color: #f0f0f0;
-  text-shadow: 
-    0 0 8px rgba(255, 255, 255, 0.7),
-    3px 3px 12px rgba(0, 0, 0, 0.9);
-  transform: scale(1.05);
+  color: white;
+  text-shadow: none;
+  transform: none;
 }
 
 /* Creative Animation keyframes - Removed */

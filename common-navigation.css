@@ -31,23 +31,25 @@
   box-shadow: none;
 }
 
-/* Dot Grid Menu Icon */
+/* MENU Text Icon */
 .menu-icon {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(3, 1fr);
-  gap: 2px;
-  width: 16px;
-  height: 16px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  height: auto;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 14px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.menu-icon::before {
+  content: "MENU";
 }
 
 .dot {
-  width: 3px;
-  height: 3px;
-  background-color: #333;
-  border-radius: 50%;
-  transition: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
-  opacity: 0.7;
+  display: none;
 }
 
 /* Hover animation - dots spread out */
@@ -142,7 +144,7 @@
   right: -280px;
   width: 280px;
   height: 100vh;
-  background: linear-gradient(145deg, #f5f5f5 0%, #dcdcdc 100%);
+  background: linear-gradient(145deg, #e4ffe9 0%, #b8f0c5 50%, #8ad8a3 100%);
   backdrop-filter: blur(15px);
   transition: right 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
   z-index: 999;
