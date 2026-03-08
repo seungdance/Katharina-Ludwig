@@ -45,7 +45,9 @@ main {
   max-width: none;
   margin: 0;
   padding: 0;
-  flex: 1;
+  flex: 1 1 auto;
+  min-width: 0;
+  min-height: 0; /* Ensure flex child can shrink correctly in Firefox */
 }
 
 section {
