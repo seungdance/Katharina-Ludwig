@@ -174,6 +174,38 @@ a {
   font-family: "Josefin Sans", sans-serif;
 }
 
+/* External festival links in calendar entries */
+a.calendar-piece-link[href*="betastagefestival.ch"] {
+  color: #0056b3;
+}
+
+a.calendar-piece-link[href*="betastagefestival.ch"]:hover {
+  color: #003f80;
+}
+
+/* BeJazz venue link styling */
+a.calendar-piece-link[href*="bejazz.ch"],
+a.calendar-piece-link[href*="tojo.ch"] {
+  color: #d63384;
+}
+
+a.calendar-piece-link[href*="bejazz.ch"]:hover,
+a.calendar-piece-link[href*="tojo.ch"]:hover {
+  color: #a61e63;
+}
+
+/* Eventfrog ticket emoji link - no underline */
+a.calendar-piece-link[href*="eventfrog.ch"] {
+  text-decoration: none;
+  display: inline-block;
+  transform: scale(1);
+  transition: transform 0.15s ease-out;
+}
+
+a.calendar-piece-link[href*="eventfrog.ch"]:hover {
+  transform: scale(1.25);
+}
+
 a:hover {
   color: #000000;
 }
