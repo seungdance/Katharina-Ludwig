@@ -355,6 +355,22 @@ main {
   text-align: center;
 }
 
+.timeline-calendar-section p {
+  margin-bottom: 0.75rem;
+}
+
+.timeline-calendar-section .calendar-subsection-title {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  text-align: left;
+  max-width: 1000px;
+  margin: 3rem auto 1rem;
+  padding: 0 2rem;
+}
+
 .timeline-calendar-section h2:first-of-type {
   margin-top: 0;
 }
@@ -495,6 +511,20 @@ a {
 
 a:hover {
   color: #000000;
+}
+
+/* Keep calendar links in page font */
+.timeline-calendar-section a {
+  font-family: "Josefin Sans", sans-serif;
+}
+
+/* Calendar hyperlinks in light green */
+.timeline-calendar-section a {
+  color: #3fbfb3;
+}
+
+.timeline-calendar-section a:hover {
+  color: #2aa89a;
 }
 
 /* Magazine Layout */
@@ -897,6 +927,10 @@ a:hover {
     padding: 0 1rem;
     font-size: 16px;
     letter-spacing: 0.08em;
+  }
+
+  .timeline-calendar-section .calendar-subsection-title {
+    padding: 0 1rem;
   }
 
   .description-section p {
