@@ -32,8 +32,8 @@ html {
 body {
   font-family: "Josefin Sans", sans-serif;
   line-height: 1.6;
-  color: #333333;
-  background: #ffffff;
+  color: #ffffff;
+  background: #2d2d2d;
   overflow-x: hidden;
   display: flex;
   flex-direction: column;
@@ -62,7 +62,7 @@ h1 {
   margin-bottom: 2rem;
   text-align: center;
   padding: 2rem 1rem;
-  color: #000000;
+  color: #ffffff;
   letter-spacing: 0.05em;
 }
 
@@ -119,10 +119,33 @@ h1 {
   margin: 4rem 0 1rem;
   padding-left: 4cm;
   letter-spacing: 0.08em;
+  color: #ffffff;
 }
 
 .calendar-section-title-first {
   margin-top: 5.5rem;
+}
+
+.calendar-dancer-section-image {
+  width: 100%;
+  max-width: 520px;
+  height: auto;
+  display: block;
+  margin: 3rem auto 0;
+}
+
+.calendar-section-title-after-dancer-photo,
+.calendar-section-title-after-photo {
+  margin-top: 1.5rem;
+}
+
+/* Landscape banner before Past events — slightly wider than portrait dancer image */
+.calendar-past-events-image {
+  width: 100%;
+  max-width: 720px;
+  height: auto;
+  display: block;
+  margin: 3rem auto 0;
 }
 
 p {
@@ -132,7 +155,7 @@ p {
   line-height: 1.6;
   margin-left: 0;
   font-family: "Josefin Sans", sans-serif;
-  color: #333333;
+  color: #ffffff;
 }
 
 /* Footer */
@@ -174,42 +197,60 @@ a {
   font-family: "Josefin Sans", sans-serif;
 }
 
+/* Internal piece pages (NUMBER 52, DOUBLE STANDARDS) */
+a.calendar-piece-link[href$="number52.html"],
+a.calendar-piece-link[href$="double-standards.html"] {
+  color: #ffffff;
+  display: inline-block;
+  padding: 0.15em 0.35em;
+  border-radius: 2px;
+  background-color: transparent;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+a.calendar-piece-link[href$="number52.html"]:hover,
+a.calendar-piece-link[href$="double-standards.html"]:hover {
+  color: #000000;
+  background-color: #ffffff;
+  text-decoration: none;
+}
+
 /* External festival links in calendar entries */
 a.calendar-piece-link[href*="betastagefestival.ch"] {
-  color: #0056b3;
+  color: #1ea7ff;
 }
 
 a.calendar-piece-link[href*="betastagefestival.ch"]:hover {
-  color: #003f80;
+  color: #0b8fe6;
 }
 
 /* Tanzfest / Fête de la Danse link styling */
 a.calendar-piece-link[href*="dastanzfest.ch"] {
-  color: #0056b3;
+  color: #1ea7ff;
 }
 
 a.calendar-piece-link[href*="dastanzfest.ch"]:hover {
-  color: #003f80;
+  color: #0b8fe6;
 }
 
 /* Theater am Hechtplatz link styling */
 a.calendar-piece-link[href*="theaterhechtplatz.ch"] {
-  color: #0056b3;
+  color: #1ea7ff;
 }
 
 a.calendar-piece-link[href*="theaterhechtplatz.ch"]:hover {
-  color: #003f80;
+  color: #0b8fe6;
 }
 
-/* Company links */
+/* Company links (Rotes VELO, Joshua Monten) — same blue as festival links */
 a.calendar-piece-link[href*="rotesvelo.ch"],
 a.calendar-piece-link[href*="joshuamonten.com"] {
-  color: #0b3d2e;
+  color: #1ea7ff;
 }
 
 a.calendar-piece-link[href*="rotesvelo.ch"]:hover,
 a.calendar-piece-link[href*="joshuamonten.com"]:hover {
-  color: #06281f;
+  color: #0b8fe6;
 }
 
 /* BeJazz venue link styling */
