@@ -65,10 +65,11 @@ body::after {
 
 /* Main content */
 main {
-  padding: 60px 20px 20px;
+  padding: 60px 24px 4rem;
   max-width: 1400px;
   margin: 0 auto;
-  height: calc(100vh - 80px);
+  min-height: calc(100vh - 80px);
+  height: auto;
   display: flex;
   flex-direction: column;
   position: relative;
@@ -77,9 +78,7 @@ main {
   backdrop-filter: none;
   border-radius: 20px;
   border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05);
   color: #1e1e1e;
-  text-shadow: 0 1px 3px rgba(255, 255, 255, 0.7);
 }
 
 .page-title {
@@ -89,21 +88,24 @@ main {
 }
 
 .page-title h1 {
+  font-family: "League Spartan", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   font-size: 2.5rem;
   font-weight: 400;
   color: #1e1e1e;
   margin: 0;
   letter-spacing: 10px;
-  text-shadow: 0 2px 6px rgba(255, 255, 255, 0.7);
 }
 
-/* Add 3D depth to the grid */
+/* Productions: one per row on desktop, large imagery */
 .works-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(2, 1fr);
-  gap: 30px;
-  flex: 1;
+  grid-template-columns: 1fr;
+  grid-auto-rows: auto;
+  gap: 3rem;
+  flex: 0 1 auto;
+  width: 100%;
+  max-width: 1180px;
+  margin: 0 auto;
   align-items: stretch;
   perspective: 1200px;
   transform-style: preserve-3d;
@@ -140,7 +142,7 @@ main {
   background: linear-gradient(135deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.04) 100%);
   opacity: 0;
   transition: opacity 0.35s ease;
-  z-index: 4;
+  z-index: 2;
 }
 
 .work-card:hover .work-card-overlay {
@@ -149,7 +151,9 @@ main {
 
 .work-card-image {
   width: 100%;
-  height: 60%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  min-height: clamp(240px, 36vw, 560px);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -158,56 +162,83 @@ main {
   z-index: 3;
   border-radius: 0;
   overflow: hidden;
+  isolation: isolate;
 }
 
-/* Premium Text Styling */
+.work-card-image::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 78% 72% at 50% 50%, rgba(0, 0, 0, 0.52) 0%, rgba(0, 0, 0, 0.22) 52%, transparent 72%),
+    linear-gradient(to top, rgba(0, 0, 0, 0.35) 0%, transparent 42%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Title + year overlaid on photo */
 .work-card-content {
-  padding: 24px;
+  position: absolute;
+  inset: 0;
+  padding: clamp(1rem, 3vw, 2rem);
   text-align: center;
-  flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
+  gap: 0.45rem;
   background: transparent;
-  backdrop-filter: none;
   border-top: none;
-  position: relative;
   z-index: 3;
+  pointer-events: none;
+  width: 100%;
+  box-sizing: border-box;
+  /* Slightly below vertical center */
+  transform: translateY(clamp(0.75rem, 3.5vw, 2rem));
+}
+
+.work-card-content .work-card-title,
+.work-card-content .work-card-year {
+  max-width: min(36rem, 92%);
 }
 
 .work-card-title {
-  font-size: 1.1rem;
-  font-weight: 400;
-  color: #2a2a2a;
-  margin: 0 0 8px 0;
-  letter-spacing: 0.5px;
-  line-height: 1.3;
-  text-shadow: 0 1px 4px rgba(255, 255, 255, 0.8);
-  transition: color 0.3s ease-in-out, text-shadow 0.3s ease-in-out;
-}
-
-.work-card-title:hover {
-  color: #000;
-  text-shadow: 0 2px 8px rgba(255, 255, 255, 0.9);
-  transition: all 0.3s ease-in-out;
+  font-family: "League Spartan", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: clamp(1.65rem, 4.2vw, 3.1rem);
+  font-weight: 500;
+  margin: 0;
+  letter-spacing: 0.06em;
+  line-height: 1.12;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.6);
+  text-shadow: none;
+  transition: color 0.3s ease;
 }
 
 .work-card-year {
-  font-size: 0.85rem;
-  color: #2a2a2a;
+  font-family: "League Spartan", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: clamp(1.05rem, 2.4vw, 1.65rem);
   font-weight: 400;
   margin: 0;
-  letter-spacing: 0.3px;
-  text-shadow: 0 1px 4px rgba(255, 255, 255, 0.8);
+  letter-spacing: 0.12em;
+  color: rgba(255, 255, 255, 0.6);
+  text-shadow: none;
+  transition: color 0.3s ease;
+}
+
+.work-card:hover .work-card-title,
+.work-card:hover .work-card-year {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+@media (min-width: 1025px) {
+  .work-card-title {
+    font-size: clamp(2.6rem, 7vw, 5.5rem);
+  }
 }
 
 /* Responsive design */
 @media (max-width: 1200px) {
-  .works-grid {
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, 1fr);
-  }
-
   .page-title h1 {
     font-size: 2.2rem;
   }
@@ -224,11 +255,6 @@ main {
 }
 
 @media (max-width: 900px) {
-  .works-grid {
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(4, 1fr);
-  }
-
   .page-title h1 {
     font-size: 2rem;
   }
@@ -248,48 +274,15 @@ main {
   }
 }
 
-/* 중간 크기 화면 (태블릿)에서 깨지는 문제 방지 */
+/* Tablet: same single column, slightly tighter rhythm */
 @media (max-width: 1024px) and (min-width: 769px) {
   .works-grid {
-    grid-template-columns: repeat(2, 1fr); /* 2열 레이아웃으로 조정 */
-    gap: 24px;
-  }
-
-  .work-card {
-    width: 100%;
-    aspect-ratio: 16 / 9;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    border-radius: 0;
+    gap: 2.25rem;
+    max-width: 100%;
   }
 
   .work-card-image {
-    width: 100%;
-    height: auto;
-    aspect-ratio: 16 / 9;
-    object-fit: cover;
-    display: block;
-    border-radius: 0;
-  }
-
-  .work-card-content {
-    position: relative;
-    z-index: 5;
-    padding: 1rem 0 1.2rem;
-    text-align: center;
-    background: transparent;
-    border-top: none;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    visibility: visible;
-    opacity: 1;
-  }
-
-  .work-card * {
-    z-index: 5;
+    min-height: clamp(200px, 40vw, 480px);
   }
 }
 
@@ -326,6 +319,7 @@ main {
   .work-card-image {
     width: 100%;
     height: auto;
+    min-height: unset;
     aspect-ratio: 16 / 9;
     background-size: cover;
     background-position: center;
@@ -336,19 +330,19 @@ main {
   }
 
   .work-card-content {
-    padding: 1rem 0 1.2rem;
+    padding: 1rem;
     text-align: center;
-    background: transparent;
-    backdrop-filter: none;
-    border-top: none;
+    justify-content: center;
   }
 
   .work-card-title {
-    font-size: 1rem;
+    font-size: clamp(1.15rem, 5.2vw, 1.85rem);
+    letter-spacing: 0.05em;
   }
 
   .work-card-year {
-    font-size: 0.85rem;
+    font-size: clamp(0.85rem, 3.2vw, 1.1rem);
+    letter-spacing: 0.1em;
   }
 
   main {
@@ -378,19 +372,18 @@ main {
   }
 
   .work-card-content {
-    padding: 15px;
-    background: transparent;
-    border-top: none;
+    padding: 0.75rem;
+    justify-content: center;
   }
 
   .work-card-title {
-    font-size: 1rem;
-    letter-spacing: 1.5px;
+    font-size: clamp(1rem, 5.5vw, 1.5rem);
+    letter-spacing: 0.04em;
   }
 
   .work-card-year {
-    font-size: 0.85rem;
-    letter-spacing: 0.5px;
+    font-size: clamp(0.8rem, 3.5vw, 1rem);
+    letter-spacing: 0.08em;
   }
 }
 
