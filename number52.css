@@ -198,9 +198,23 @@ main {
   text-align: center;
 }
 
+.trailer-section .section-content {
+  padding-bottom: 1.25rem;
+}
+
 .video-container {
   max-width: 1000px;
   margin: 0 auto;
+}
+
+.teaser-video {
+  margin: 0 auto 3rem;
+}
+
+@media (min-width: 769px) {
+  .teaser-video {
+    max-width: 420px;
+  }
 }
 
 /* Credits Section */
