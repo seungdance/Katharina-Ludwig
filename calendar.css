@@ -183,6 +183,35 @@ a.calendar-piece-link[href*="betastagefestival.ch"]:hover {
   color: #003f80;
 }
 
+/* Tanzfest / Fête de la Danse link styling */
+a.calendar-piece-link[href*="dastanzfest.ch"] {
+  color: #0056b3;
+}
+
+a.calendar-piece-link[href*="dastanzfest.ch"]:hover {
+  color: #003f80;
+}
+
+/* Theater am Hechtplatz link styling */
+a.calendar-piece-link[href*="theaterhechtplatz.ch"] {
+  color: #0056b3;
+}
+
+a.calendar-piece-link[href*="theaterhechtplatz.ch"]:hover {
+  color: #003f80;
+}
+
+/* Company links */
+a.calendar-piece-link[href*="rotesvelo.ch"],
+a.calendar-piece-link[href*="joshuamonten.com"] {
+  color: #0b3d2e;
+}
+
+a.calendar-piece-link[href*="rotesvelo.ch"]:hover,
+a.calendar-piece-link[href*="joshuamonten.com"]:hover {
+  color: #06281f;
+}
+
 /* BeJazz venue link styling */
 a.calendar-piece-link[href*="bejazz.ch"],
 a.calendar-piece-link[href*="tojo.ch"] {
@@ -224,6 +253,10 @@ a:hover {
   .calendar-hero-title {
     font-size: 3rem;
     transform: translateX(-5%);
+  }
+
+  .calendar-section-title {
+    padding-left: 1rem;
   }
 
   p {
