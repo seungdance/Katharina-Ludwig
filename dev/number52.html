@@ -7,6 +7,87 @@
     <title>NUMBER 52 — KATHARINA LUDWIG</title>
             <link rel="stylesheet" href="common-navigation.css" />
     <link rel="stylesheet" href="number52.css" />
+    <style>
+      /* Hero slideshow (title picture) */
+      .hero-slideshow {
+        position: relative;
+        width: 100%;
+        height: 100%;
+      }
+
+      .hero-slideshow img {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        opacity: 0;
+        transition: opacity 600ms ease;
+      }
+
+      .hero-slideshow img.is-active {
+        opacity: 1;
+      }
+
+      .hero-slideshow__nav {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 12;
+        width: 2.75rem;
+        height: 2.75rem;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border: none;
+        border-radius: 999px;
+        cursor: pointer;
+        background: rgba(0, 0, 0, 0.35);
+        color: #fff;
+        font-size: 1.5rem;
+        line-height: 1;
+        padding: 0;
+        user-select: none;
+        -webkit-tap-highlight-color: transparent;
+        transition: background-color 150ms ease, transform 150ms ease, opacity 150ms ease;
+        opacity: 0.9;
+      }
+
+      .hero-slideshow__nav:hover {
+        background: rgba(0, 0, 0, 0.5);
+        opacity: 1;
+      }
+
+      .hero-slideshow__nav:active {
+        transform: translateY(-50%) scale(0.98);
+      }
+
+      .hero-slideshow__nav:focus-visible {
+        outline: 2px solid rgba(255, 255, 255, 0.9);
+        outline-offset: 3px;
+      }
+
+      .hero-slideshow__nav--prev {
+        left: 1rem;
+      }
+
+      .hero-slideshow__nav--next {
+        right: 1rem;
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .hero-slideshow img {
+          transition: none;
+        }
+      }
+
+      /* ZANT slide (mobile): keep in sync with number52.css — inline so it always wins over hero defaults */
+      @media (max-width: 768px) {
+        .hero-section .hero-slideshow .hero-slide-picture--zant img {
+          object-position: calc(60% + 9cm) 60%;
+        }
+      }
+    </style>
   </head>
   <body>
     <!-- Common Navigation Component -->
@@ -54,9 +135,37 @@
     <main class="magazine-layout">
       <!-- Hero Section -->
       <section class="hero-section">
-        <img
-          src="https://res.cloudinary.com/dxefd3n1k/image/upload/v1758702882/N52.6_Katharina_Ludwig_Nik_Spoerri_WEB_nbea8p.jpg"
-          alt="NUMBER 52 Performance" />
+        <div class="hero-slideshow" data-interval-ms="3000" aria-label="NUMBER 52 title slideshow">
+          <img
+            class="is-active hero-slide--dsc00656"
+            src="https://res.cloudinary.com/dxefd3n1k/image/upload/c_fill,ar_16:9,g_auto:faces,q_auto,f_auto/v1776112787/DSC00656_wtxygn.jpg"
+            alt="NUMBER 52 — title photo 1" />
+          <img
+            class="hero-slide--dsc00748"
+            src="https://res.cloudinary.com/dxefd3n1k/image/upload/c_fill,ar_16:9,g_auto:faces,q_auto,f_auto/v1776112787/DSC00748_u786zw.jpg"
+            alt="NUMBER 52 — title photo 2" />
+          <picture class="hero-slide-picture hero-slide-picture--zant">
+            <source
+              media="(max-width: 768px)"
+              srcset="https://res.cloudinary.com/dxefd3n1k/image/upload/c_fill,ar_16:9,g_west,q_auto,f_auto/v1758702876/KatharinaLudwig_ZANT__Fl%C3%A1via_Samper_zbxvxh.jpg" />
+            <img
+              src="https://res.cloudinary.com/dxefd3n1k/image/upload/c_fill,ar_16:9,g_auto:faces,q_auto,f_auto/v1758702876/KatharinaLudwig_ZANT__Fl%C3%A1via_Samper_zbxvxh.jpg"
+              alt="NUMBER 52 — title photo 3" />
+          </picture>
+          <img
+            src="https://res.cloudinary.com/dxefd3n1k/image/upload/c_fill,ar_16:9,g_auto:faces,q_auto,f_auto/v1776112787/DSC00647_x7ce5w.jpg"
+            alt="NUMBER 52 — title photo 4" />
+          <img
+            class="hero-slide--img6586"
+            src="https://res.cloudinary.com/dxefd3n1k/image/upload/c_fill,ar_16:9,g_auto:faces,q_auto,f_auto/v1758702876/IMG_6586N52_KatharinaLudwig_ZANT__Fl%C3%A1via_Samper_bt63ol.jpg"
+            alt="NUMBER 52 — title photo 5" />
+          <button class="hero-slideshow__nav hero-slideshow__nav--prev" type="button" aria-label="Previous photo">
+            &lt;
+          </button>
+          <button class="hero-slideshow__nav hero-slideshow__nav--next" type="button" aria-label="Next photo">
+            &gt;
+          </button>
+        </div>
         <!-- Work Information Text -->
         <div class="work-info-text">
           <div class="work-title">NUMBER 52</div>
@@ -339,6 +448,65 @@
 
     <script src="common-navigation.js"></script>
     <script>
+      function initHeroSlideshow() {
+        const prefersReducedMotion =
+          window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        const el = document.querySelector(".hero-slideshow");
+        if (!el) return;
+
+        const slides = Array.from(el.querySelectorAll("img"));
+        if (slides.length < 2) return;
+
+        const intervalMs = Number(el.getAttribute("data-interval-ms")) || 3000;
+        let idx = Math.max(
+          0,
+          slides.findIndex((s) => s.classList.contains("is-active"))
+        );
+        if (idx === -1) idx = 0;
+
+        const goTo = (nextIdx) => {
+          if (nextIdx === idx) return;
+          slides[idx].classList.remove("is-active");
+          idx = (nextIdx + slides.length) % slides.length;
+          slides[idx].classList.add("is-active");
+        };
+
+        const goNext = () => goTo(idx + 1);
+        const goPrev = () => goTo(idx - 1);
+
+        let timerId = null;
+        const startAuto = () => {
+          if (prefersReducedMotion) return;
+          if (timerId) window.clearInterval(timerId);
+          timerId = window.setInterval(goNext, intervalMs);
+        };
+
+        const restartAuto = () => {
+          if (prefersReducedMotion) return;
+          if (timerId) window.clearInterval(timerId);
+          timerId = window.setInterval(goNext, intervalMs);
+        };
+
+        const prevBtn = el.querySelector(".hero-slideshow__nav--prev");
+        const nextBtn = el.querySelector(".hero-slideshow__nav--next");
+
+        if (prevBtn) {
+          prevBtn.addEventListener("click", () => {
+            goPrev();
+            restartAuto();
+          });
+        }
+
+        if (nextBtn) {
+          nextBtn.addEventListener("click", () => {
+            goNext();
+            restartAuto();
+          });
+        }
+
+        startAuto();
+      }
+
       // Scroll to top functionality
       function scrollToTop() {
         window.scrollTo({
@@ -359,6 +527,8 @@
 
       // Hide video overlays when videos start playing
       document.addEventListener("DOMContentLoaded", function () {
+        initHeroSlideshow();
+
         const videoContainers = document.querySelectorAll(".video-container");
 
         videoContainers.forEach(function (container) {

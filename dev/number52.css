@@ -64,7 +64,20 @@ img {
   overflow: hidden;
 }
 
-.hero-section img {
+/* Hero slideshow: <picture> slide occupies the same full-bleed slot as <img> slides */
+.hero-section .hero-slideshow > .hero-slide-picture {
+  position: absolute;
+  inset: 0;
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+
+.hero-section .hero-slideshow img {
+  object-position: center;
+}
+
+.hero-section > img {
   width: 100%;
   height: auto;
   object-fit: contain;
@@ -1224,11 +1237,31 @@ body {
     position: relative;
   }
 
-  .hero-section img {
+  .hero-section .hero-slideshow img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     object-position: center;
+  }
+
+  /* DSC00748: slight horizontal pan (mobile only) */
+  .hero-section .hero-slideshow img.hero-slide--dsc00748 {
+    object-position: calc(50% - 3cm) center;
+  }
+
+  /* DSC00656: horizontal pan (mobile only) */
+  .hero-section .hero-slideshow img.hero-slide--dsc00656 {
+    object-position: calc(50% - 5cm) center;
+  }
+
+  /* ZANT hero slide (mobile): horizontal 60% + 9cm toward right; vertical 60% */
+  .hero-section .hero-slideshow .hero-slide-picture--zant img {
+    object-position: calc(60% + 9cm) 60%;
+  }
+
+  /* IMG_6586 hero slide (mobile only): nudge crop left */
+  .hero-section .hero-slideshow img.hero-slide--img6586 {
+    object-position: calc(50% - 4cm) center;
   }
 
   /* Work Info Mobile */
