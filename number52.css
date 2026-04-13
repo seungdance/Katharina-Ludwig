@@ -221,7 +221,75 @@ main {
 }
 
 .teaser-video {
+  position: relative;
   margin: 0 auto 3rem;
+}
+
+.teaser-video__aspect {
+  padding: 177.78% 0 0 0;
+  position: relative;
+}
+
+.teaser-video__aspect iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.teaser-video__mute {
+  position: absolute;
+  right: 0.75rem;
+  bottom: 3.25rem;
+  z-index: 6;
+  width: 2.75rem;
+  height: 2.75rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  transition: background-color 150ms ease, transform 150ms ease, opacity 150ms ease;
+  opacity: 0.95;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.teaser-video__mute:hover {
+  background: rgba(0, 0, 0, 0.65);
+  opacity: 1;
+}
+
+.teaser-video__mute:active {
+  transform: scale(0.98);
+}
+
+.teaser-video__mute:focus-visible {
+  outline: 2px solid rgba(255, 255, 255, 0.9);
+  outline-offset: 3px;
+}
+
+.teaser-video__mute svg {
+  width: 1.35rem;
+  height: 1.35rem;
+  display: block;
+}
+
+.teaser-video__mute .teaser-video__icon--unmuted {
+  display: none;
+}
+
+.teaser-video__mute:not(.is-muted) .teaser-video__icon--muted {
+  display: none;
+}
+
+.teaser-video__mute:not(.is-muted) .teaser-video__icon--unmuted {
+  display: block;
 }
 
 @media (min-width: 769px) {
