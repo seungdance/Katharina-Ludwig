@@ -63,7 +63,17 @@ img {
   overflow: hidden;
 }
 
-.hero-section img {
+.hero-title-image-shell {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 0;
+}
+
+.hero-section .hero-title-image-shell img {
   width: 100%;
   height: auto;
   object-fit: contain;
@@ -74,6 +84,14 @@ img {
   outline: none;
   background-color: #ffffff;
   transform: scale(1);
+}
+
+/* Desktop: crop 30% from top, 10% from bottom; full width, horizontally centered */
+@media (min-width: 769px) {
+  .hero-section .hero-title-image-shell img {
+    clip-path: inset(30% 0 10% 0);
+    transform: translateY(-3cm);
+  }
 }
 
 /* Work Information Text */
@@ -152,6 +170,7 @@ main {
 .description-section,
 .trailer-section,
 .credits-section,
+.dual-promo-photos,
 .press-award-section,
 .some-photos-section,
 .more-photos-section,
@@ -207,6 +226,25 @@ main {
   margin: 0 auto;
 }
 
+.credits-festival-photo {
+  margin: 0 auto;
+  max-width: 1400px;
+}
+
+.dual-promo-photos .credits-festival-photo {
+  max-width: none;
+}
+
+.dual-promo-photos__inner {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.dual-promo-photos .section-content.dual-promo-photos__inner {
+  padding-top: 2rem;
+}
+
 .credits-column h3 {
   font-size: 1.5rem;
   margin-bottom: 2rem;
@@ -237,6 +275,11 @@ main {
   line-height: 1.4;
 }
 
+.credit-item span.support-funded-by {
+  display: block;
+  margin-top: 0.75rem;
+}
+
 /* Photos Sections */
 .some-photos-section h2,
 .more-photos-section h2 {
@@ -254,6 +297,36 @@ main {
 
 .photos-grid.large {
   grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+}
+
+@media (min-width: 900px) {
+  .photos-grid.photos-grid--credits-trio {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+/* Desktop: festival + performance photos side by side — equal column width */
+@media (min-width: 769px) {
+  .dual-promo-photos__inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    align-items: start;
+    justify-items: center;
+  }
+
+  .dual-promo-photos .credits-festival-photo,
+  .dual-promo-photos .some-photos-section--before-vk {
+    width: 100%;
+    max-width: min(440px, 100%);
+    margin: 0;
+  }
+
+  .dual-promo-photos .some-photos-section--before-vk .photos-grid {
+    max-width: none;
+    width: 100%;
+    margin: 0;
+  }
 }
 
 .photo-item {
@@ -441,11 +514,12 @@ p {
     position: relative;
   }
 
-  .hero-section img {
+  .hero-section .hero-title-image-shell img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     object-position: center;
+    clip-path: none;
   }
 
   /* Work Info Mobile */
