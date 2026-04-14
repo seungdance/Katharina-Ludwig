@@ -211,10 +211,82 @@ main {
 /* Teaching Calendar Section */
 .teaching-calendar {
   margin: 0;
-  padding: 4rem 2rem;
+  padding: 0 0 4rem;
   background-color: #ffffff;
   width: 100vw;
   margin-left: calc(-50vw + 50%);
+}
+
+.teaching-split-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+  gap: 0;
+  margin-top: 0;
+}
+
+.teaching-split-grid .grid-item {
+  padding: 2rem;
+}
+
+.teaching-split-grid .media-block {
+  padding: 0;
+}
+
+/* Keep desktop text aligned while photos go full width */
+.teaching-split-grid .grid-item.text-block {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.teaching-split-grid .text-content h3 {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 1.8rem;
+  font-weight: 400;
+  color: #2c2c2c;
+  margin: 0 0 1.5rem;
+  letter-spacing: 0.05em;
+  text-align: left;
+}
+
+.teaching-split-grid .text-content .upcoming-dates-title {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 1.8rem;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  color: #2c2c2c;
+  margin: 2.4rem 0 1.5rem;
+  text-align: left;
+}
+
+.teaching-split-grid .text-content p {
+  font-size: 17px;
+}
+
+.teaching-split-grid .text-content a {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: inherit;
+  color: #2c2c2c;
+  text-decoration: none;
+  display: inline-block;
+  padding: 0.15rem 0.4rem;
+  border-radius: 4px;
+  transition:
+    transform 180ms ease,
+    background-color 180ms ease,
+    color 180ms ease;
+}
+
+.teaching-split-grid .text-content a:hover,
+.teaching-split-grid .text-content a:focus-visible {
+  background-color: #0b2d5b;
+  color: #ffffff;
+  transform: scale(1.06);
+  text-decoration: none;
+}
+
+.teaching-split-grid .text-content .vorbern-address {
+  font-size: 0.9em;
 }
 
 .teaching-calendar h2 {
@@ -454,6 +526,15 @@ a:hover {
     order: 3; /* Text Block 2 (Studio Experience) */
   }
 
+  /* Remove gap between Studio Experience and stacked image */
+  .content-grid .grid-item:nth-child(4) {
+    padding-bottom: 0;
+  }
+
+  .content-grid .grid-item:nth-child(3) {
+    padding-top: 0;
+  }
+
   .text-block {
     min-height: auto;
     padding: 2rem 1rem;
@@ -545,8 +626,61 @@ a:hover {
 
   /* Teaching Calendar Mobile */
   .teaching-calendar {
-    padding: 2rem 1rem;
+    padding: 2rem 0;
     max-width: 100%;
+  }
+
+  .teaching-split-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 100%;
+    overflow: visible;
+  }
+
+  /* Mobile order: text, photo, text, photo (last photo at page end) */
+  .teaching-split-grid .grid-item:nth-child(1) {
+    order: 1; /* Training text */
+  }
+
+  .teaching-split-grid .grid-item:nth-child(2) {
+    order: 2; /* Training photo */
+  }
+
+  .teaching-split-grid .grid-item:nth-child(4) {
+    order: 3; /* Regular classes text (incl. VORBERN link) */
+  }
+
+  .teaching-split-grid .grid-item:nth-child(3) {
+    order: 4; /* Last photo */
+  }
+
+  .teaching-split-grid .grid-item {
+    padding: 1.5rem;
+    min-height: 300px;
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+  }
+
+  .teaching-split-grid .media-block {
+    padding: 0;
+  }
+
+  /* Keep text readable while photos are full width */
+  .teaching-split-grid .grid-item.text-block {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  /* Full-bleed photos (fill screen width) */
+  .teaching-split-grid .grid-item.media-block {
+    padding: 0;
+    width: 100%;
+    margin: 0;
   }
 
   .teaching-calendar h2 {
@@ -557,6 +691,27 @@ a:hover {
   .teaching-calendar h3 {
     font-size: 1.2rem;
     margin: 2rem 0;
+  }
+
+  .teaching-split-grid .text-content h3 {
+    font-size: 1.5rem;
+    margin: 0 0 1.2rem;
+    text-align: center;
+  }
+
+  .teaching-split-grid .text-content .upcoming-dates-title {
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin: 2rem 0 1.2rem;
+    text-align: center;
+  }
+
+  .teaching-split-grid .text-content p {
+    font-size: 16px;
+  }
+
+  .weekday-heading h4 {
+    text-align: center;
   }
 
   .weekday-section {
