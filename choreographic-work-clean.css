@@ -146,7 +146,7 @@ main {
 }
 
 .work-card:hover .work-card-overlay {
-  opacity: 1;
+  opacity: 0;
 }
 
 .work-card-image {
@@ -166,14 +166,8 @@ main {
 }
 
 .work-card-image::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(ellipse 78% 72% at 50% 50%, rgba(0, 0, 0, 0.52) 0%, rgba(0, 0, 0, 0.22) 52%, transparent 72%),
-    linear-gradient(to top, rgba(0, 0, 0, 0.35) 0%, transparent 42%);
-  z-index: 1;
-  pointer-events: none;
+  content: none;
+  display: none;
 }
 
 /* Title + year overlaid on photo */
@@ -194,7 +188,19 @@ main {
   width: 100%;
   box-sizing: border-box;
   /* Slightly below vertical center */
-  transform: translateY(clamp(0.75rem, 3.5vw, 2rem));
+  transform: translateY(clamp(0.75rem, 3.5vw, 2rem)) scale(1);
+  transform-origin: center center;
+  opacity: 1;
+  transition:
+    transform 0.65s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .work-card:hover .work-card-content {
+    transform: translateY(clamp(0.75rem, 3.5vw, 2rem)) scale(7);
+    opacity: 0;
+  }
 }
 
 .work-card-content .work-card-title,
@@ -205,30 +211,40 @@ main {
 .work-card-title {
   font-family: "League Spartan", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   font-size: clamp(1.65rem, 4.2vw, 3.1rem);
-  font-weight: 500;
+  font-weight: 600;
   margin: 0;
   letter-spacing: 0.06em;
   line-height: 1.12;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.6);
-  text-shadow: none;
-  transition: color 0.3s ease;
+  color: #ffffff;
+  text-shadow:
+    0 1px 4px rgba(0, 0, 0, 0.45),
+    0 2px 12px rgba(0, 0, 0, 0.35);
 }
 
 .work-card-year {
   font-family: "League Spartan", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   font-size: clamp(1.05rem, 2.4vw, 1.65rem);
-  font-weight: 400;
+  font-weight: 500;
   margin: 0;
   letter-spacing: 0.12em;
-  color: rgba(255, 255, 255, 0.6);
-  text-shadow: none;
-  transition: color 0.3s ease;
+  color: #ffffff;
+  text-shadow:
+    0 1px 4px rgba(0, 0, 0, 0.45),
+    0 2px 12px rgba(0, 0, 0, 0.35);
 }
 
-.work-card:hover .work-card-title,
-.work-card:hover .work-card-year {
-  color: rgba(255, 255, 255, 0.75);
+@media (prefers-reduced-motion: reduce) {
+  .work-card-content {
+    transition: opacity 0.25s ease;
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    .work-card:hover .work-card-content {
+      transform: translateY(clamp(0.75rem, 3.5vw, 2rem)) scale(1);
+      opacity: 0;
+    }
+  }
 }
 
 @media (min-width: 1025px) {
