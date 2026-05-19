@@ -190,16 +190,12 @@ main {
   /* Slightly below vertical center */
   transform: translateY(clamp(0.75rem, 3.5vw, 2rem)) scale(1);
   transform-origin: center center;
-  opacity: 1;
-  transition:
-    transform 0.65s cubic-bezier(0.22, 1, 0.36, 1),
-    opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 0.3s ease;
 }
 
 @media (hover: hover) and (pointer: fine) {
   .work-card:hover .work-card-content {
-    transform: translateY(clamp(0.75rem, 3.5vw, 2rem)) scale(7);
-    opacity: 0;
+    transform: translateY(clamp(0.75rem, 3.5vw, 2rem)) scale(1.04);
   }
 }
 
@@ -236,20 +232,28 @@ main {
 
 @media (prefers-reduced-motion: reduce) {
   .work-card-content {
-    transition: opacity 0.25s ease;
+    transition: none;
   }
 
   @media (hover: hover) and (pointer: fine) {
     .work-card:hover .work-card-content {
       transform: translateY(clamp(0.75rem, 3.5vw, 2rem)) scale(1);
-      opacity: 0;
     }
   }
 }
 
 @media (min-width: 1025px) {
+  .works-grid {
+    max-width: 900px;
+    gap: 2.5rem;
+  }
+
+  .work-card-image {
+    min-height: clamp(260px, 24vw, 420px);
+  }
+
   .work-card-title {
-    font-size: clamp(2.6rem, 7vw, 5.5rem);
+    font-size: clamp(2.2rem, 4.5vw, 4rem);
   }
 }
 
