@@ -4,7 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TEACHING — KATHARINA LUDWIG</title>
-                <link rel="stylesheet" href="common-navigation.css" />
+    <link rel="stylesheet" href="common-navigation.css" />
+    <link rel="stylesheet" href="hero-title-scroll.css" />
     <link rel="stylesheet" href="teaching.css" />
   </head>
   <body>
@@ -61,8 +62,14 @@
         <div class="hero-section">
           <img
             src="../assets/For the beginning of the page_Katharina Ludwig ©Gwendoline Böttger.jpeg"
-            alt="Katharina Ludwig teaching dance" />
-          <h1>TEACHING</h1>
+            alt="Katharina Ludwig teaching dance"
+            class="teaching-hero-image"
+          />
+        </div>
+
+        <div class="page-title-landing teaching-title-landing">
+          <div class="page-title-placeholder teaching-title-placeholder" aria-hidden="true"></div>
+          <h1 class="page-hero-title teaching-hero-title is-fixed is-on-hero" id="teachingPageTitle">TEACHING</h1>
         </div>
 
         <!-- Main Content Grid: Text(1fr) + Video(1fr) + Image(1fr) + Text(1fr) -->
@@ -223,5 +230,7 @@
     </main>
 
     <script src="common-navigation.js"></script>
+    <script src="hero-title-scroll.js"></script>
+    <script src="teaching.js"></script>
   </body>
 </html>

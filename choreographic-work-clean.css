@@ -1,4 +1,6 @@
 /* Choreographic Work Page Styles */
+@import url("fonts.css");
+
 html,
 body {
   overflow-x: hidden;
@@ -65,7 +67,7 @@ body::after {
 
 /* Main content */
 main {
-  padding: 60px 24px 4rem;
+  padding: 0 24px 4rem;
   max-width: 1400px;
   margin: 0 auto;
   min-height: calc(100vh - 80px);
@@ -81,19 +83,49 @@ main {
   color: #1e1e1e;
 }
 
-.page-title {
-  text-align: center;
-  margin-bottom: 30px;
+.choreographic-work-hero {
+  position: relative;
+  width: 100vw;
+  max-width: 100vw;
+  height: 100vh;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  margin-bottom: 0;
+  overflow: hidden;
   flex-shrink: 0;
 }
 
-.page-title h1 {
-  font-family: "League Spartan", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  font-size: 2.5rem;
-  font-weight: 400;
+.choreographic-work-hero-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center bottom;
+  display: block;
+}
+
+.choreographic-work-title-landing {
+  width: 100vw;
+  max-width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+}
+
+.choreographic-work-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.1em;
+  font-size: clamp(2.5rem, 7vw, 5.5rem);
+}
+
+.choreographic-work-title.is-landed {
   color: #1e1e1e;
-  margin: 0;
-  letter-spacing: 10px;
+}
+
+.choreographic-work-title-line {
+  display: block;
 }
 
 /* Productions: one per row on desktop, large imagery */
@@ -119,17 +151,11 @@ main {
   border-radius: 0;
   overflow: hidden;
   box-shadow: none;
-  transition: transform 0.35s ease, opacity 0.35s ease;
   cursor: pointer;
   position: relative;
   display: flex;
   flex-direction: column;
   transform-style: preserve-3d;
-}
-
-.work-card:hover {
-  transform: translateY(-4px) scale(1.01);
-  box-shadow: none;
 }
 
 /* Subtle Metallic Overlay */
@@ -166,8 +192,24 @@ main {
 }
 
 .work-card-image::before {
-  content: none;
-  display: none;
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: inherit;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transform: scale(1);
+  transform-origin: center center;
+  transition: transform 0.75s cubic-bezier(0.22, 1, 0.36, 1);
+  z-index: 0;
+  pointer-events: none;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .work-card:hover .work-card-image::before {
+    transform: scale(1.06);
+  }
 }
 
 /* Title + year overlaid on photo */
@@ -188,15 +230,7 @@ main {
   width: 100%;
   box-sizing: border-box;
   /* Slightly below vertical center */
-  transform: translateY(clamp(0.75rem, 3.5vw, 2rem)) scale(1);
-  transform-origin: center center;
-  transition: transform 0.3s ease;
-}
-
-@media (hover: hover) and (pointer: fine) {
-  .work-card:hover .work-card-content {
-    transform: translateY(clamp(0.75rem, 3.5vw, 2rem)) scale(1.04);
-  }
+  transform: translateY(clamp(0.75rem, 3.5vw, 2rem));
 }
 
 .work-card-content .work-card-title,
@@ -231,13 +265,13 @@ main {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .work-card-content {
+  .work-card-image::before {
     transition: none;
   }
 
   @media (hover: hover) and (pointer: fine) {
-    .work-card:hover .work-card-content {
-      transform: translateY(clamp(0.75rem, 3.5vw, 2rem)) scale(1);
+    .work-card:hover .work-card-image::before {
+      transform: scale(1);
     }
   }
 }
@@ -259,10 +293,6 @@ main {
 
 /* Responsive design */
 @media (max-width: 1200px) {
-  .page-title h1 {
-    font-size: 2.2rem;
-  }
-
   /* Adjust geometric background for smaller screens */
   body::before {
     background-size: 200px 200px, 180px 180px, 250px 250px, 200px 200px, 300px 300px, 250px 250px;
@@ -275,12 +305,8 @@ main {
 }
 
 @media (max-width: 900px) {
-  .page-title h1 {
-    font-size: 2rem;
-  }
-
   main {
-    padding: 50px 15px 15px;
+    padding: 0 15px 15px;
   }
 
   /* Further reduce geometric background complexity for tablets */
@@ -307,9 +333,13 @@ main {
 }
 
 @media (max-width: 768px) {
-  .page-title h1 {
-    font-size: 1.8rem;
-    letter-spacing: 1.5px;
+  .choreographic-work-hero {
+    height: 50vh;
+    min-height: 50vh;
+  }
+
+  .choreographic-work-hero-image {
+    object-position: center bottom;
   }
 
   .works-grid {
@@ -366,7 +396,7 @@ main {
   }
 
   main {
-    padding: 40px 16px 16px;
+    padding: 0 16px 16px;
     padding-bottom: 80px; /* 마지막 카드와 화면 하단 사이에 여백 추가 */
   }
 
@@ -386,11 +416,6 @@ main {
 }
 
 @media (max-width: 480px) {
-  .page-title h1 {
-    font-size: 1.5rem;
-    letter-spacing: 1.5px;
-  }
-
   .work-card-content {
     padding: 0.75rem;
     justify-content: center;

@@ -1,0 +1,62 @@
+/* Shared scroll-pinned page title (hero → headline) */
+.page-title-landing {
+  position: relative;
+  text-align: center;
+  padding: 12vh 2rem 0;
+  margin-bottom: 4rem;
+  box-sizing: border-box;
+}
+
+.page-title-placeholder {
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.page-hero-title {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 400;
+  line-height: 1.05;
+  letter-spacing: 0.05em;
+  will-change: top, color;
+}
+
+.page-hero-title.is-fixed {
+  position: fixed;
+  left: 50%;
+  z-index: 100;
+  width: max-content;
+  max-width: calc(100vw - 4rem);
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+.page-hero-title.is-landed {
+  position: relative;
+  left: auto;
+  top: auto;
+  transform: none;
+}
+
+.page-hero-title.is-on-hero {
+  color: #ffffff;
+}
+
+@media (max-width: 768px) {
+  .page-title-landing {
+    padding: 8vh 1rem 0;
+    margin-bottom: 3rem;
+  }
+
+  .page-hero-title.is-fixed {
+    max-width: calc(100vw - 2rem);
+  }
+}
+
+@media (max-width: 480px) {
+  .page-title-landing {
+    margin-bottom: 2.5rem;
+  }
+}

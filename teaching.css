@@ -62,41 +62,40 @@ main {
   overflow: hidden;
 }
 
-.hero-section img {
+.hero-section img,
+.teaching-hero-image {
+  position: absolute;
+  inset: 0;
   width: 100%;
-  height: auto;
-  object-fit: contain;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
   display: block;
   margin: 0;
   padding: 0;
   border: none;
   outline: none;
   background-color: #ffffff;
-  transform: scale(1);
 }
 
-.hero-section h1 {
-  position: absolute;
-  top: 25%;
-  left: 25%;
-  transform: translate(-50%, -50%);
-  color: white;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-  font-size: 3rem;
-  font-weight: 300;
-  margin: 0;
-  padding: 0;
-  text-align: center;
-  z-index: 10;
-  font-family: "Josefin Sans", sans-serif;
-  opacity: 1;
+.teaching-title-landing {
+  grid-column: 1 / -1;
+  grid-row: 2;
+}
+
+.teaching-hero-title {
+  font-size: clamp(2.5rem, 7vw, 5.5rem);
+}
+
+.teaching-hero-title.is-landed {
+  color: #000000;
 }
 
 /* Main Grid Container */
 .main-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: auto 1fr 1fr;
+  grid-template-rows: auto auto 1fr 1fr;
   background-color: #ffffff;
   margin: 0;
   padding: 0;
@@ -106,7 +105,7 @@ main {
 /* Content Grid Layout */
 .content-grid {
   grid-column: 1 / -1;
-  grid-row: 2 / -1;
+  grid-row: 3 / -1;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
@@ -453,7 +452,7 @@ a:hover {
   /* Main Grid Mobile */
   .main-grid {
     grid-template-columns: 1fr;
-    grid-template-rows: auto auto;
+    grid-template-rows: auto auto auto;
     width: 100%;
     max-width: 100%;
     overflow: hidden;
@@ -472,7 +471,8 @@ a:hover {
     padding: 0;
   }
 
-  .hero-section img {
+  .hero-section img,
+  .teaching-hero-image {
     position: absolute;
     top: 0;
     left: 0;
@@ -487,10 +487,15 @@ a:hover {
     padding: 0;
   }
 
+  .teaching-title-landing {
+    grid-column: 1;
+    grid-row: 2;
+  }
+
   /* Content Grid Mobile */
   .content-grid {
     grid-column: 1;
-    grid-row: 2;
+    grid-row: 3;
     grid-template-columns: 1fr;
     min-height: auto;
     display: flex;
@@ -613,13 +618,6 @@ a:hover {
   .text-content p {
     text-align: center;
     font-size: 15px;
-  }
-
-  /* Hero Section Mobile */
-  .hero-section h1 {
-    font-size: 1.5rem;
-    top: 15%;
-    left: 25%;
   }
 
   /* Navigation Mobile */

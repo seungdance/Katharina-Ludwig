@@ -11,6 +11,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="common-navigation.css" />
+    <link rel="stylesheet" href="hero-title-scroll.css" />
     <link rel="stylesheet" href="choreographic-work-clean.css" />
   </head>
   <body>
@@ -60,8 +61,20 @@
     </nav>
 
     <main>
-      <div class="page-title">
-        <h1>CHOREOGRAPHIC WORK</h1>
+      <section class="choreographic-work-hero">
+        <img
+          src="https://res.cloudinary.com/dxefd3n1k/image/upload/v1779215640/Katharina_Ludwig_Gwendoline_Bo%CC%88ttger_clnn9v.jpg"
+          alt="Katharina Ludwig — choreographic work"
+          class="choreographic-work-hero-image"
+        />
+      </section>
+
+      <div class="page-title-landing choreographic-work-title-landing">
+        <div class="page-title-placeholder choreographic-work-title-placeholder" aria-hidden="true"></div>
+        <h1 class="page-hero-title choreographic-work-title is-fixed is-on-hero" id="choreographicWorkTitle">
+          <span class="choreographic-work-title-line">CHOREOGRAPHIC</span>
+          <span class="choreographic-work-title-line">WORK</span>
+        </h1>
       </div>
 
       <div class="works-grid">
@@ -170,5 +183,7 @@
     </main>
 
     <script src="common-navigation.js"></script>
+    <script src="hero-title-scroll.js"></script>
+    <script src="choreographic-work.js"></script>
   </body>
 </html>

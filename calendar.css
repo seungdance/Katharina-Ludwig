@@ -69,35 +69,26 @@ h1 {
 .calendar-hero {
   position: relative;
   width: 100%;
+  height: 100vh;
   overflow: hidden;
 }
 
 .calendar-hero-image {
+  position: absolute;
+  inset: 0;
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: cover;
+  object-position: center bottom;
   display: block;
 }
 
-.calendar-hero-title-wrapper {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0 2rem;
+.calendar-hero-title {
+  font-size: clamp(2.5rem, 7vw, 5.5rem);
 }
 
-.calendar-hero-title {
-  margin: 0;
-  padding: 0;
+.calendar-hero-title.is-landed {
   color: #ffffff;
-  text-align: center;
-  font-family: "Josefin Sans", sans-serif;
-  font-size: 4rem;
-  font-weight: 400;
-  letter-spacing: 0.05em;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
-  transform: translateX(-8%);
 }
 
 .calendar-subtitle {
@@ -287,13 +278,9 @@ a:hover {
     padding: 1.5rem 1rem;
   }
 
-  .calendar-hero-title-wrapper {
-    padding: 0 1rem;
-  }
-
-  .calendar-hero-title {
-    font-size: 3rem;
-    transform: translateX(-5%);
+  .calendar-hero {
+    height: 50vh;
+    min-height: 50vh;
   }
 
   .calendar-section-title {

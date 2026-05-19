@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CALENDAR — KATHARINA LUDWIG</title>
     <link rel="stylesheet" href="common-navigation.css" />
+    <link rel="stylesheet" href="hero-title-scroll.css" />
     <link rel="stylesheet" href="calendar.css" />
   </head>
   <body>
@@ -61,10 +62,12 @@
           alt="Performance image for NUMBER 52 by Katharina Ludwig"
           class="calendar-hero-image"
         />
-        <div class="calendar-hero-title-wrapper">
-          <h1 class="calendar-hero-title">CALENDAR</h1>
-        </div>
       </section>
+
+      <div class="page-title-landing calendar-title-landing">
+        <div class="page-title-placeholder calendar-title-placeholder" aria-hidden="true"></div>
+        <h1 class="page-hero-title calendar-hero-title is-fixed is-on-hero" id="calendarPageTitle">CALENDAR</h1>
+      </div>
 
       <section>
         <h2 class="calendar-section-title calendar-section-title-first">OWN WORK</h2>
@@ -148,5 +151,7 @@
       </section>
     </main>
     <script src="common-navigation.js"></script>
+    <script src="hero-title-scroll.js"></script>
+    <script src="calendar.js"></script>
   </body>
 </html>
