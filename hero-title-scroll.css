@@ -34,9 +34,10 @@
 }
 
 .page-hero-title.is-landed {
-  position: relative;
+  position: sticky;
+  top: 1.5rem;
   left: auto;
-  top: auto;
+  z-index: 100;
   transform: none;
 }
 

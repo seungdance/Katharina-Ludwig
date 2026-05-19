@@ -32,8 +32,8 @@ html {
 body {
   font-family: "Josefin Sans", sans-serif;
   line-height: 1.6;
-  color: #ffffff;
-  background: #2d2d2d;
+  color: #000000;
+  background: #ffffff;
   overflow-x: hidden;
   display: flex;
   flex-direction: column;
@@ -62,7 +62,7 @@ h1 {
   margin-bottom: 2rem;
   text-align: center;
   padding: 2rem 1rem;
-  color: #ffffff;
+  color: #000000;
   letter-spacing: 0.05em;
 }
 
@@ -88,7 +88,11 @@ h1 {
 }
 
 .calendar-hero-title.is-landed {
-  color: #ffffff;
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  top: auto;
+  color: #000000;
 }
 
 .calendar-subtitle {
@@ -110,33 +114,80 @@ h1 {
   margin: 4rem 0 1rem;
   padding-left: 4cm;
   letter-spacing: 0.08em;
-  color: #ffffff;
+  color: #000000;
 }
 
 .calendar-section-title-first {
   margin-top: 5.5rem;
 }
 
-.calendar-dancer-section-image {
-  width: 100%;
-  max-width: 520px;
-  height: auto;
-  display: block;
-  margin: 3rem auto 0;
+.calendar-events-wrap {
+  margin-left: 4cm;
+  margin-right: 2rem;
+  width: fit-content;
+  max-width: calc(100% - 4cm - 2rem);
+  box-sizing: border-box;
 }
 
-.calendar-section-title-after-dancer-photo,
-.calendar-section-title-after-photo {
-  margin-top: 1.5rem;
+.calendar-events-wrap .calendar-events-column {
+  margin-left: 0;
+  margin-right: 0;
+  width: 100%;
+  max-width: none;
 }
 
-/* Landscape banner before Past events — slightly wider than portrait dancer image */
-.calendar-past-events-image {
+.calendar-events-column--past {
+  margin-top: 7rem;
+}
+
+.calendar-events-column > p {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.calendar-events-column > p:not(.calendar-section-subtitle) + p:not(.calendar-section-subtitle) {
+  border-top: 1px solid #002d6b;
+  padding-top: 1.25rem;
+}
+
+.calendar-own-work-header {
   width: 100%;
-  max-width: 720px;
-  height: auto;
-  display: block;
-  margin: 3rem auto 0;
+  margin: 0;
+  padding: 0;
+}
+
+.calendar-section-title-own-work {
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  margin: 0 0 1rem;
+  padding: 0 0 0.65rem;
+  padding-left: 0;
+  border-bottom: 6px solid #002d6b;
+}
+
+.calendar-section-subtitle {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #000000;
+  width: 100%;
+  padding: 0 0 0.65rem;
+  margin: 0 0 2.5rem;
+  border-bottom: 2px solid #002d6b;
+}
+
+.calendar-section-subtitle-past {
+  margin-top: 0;
+}
+
+.calendar-events-column--dancer {
+  margin-top: 7rem;
+}
+
+.calendar-events-column--dancer .calendar-section-title {
+  margin-top: 0;
+  padding-left: 0;
 }
 
 p {
@@ -146,7 +197,7 @@ p {
   line-height: 1.6;
   margin-left: 0;
   font-family: "Josefin Sans", sans-serif;
-  color: #ffffff;
+  color: #000000;
 }
 
 /* Footer */
@@ -191,7 +242,7 @@ a {
 /* Internal piece pages (NUMBER 52, DOUBLE STANDARDS) */
 a.calendar-piece-link[href$="number52.html"],
 a.calendar-piece-link[href$="double-standards.html"] {
-  color: #ffffff;
+  color: #000000;
   display: inline-block;
   padding: 0.15em 0.35em;
   border-radius: 2px;
@@ -201,58 +252,49 @@ a.calendar-piece-link[href$="double-standards.html"] {
 
 a.calendar-piece-link[href$="number52.html"]:hover,
 a.calendar-piece-link[href$="double-standards.html"]:hover {
-  color: #000000;
-  background-color: #ffffff;
+  color: #ffffff;
+  background-color: #000000;
   text-decoration: none;
 }
 
-/* External festival links in calendar entries */
-a.calendar-piece-link[href*="betastagefestival.ch"] {
-  color: #1ea7ff;
-}
-
-a.calendar-piece-link[href*="betastagefestival.ch"]:hover {
-  color: #0b8fe6;
-}
-
-/* Tanzfest / Fête de la Danse link styling */
-a.calendar-piece-link[href*="dastanzfest.ch"] {
-  color: #1ea7ff;
-}
-
-a.calendar-piece-link[href*="dastanzfest.ch"]:hover {
-  color: #0b8fe6;
-}
-
-/* Theater am Hechtplatz link styling */
-a.calendar-piece-link[href*="theaterhechtplatz.ch"] {
-  color: #1ea7ff;
-}
-
-a.calendar-piece-link[href*="theaterhechtplatz.ch"]:hover {
-  color: #0b8fe6;
-}
-
-/* Company links (Rotes VELO, Joshua Monten) — same blue as festival links */
+/* External links in calendar entries — black text, navy highlight on hover */
+a.calendar-piece-link[href*="betastagefestival.ch"],
+a.calendar-piece-link[href*="dastanzfest.ch"],
+a.calendar-piece-link[href*="theaterhechtplatz.ch"],
 a.calendar-piece-link[href*="rotesvelo.ch"],
-a.calendar-piece-link[href*="joshuamonten.com"] {
-  color: #1ea7ff;
-}
-
-a.calendar-piece-link[href*="rotesvelo.ch"]:hover,
-a.calendar-piece-link[href*="joshuamonten.com"]:hover {
-  color: #0b8fe6;
-}
-
-/* BeJazz venue link styling */
+a.calendar-piece-link[href*="joshuamonten.com"],
+a.calendar-piece-link[href*="dansometre.ch"],
+a.calendar-piece-link[href*="thik.ch"],
+a.calendar-piece-link[href*="ewerk-freiburg"],
+a.calendar-piece-link[href*="brueckerei.com"],
+a.calendar-piece-link[href*="tanzhausbern.ch"],
+a.calendar-piece-link[href*="qah.koeln"],
 a.calendar-piece-link[href*="bejazz.ch"],
 a.calendar-piece-link[href*="tojo.ch"] {
-  color: #d63384;
+  color: #000000;
+  display: inline-block;
+  padding: 0.15em 0.35em;
+  border-radius: 2px;
+  background-color: transparent;
+  transition: background-color 0.15s ease, color 0.15s ease;
 }
 
+a.calendar-piece-link[href*="betastagefestival.ch"]:hover,
+a.calendar-piece-link[href*="dastanzfest.ch"]:hover,
+a.calendar-piece-link[href*="theaterhechtplatz.ch"]:hover,
+a.calendar-piece-link[href*="rotesvelo.ch"]:hover,
+a.calendar-piece-link[href*="joshuamonten.com"]:hover,
+a.calendar-piece-link[href*="dansometre.ch"]:hover,
+a.calendar-piece-link[href*="thik.ch"]:hover,
+a.calendar-piece-link[href*="ewerk-freiburg"]:hover,
+a.calendar-piece-link[href*="brueckerei.com"]:hover,
+a.calendar-piece-link[href*="tanzhausbern.ch"]:hover,
+a.calendar-piece-link[href*="qah.koeln"]:hover,
 a.calendar-piece-link[href*="bejazz.ch"]:hover,
 a.calendar-piece-link[href*="tojo.ch"]:hover {
-  color: #a61e63;
+  color: #ffffff;
+  background-color: #001a4d;
+  text-decoration: none;
 }
 
 /* Eventfrog ticket emoji link - no underline */
@@ -285,6 +327,12 @@ a:hover {
 
   .calendar-section-title {
     padding-left: 1rem;
+  }
+
+  .calendar-events-wrap {
+    margin-left: 1rem;
+    margin-right: 1rem;
+    max-width: calc(100% - 2rem);
   }
 
   p {
