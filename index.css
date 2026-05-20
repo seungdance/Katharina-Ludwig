@@ -350,6 +350,36 @@ a:hover {
   }
 }
 
+/* News section */
+.news-section {
+  background-color: #ffffff;
+  width: 100%;
+}
+
+.news-section__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.news-section__title {
+  font-family: "League Spartan", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #000000;
+  margin: 0;
+  line-height: 1.1;
+}
+
+@media (max-width: 768px) {
+  .news-section__inner {
+    padding: 3rem 1.5rem;
+  }
+}
+
 /* Prevent horizontal scrolling globally */
 html,
 body {

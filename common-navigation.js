@@ -1,4 +1,6 @@
 // Common Navigation JavaScript
+let navScrollPosition = 0;
+
 function setNavOpen(isOpen) {
   const navMenu = document.getElementById("navMenu");
   const navIcon = document.querySelector(".nav-icon");
@@ -11,6 +13,19 @@ function setNavOpen(isOpen) {
     navIcon.classList.toggle("active", isOpen);
     navIcon.setAttribute("aria-expanded", isOpen ? "true" : "false");
     navIcon.setAttribute("aria-label", isOpen ? "Close menu" : "Open menu");
+  }
+
+  if (isOpen) {
+    navScrollPosition = window.scrollY;
+    document.body.classList.add("nav-open");
+    document.body.style.top = "-" + navScrollPosition + "px";
+    return;
+  }
+
+  if (document.body.classList.contains("nav-open")) {
+    document.body.classList.remove("nav-open");
+    document.body.style.top = "";
+    window.scrollTo(0, navScrollPosition);
   }
 }
 
