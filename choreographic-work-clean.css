@@ -105,27 +105,54 @@ main {
   display: block;
 }
 
-.choreographic-work-title-landing {
-  width: 100vw;
-  max-width: 100vw;
-  margin-left: calc(50% - 50vw);
-  margin-right: calc(50% - 50vw);
-}
-
-.choreographic-work-title {
+.choreographic-work-hero .hero-scroll-down {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 11;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  gap: 0.1em;
-  font-size: clamp(2.5rem, 7vw, 5.5rem);
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  padding: 0;
+  background: transparent;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  pointer-events: auto;
+  opacity: 0.9;
+  transition: opacity 0.2s ease;
 }
 
-.choreographic-work-title.is-landed {
-  color: #1e1e1e;
+.choreographic-work-hero .hero-scroll-down:hover {
+  opacity: 1;
 }
 
-.choreographic-work-title-line {
+.choreographic-work-hero .hero-scroll-down:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 4px;
+}
+
+.choreographic-work-hero .hero-scroll-down svg {
   display: block;
+  animation: scroll-arrow-bounce 2s ease-in-out infinite;
+}
+
+@keyframes scroll-arrow-bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(10px);
+  }
+}
+
+#choreographic-work-content {
+  padding-top: 3rem;
 }
 
 /* Productions: one per row on desktop, large imagery */
@@ -334,8 +361,16 @@ main {
 
 @media (max-width: 768px) {
   .choreographic-work-hero {
-    height: 50vh;
-    min-height: 50vh;
+    height: 100vh;
+    min-height: 100vh;
+  }
+
+  .choreographic-work-hero .hero-scroll-down {
+    bottom: 1.5rem;
+  }
+
+  #choreographic-work-content {
+    padding-top: 2rem;
   }
 
   .choreographic-work-hero-image {
@@ -416,6 +451,15 @@ main {
 }
 
 @media (max-width: 480px) {
+  .choreographic-work-hero .hero-scroll-down {
+    bottom: 1.25rem;
+  }
+
+  .choreographic-work-hero .hero-scroll-down svg {
+    width: 28px;
+    height: 28px;
+  }
+
   .work-card-content {
     padding: 0.75rem;
     justify-content: center;

@@ -74,6 +74,52 @@ main {
   object-position: center;
 }
 
+.about-video-hero .hero-scroll-down {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 11;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  padding: 0;
+  background: transparent;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  pointer-events: auto;
+  opacity: 0.9;
+  transition: opacity 0.2s ease;
+}
+
+.about-video-hero .hero-scroll-down:hover {
+  opacity: 1;
+}
+
+.about-video-hero .hero-scroll-down:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 4px;
+}
+
+.about-video-hero .hero-scroll-down svg {
+  display: block;
+  animation: scroll-arrow-bounce 2s ease-in-out infinite;
+}
+
+@keyframes scroll-arrow-bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(10px);
+  }
+}
+
 .about-content {
   background-color: #fff;
   padding: 4rem 0;
@@ -94,12 +140,14 @@ main {
   margin-bottom: 3rem;
   letter-spacing: 0.05em;
   text-align: center;
+  text-transform: uppercase;
 }
 
 .hero-subtitle {
   font-family: "Josefin Sans", sans-serif;
   font-size: 1.2rem;
   color: #2c2c2c;
+  margin-top: 0;
   margin-bottom: 0.5rem;
   font-style: normal;
   font-weight: 700;
@@ -175,6 +223,10 @@ a:hover {
     height: 100vh;
   }
 
+  .about-video-hero .hero-scroll-down {
+    bottom: 1.5rem;
+  }
+
   .about-video-hero .video-container img {
     position: absolute;
     inset: 0;
@@ -201,6 +253,10 @@ a:hover {
 
   .about-video-hero .video-container img {
     pointer-events: none;
+  }
+
+  .about-video-hero .hero-scroll-down {
+    pointer-events: auto;
   }
 
   .about-content {
@@ -274,6 +330,16 @@ a:hover {
 
   .about-video-hero .video-container img {
     pointer-events: none;
+  }
+
+  .about-video-hero .hero-scroll-down {
+    bottom: 1.25rem;
+    pointer-events: auto;
+  }
+
+  .about-video-hero .hero-scroll-down svg {
+    width: 28px;
+    height: 28px;
   }
 }
 

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TEACHING — KATHARINA LUDWIG</title>
     <link rel="stylesheet" href="common-navigation.css" />
-    <link rel="stylesheet" href="hero-title-scroll.css" />
+    <link rel="stylesheet" href="page-hero-title.css" />
     <link rel="stylesheet" href="teaching.css" />
   </head>
   <body>
@@ -53,21 +53,22 @@
       <!-- Main Grid Container: Hero + Content Grid -->
       <section class="main-grid">
         <!-- Hero Section -->
-        <div class="hero-section">
+        <div class="hero-section" data-nav-theme="dark" data-scroll-to="teaching-content">
           <img
             src="../assets/For the beginning of the page_Katharina Ludwig ©Gwendoline Böttger.jpeg"
             alt="Katharina Ludwig teaching dance"
             class="teaching-hero-image"
           />
-        </div>
-
-        <div class="page-title-landing teaching-title-landing">
-          <div class="page-title-placeholder teaching-title-placeholder" aria-hidden="true"></div>
-          <h1 class="page-hero-title teaching-hero-title is-fixed is-on-hero" id="teachingPageTitle">TEACHING</h1>
+          <h1 class="hero-page-title">TEACHING</h1>
+          <button type="button" class="hero-scroll-down" aria-label="Scroll to teaching content">
+            <svg viewBox="0 0 24 24" width="32" height="32" aria-hidden="true">
+              <path d="M12 16l-6-6h12l-6 6z" fill="currentColor" />
+            </svg>
+          </button>
         </div>
 
         <!-- Main Content Grid: Text(1fr) + Video(1fr) + Image(1fr) + Text(1fr) -->
-        <div class="content-grid">
+        <div class="content-grid" id="teaching-content">
           <!-- Text Block (1fr) -->
           <div class="grid-item text-block">
             <div class="text-content">
@@ -224,7 +225,6 @@
     </main>
 
     <script src="common-navigation.js"></script>
-    <script src="hero-title-scroll.js"></script>
-    <script src="teaching.js"></script>
+    <script src="hero-scroll-to-content.js"></script>
   </body>
 </html>

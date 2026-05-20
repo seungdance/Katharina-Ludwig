@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CHOREOGRAPHIC WORK — KATHARINA LUDWIG</title>
     <link rel="stylesheet" href="common-navigation.css" />
-    <link rel="stylesheet" href="hero-title-scroll.css" />
+    <link rel="stylesheet" href="page-hero-title.css" />
     <link rel="stylesheet" href="choreographic-work-clean.css" />
   </head>
   <body>
@@ -49,23 +49,28 @@
     </nav>
 
     <main>
-      <section class="choreographic-work-hero">
+      <section class="choreographic-work-hero" data-nav-theme="dark" data-scroll-to="choreographic-work-content">
         <img
           src="https://res.cloudinary.com/dxefd3n1k/image/upload/v1779215640/Katharina_Ludwig_Gwendoline_Bo%CC%88ttger_clnn9v.jpg"
           alt="Katharina Ludwig — choreographic work"
           class="choreographic-work-hero-image"
         />
+        <h1 class="hero-page-title hero-page-title--stacked">
+          <span class="hero-page-title__line hero-page-title__line--full">CHOREOGRAPHIC</span>
+          <span class="hero-page-title__split-mobile">
+            <span class="hero-page-title__line">CHOREO-</span>
+            <span class="hero-page-title__line">GRAPHIC</span>
+          </span>
+          <span class="hero-page-title__line">WORK</span>
+        </h1>
+        <button type="button" class="hero-scroll-down" aria-label="Scroll to choreographic work content">
+          <svg viewBox="0 0 24 24" width="32" height="32" aria-hidden="true">
+            <path d="M12 16l-6-6h12l-6 6z" fill="currentColor" />
+          </svg>
+        </button>
       </section>
 
-      <div class="page-title-landing choreographic-work-title-landing">
-        <div class="page-title-placeholder choreographic-work-title-placeholder" aria-hidden="true"></div>
-        <h1 class="page-hero-title choreographic-work-title is-fixed is-on-hero" id="choreographicWorkTitle">
-          <span class="choreographic-work-title-line">CHOREOGRAPHIC</span>
-          <span class="choreographic-work-title-line">WORK</span>
-        </h1>
-      </div>
-
-      <div class="works-grid">
+      <div class="works-grid" id="choreographic-work-content">
         <!-- Work 1 -->
         <div class="work-card work-card--number52" onclick="navigateToDetail('number52.html')">
           <div
@@ -171,7 +176,6 @@
     </main>
 
     <script src="common-navigation.js"></script>
-    <script src="hero-title-scroll.js"></script>
-    <script src="choreographic-work.js"></script>
+    <script src="hero-scroll-to-content.js"></script>
   </body>
 </html>
