@@ -8,13 +8,15 @@
   top: 24px;
   right: 24px;
   z-index: 1000;
-  color: #333 !important;
+  color: #333;
   background: none !important;
   background-color: transparent !important;
   border-radius: 0;
   box-shadow: none;
   backdrop-filter: none;
-  transition: all 0.3s ease;
+  transition:
+    color 0.4s ease,
+    transform 0.3s ease;
   cursor: pointer;
   display: inline-flex;
   align-items: center;
@@ -25,115 +27,50 @@
   padding: 14px;
 }
 
+.nav-icon--on-dark {
+  color: #fff !important;
+}
+
+.nav-icon--on-light {
+  color: #333 !important;
+}
+
 .nav-icon:hover {
   background-color: transparent !important;
   transform: scale(1.05);
   box-shadow: none;
 }
 
-/* Dot Grid Menu Icon */
+/* Hamburger menu — three horizontal stripes, rotate to vertical when open */
 .menu-icon {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(3, 1fr);
-  gap: 2px;
-  width: 16px;
-  height: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  width: 28px;
+  transform: rotate(0deg);
+  transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform;
 }
 
-.dot {
-  width: 3px;
-  height: 3px;
-  background-color: #333;
-  border-radius: 50%;
-  transition: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
-  opacity: 0.7;
+.menu-stripe {
+  display: block;
+  width: 28px;
+  height: 2px;
+  background-color: currentColor;
+  border-radius: 1px;
 }
 
-/* Hover animation - dots spread out */
-.nav-icon:hover .dot:nth-child(1) {
-  transform: translate(-2px, -2px);
-  opacity: 1;
+.nav-icon.active .menu-icon {
+  transform: rotate(90deg);
 }
 
-.nav-icon:hover .dot:nth-child(2) {
-  transform: translateY(-2px);
-  opacity: 1;
-}
-
-.nav-icon:hover .dot:nth-child(3) {
-  transform: translate(2px, -2px);
-  opacity: 1;
-}
-
-.nav-icon:hover .dot:nth-child(4) {
-  transform: translateX(-2px);
-  opacity: 1;
-}
-
-.nav-icon:hover .dot:nth-child(5) {
-  opacity: 1;
-}
-
-.nav-icon:hover .dot:nth-child(6) {
-  transform: translateX(2px);
-  opacity: 1;
-}
-
-.nav-icon:hover .dot:nth-child(7) {
-  transform: translate(-2px, 2px);
-  opacity: 1;
-}
-
-.nav-icon:hover .dot:nth-child(8) {
-  transform: translateY(2px);
-  opacity: 1;
-}
-
-.nav-icon:hover .dot:nth-child(9) {
-  transform: translate(2px, 2px);
-  opacity: 1;
-}
-
-/* Active state - dots form X pattern */
-.nav-icon.active .dot:nth-child(1) {
-  transform: translate(-3px, -3px);
-  opacity: 1;
-}
-
-.nav-icon.active .dot:nth-child(2) {
-  opacity: 0;
-}
-
-.nav-icon.active .dot:nth-child(3) {
-  transform: translate(3px, -3px);
-  opacity: 1;
-}
-
-.nav-icon.active .dot:nth-child(4) {
-  opacity: 0;
-}
-
-.nav-icon.active .dot:nth-child(5) {
-  opacity: 1;
-}
-
-.nav-icon.active .dot:nth-child(6) {
-  opacity: 0;
-}
-
-.nav-icon.active .dot:nth-child(7) {
-  transform: translate(-3px, 3px);
-  opacity: 1;
-}
-
-.nav-icon.active .dot:nth-child(8) {
-  opacity: 0;
-}
-
-.nav-icon.active .dot:nth-child(9) {
-  transform: translate(3px, 3px);
-  opacity: 1;
+@media (prefers-reduced-motion: reduce) {
+  .menu-icon {
+    transition: none;
+    will-change: auto;
+  }
 }
 
 .nav-menu {

@@ -53,23 +53,101 @@ main {
   padding: 0;
 }
 
-/* Full-screen video hero section */
+/* Scrollable hero: full-viewport photo, then video */
 .video-hero {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
+  position: relative;
+  width: 100%;
   z-index: 1;
+}
+
+/* Mobile: single full-screen photo (no scroll-through) */
+.video-hero .hero-photo {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  height: 100dvh;
+  overflow: hidden;
+  background-color: #000;
+}
+
+.hero-photo-track {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.video-hero .hero-photo-track .hero-photo__image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.hero-photo-ui {
+  position: absolute;
+  inset: 0;
+  z-index: 50;
+  pointer-events: none;
+}
+
+/* Desktop: fixed UI while scrolling photo; pins to photo end then scrolls away */
+@media (min-width: 769px) {
+  .video-hero .hero-photo {
+    height: auto;
+    min-height: 100vh;
+    min-height: 100dvh;
+    overflow: visible;
+  }
+
+  .hero-photo-track {
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+  }
+
+  .video-hero .hero-photo-track .hero-photo__image {
+    position: static;
+    display: block;
+    width: 100%;
+    height: auto;
+    min-height: 150vh;
+    object-fit: cover;
+    object-position: center 37.5%;
+    transform: translateY(-25%);
+  }
+
+  .hero-photo-ui {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100vh;
+    height: 100dvh;
+    z-index: 50;
+  }
+
+  .hero-photo-ui.is-at-end {
+    position: absolute;
+    top: auto;
+    bottom: 0;
+  }
+}
+
+.video-hero .hero-video {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  height: 100dvh;
+  overflow: hidden;
+  background-color: #000;
 }
 
 .video-hero .video-container {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  inset: 0;
   padding: 0;
   background-color: #000;
   opacity: 0;
@@ -86,11 +164,10 @@ main {
   left: 50%;
   width: 100vw;
   height: 56.25vw; /* 16:9 aspect ratio */
-  min-height: 100vh;
+  min-height: 100%;
   min-width: 177.78vh; /* 16:9 aspect ratio */
   transform: translate(-50%, -50%);
   border: none;
-  /* Hide Vimeo loading spinner */
   pointer-events: none;
 }
 
@@ -98,10 +175,15 @@ main {
   pointer-events: auto;
 }
 
-/* Name overlay - centered */
-.name-overlay {
+.hero-photo-ui .name-overlay,
+.hero-photo-ui .hero-scroll-down {
+  pointer-events: auto;
+}
+
+/* Name overlay on photo */
+.hero-photo .name-overlay {
   position: absolute;
-  top: 50%;
+  top: 58%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 10;
@@ -111,12 +193,12 @@ main {
 }
 
 .animated-name {
-  font-family: "League Spartan", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: "Josefin Sans", sans-serif;
   font-size: 4rem;
-  font-weight: 500;
+  font-weight: 800;
   color: white;
   text-decoration: none;
-  letter-spacing: 0.25em;
+  letter-spacing: 0.35em;
   text-transform: uppercase;
   transition: none;
   display: inline-block;
@@ -131,6 +213,53 @@ main {
   color: white;
   text-shadow: none;
   transform: none;
+}
+
+/* Scroll-down arrow on photo */
+.hero-scroll-down {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 11;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  padding: 0;
+  background: transparent;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  pointer-events: auto;
+  opacity: 0.9;
+  transition: opacity 0.2s ease;
+}
+
+.hero-scroll-down:hover {
+  opacity: 1;
+}
+
+.hero-scroll-down:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 4px;
+}
+
+.hero-scroll-down svg {
+  display: block;
+  animation: scroll-arrow-bounce 2s ease-in-out infinite;
+}
+
+@keyframes scroll-arrow-bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(10px);
+  }
 }
 
 /* Creative Animation keyframes - Removed */
@@ -148,13 +277,8 @@ a:hover {
 
 /* Responsive */
 @media (max-width: 768px) {
-  /* Mobile video hero adjustments */
-  .video-hero {
-    height: 100vh;
-  }
-
-  .name-overlay {
-    top: 50%;
+  .hero-photo .name-overlay {
+    top: 58%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: auto;
@@ -167,12 +291,8 @@ a:hover {
     pointer-events: auto !important;
   }
 
-  /* Prevent video hero from blocking navigation clicks */
-  .video-hero {
-    pointer-events: none;
-  }
-
-  .video-hero .video-container {
+  .video-hero .hero-photo,
+  .video-hero .hero-video {
     pointer-events: none;
   }
 
@@ -182,14 +302,18 @@ a:hover {
 
   .animated-name {
     font-size: 2.5rem;
-    letter-spacing: 0.35em;
+    letter-spacing: 0.28em;
+  }
+
+  .hero-scroll-down {
+    bottom: 1.5rem;
   }
 }
 
 /* Extra small screens */
 @media (max-width: 480px) {
-  .name-overlay {
-    top: 50%;
+  .hero-photo .name-overlay {
+    top: 58%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: auto;
@@ -198,7 +322,16 @@ a:hover {
 
   .animated-name {
     font-size: 1.8rem;
-    letter-spacing: 0.3em;
+    letter-spacing: 0.22em;
+  }
+
+  .hero-scroll-down {
+    bottom: 1.25rem;
+  }
+
+  .hero-scroll-down svg {
+    width: 28px;
+    height: 28px;
   }
 
   /* Ensure navigation is above everything on small mobile */
@@ -207,18 +340,15 @@ a:hover {
     pointer-events: auto !important;
   }
 
-  /* Prevent video hero from blocking navigation clicks */
-  .video-hero {
-    pointer-events: none;
-  }
-
-  .video-hero .video-container {
+  .video-hero .hero-photo,
+  .video-hero .hero-video {
     pointer-events: none;
   }
 
   .video-hero .video-container iframe {
     pointer-events: none;
   }
+}
 
 /* Prevent horizontal scrolling globally */
 html,

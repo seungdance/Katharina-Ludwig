@@ -9,17 +9,11 @@
   </head>
   <body>
     <!-- Common Navigation Component -->
-    <div class="nav-icon" onclick="toggleNav()">
-      <div class="menu-icon">
-        <div class="dot"></div>
-        <div class="dot"></div>
-        <div class="dot"></div>
-        <div class="dot"></div>
-        <div class="dot"></div>
-        <div class="dot"></div>
-        <div class="dot"></div>
-        <div class="dot"></div>
-        <div class="dot"></div>
+    <div class="nav-icon nav-icon--on-dark" onclick="toggleNav()" aria-label="Open menu" aria-expanded="false">
+      <div class="menu-icon" aria-hidden="true">
+        <span class="menu-stripe"></span>
+        <span class="menu-stripe"></span>
+        <span class="menu-stripe"></span>
       </div>
     </div>
 
@@ -56,7 +50,7 @@
 
     <main>
       <!-- Full-screen video hero -->
-      <div class="about-video-hero">
+      <div class="about-video-hero" data-nav-theme="dark">
         <div class="video-container">
           <img
             src="https://res.cloudinary.com/dxefd3n1k/image/upload/v1776177818/39C5E29C-2419-4F1F-BE54-6777BB04963C_mdzgc3.jpg"
@@ -67,7 +61,7 @@
       </div>
 
       <!-- Content Section -->
-      <div class="about-content">
+      <div class="about-content" data-nav-theme="light">
         <div class="about-container">
           <h1>KATHARINA LUDWIG</h1>
           <p class="hero-subtitle">

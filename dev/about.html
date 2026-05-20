@@ -9,17 +9,11 @@
   </head>
   <body>
     <!-- Common Navigation Component -->
-    <div class="nav-icon" onclick="toggleNav()">
-      <div class="menu-icon">
-        <div class="dot"></div>
-        <div class="dot"></div>
-        <div class="dot"></div>
-        <div class="dot"></div>
-        <div class="dot"></div>
-        <div class="dot"></div>
-        <div class="dot"></div>
-        <div class="dot"></div>
-        <div class="dot"></div>
+    <div class="nav-icon" onclick="toggleNav()" aria-label="Open menu" aria-expanded="false">
+      <div class="menu-icon" aria-hidden="true">
+        <span class="menu-stripe"></span>
+        <span class="menu-stripe"></span>
+        <span class="menu-stripe"></span>
       </div>
     </div>
 
@@ -53,7 +47,7 @@
 
     <main>
       <!-- Full-screen video hero -->
-      <div class="about-video-hero">
+      <div class="about-video-hero" data-nav-theme="dark">
         <div class="video-container">
           <iframe
             src="https://player.vimeo.com/video/1092182077?badge=0&amp;autoplay=1&amp;autopause=0&amp;controls=0&amp;loop=1&amp;muted=1&amp;player_id=0&amp;app_id=58479"
@@ -65,7 +59,7 @@
       </div>
 
       <!-- Content Section -->
-      <div class="about-content">
+      <div class="about-content" data-nav-theme="light">
         <div class="about-container">
           <h1>Katharina Ludwig</h1>
           <p class="hero-subtitle">Performance Artist/Choreographer/Dancer</p>

@@ -4,28 +4,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>KATHARINA LUDWIG</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@300;400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
     <link rel="stylesheet" href="common-navigation.css" />
-    <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="index.css?v=hero-scroll-6" />
   </head>
   <body>
     <!-- Common Navigation Component -->
-    <div class="nav-icon" onclick="toggleNav()">
-      <div class="menu-icon">
-        <div class="dot"></div>
-        <div class="dot"></div>
-        <div class="dot"></div>
-        <div class="dot"></div>
-        <div class="dot"></div>
-        <div class="dot"></div>
-        <div class="dot"></div>
-        <div class="dot"></div>
-        <div class="dot"></div>
+    <div class="nav-icon nav-icon--on-dark" onclick="toggleNav()" aria-label="Open menu" aria-expanded="false">
+      <div class="menu-icon" aria-hidden="true">
+        <span class="menu-stripe"></span>
+        <span class="menu-stripe"></span>
+        <span class="menu-stripe"></span>
       </div>
     </div>
 
@@ -61,27 +49,124 @@
     </nav>
 
     <main>
-      <!-- Full-screen video background -->
+      <!-- Hero: full-screen photo, video on scroll -->
       <div class="video-hero">
-        <div class="video-container">
-          <iframe
-            src="https://player.vimeo.com/video/1119756899?h=78d9df9f4f&amp;badge=0&amp;autoplay=1&amp;autopause=0&amp;controls=0&amp;loop=1&amp;background=1&amp;player_id=0&amp;app_id=58479&amp;dnt=1"
-            frameborder="0"
-            allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
-            referrerpolicy="strict-origin-when-cross-origin"
-            title="infero cut for website"></iframe>
-        </div>
-
-        <!-- Animated name overlay -->
-        <div class="name-overlay">
-          <a href="about.html" class="animated-name">KATHARINA LUDWIG</a>
-        </div>
+        <section class="hero-photo" data-nav-theme="dark" aria-label="Home">
+          <div class="hero-photo-track">
+            <img
+              class="hero-photo__image"
+              src="https://res.cloudinary.com/dxefd3n1k/image/upload/v1776178453/220412_Orange_V02-4_zbh3pt.jpg"
+              alt="Katharina Ludwig in an orange scarf and grey coat, posed in a field at sunset"
+              loading="eager"
+              decoding="async" />
+          </div>
+          <div class="hero-photo-ui">
+            <div class="name-overlay">
+              <a href="about.html" class="animated-name">KATHARINA LUDWIG</a>
+            </div>
+            <button type="button" class="hero-scroll-down" aria-label="Scroll to video">
+              <svg viewBox="0 0 24 24" width="32" height="32" aria-hidden="true">
+                <path
+                  d="M12 16l-6-6h12l-6 6z"
+                  fill="currentColor" />
+              </svg>
+            </button>
+          </div>
+        </section>
+        <section class="hero-video" id="hero-video" data-nav-theme="dark" aria-label="Video">
+          <div class="video-container">
+            <iframe
+              src="https://player.vimeo.com/video/1119756899?h=78d9df9f4f&amp;badge=0&amp;autoplay=1&amp;autopause=0&amp;controls=0&amp;loop=1&amp;background=1&amp;player_id=0&amp;app_id=58479&amp;dnt=1"
+              frameborder="0"
+              allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              title="infero cut for website"></iframe>
+          </div>
+        </section>
       </div>
     </main>
 
     <script src="common-navigation.js"></script>
     <script src="https://player.vimeo.com/api/player.js"></script>
     <script>
+      const scrollDownBtn = document.querySelector(".hero-scroll-down");
+      const heroVideo = document.getElementById("hero-video");
+      const heroPhoto = document.querySelector(".hero-photo");
+      const heroPhotoTrack = document.querySelector(".hero-photo-track");
+      const heroPhotoUi = document.querySelector(".hero-photo-ui");
+      const heroPhotoImage = document.querySelector(".hero-photo__image");
+      const desktopMq = window.matchMedia("(min-width: 769px)");
+
+      if (scrollDownBtn && heroVideo) {
+        scrollDownBtn.addEventListener("click", function () {
+          heroVideo.scrollIntoView({ behavior: "smooth", block: "start" });
+        });
+      }
+
+      function setHeroPhotoHeight() {
+        if (!heroPhoto || !heroPhotoImage) {
+          return;
+        }
+
+        if (!desktopMq.matches) {
+          heroPhoto.style.minHeight = "";
+          if (heroPhotoTrack) {
+            heroPhotoTrack.style.height = "";
+          }
+          return;
+        }
+
+        if (heroPhotoImage.complete && heroPhotoImage.naturalHeight > 0) {
+          const fullHeight = heroPhotoImage.offsetHeight;
+          const visibleHeight = fullHeight * 0.75;
+          if (heroPhotoTrack) {
+            heroPhotoTrack.style.height = visibleHeight + "px";
+          }
+          heroPhoto.style.minHeight = Math.max(visibleHeight, window.innerHeight) + "px";
+        }
+      }
+
+      function updateHeroPhotoUiPosition() {
+        if (!heroPhoto || !heroPhotoUi) {
+          return;
+        }
+
+        if (!desktopMq.matches) {
+          heroPhotoUi.classList.remove("is-at-end");
+          return;
+        }
+
+        const uiHeight = heroPhotoUi.offsetHeight || window.innerHeight;
+        const photoBottom = heroPhoto.getBoundingClientRect().bottom;
+        heroPhotoUi.classList.toggle("is-at-end", photoBottom <= uiHeight);
+      }
+
+      function refreshHeroPhotoLayout() {
+        setHeroPhotoHeight();
+        updateHeroPhotoUiPosition();
+      }
+
+      if (heroPhoto && heroPhotoImage) {
+        let layoutTicking = false;
+        function scheduleLayoutUpdate() {
+          if (layoutTicking) {
+            return;
+          }
+          layoutTicking = true;
+          requestAnimationFrame(function () {
+            layoutTicking = false;
+            updateHeroPhotoUiPosition();
+          });
+        }
+
+        heroPhotoImage.addEventListener("load", refreshHeroPhotoLayout);
+        refreshHeroPhotoLayout();
+        window.addEventListener("scroll", scheduleLayoutUpdate, { passive: true });
+        window.addEventListener("resize", refreshHeroPhotoLayout);
+        desktopMq.addEventListener("change", refreshHeroPhotoLayout);
+        window.addEventListener("load", refreshHeroPhotoLayout);
+      }
+
       // Wait for Vimeo Player API to load
       window.addEventListener("load", function () {
         const iframe = document.querySelector(".video-container iframe");
