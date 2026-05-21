@@ -5,11 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>DANCE WORK — KATHARINA LUDWIG</title>
     <link rel="stylesheet" href="common-navigation.css" />
+    <link rel="stylesheet" href="page-hero-title.css" />
     <link rel="stylesheet" href="dancework.css" />
   </head>
   <body>
     <!-- Common Navigation Component -->
-    <div class="nav-icon" onclick="toggleNav()" aria-label="Open menu" aria-expanded="false">
+    <div class="nav-icon nav-icon--on-dark" onclick="toggleNav()" aria-label="Open menu" aria-expanded="false">
       <div class="menu-icon" aria-hidden="true">
         <span class="menu-stripe"></span>
         <span class="menu-stripe"></span>
@@ -49,8 +50,27 @@
     </nav>
 
     <main>
-      <section>
-        <h1>DANCE WORK</h1>
+      <section class="dancework-hero" data-nav-theme="dark" data-scroll-to="dancework-content">
+        <picture class="dancework-hero-picture">
+          <source
+            media="(max-width: 768px)"
+            srcset="https://res.cloudinary.com/dxefd3n1k/image/upload/c_fill,ar_9:16,g_auto:faces,q_auto,f_auto/v1776178029/_Q7A7065_bc9vku.jpg" />
+          <img
+            src="https://res.cloudinary.com/dxefd3n1k/image/upload/c_fill,ar_16:9,g_south,q_auto,f_auto/v1776178029/_Q7A7065_bc9vku.jpg"
+            alt="Dance performance"
+            class="dancework-hero-image"
+            loading="eager"
+            decoding="async" />
+        </picture>
+        <h1 class="hero-page-title">DANCE WORK</h1>
+        <button type="button" class="hero-scroll-down" aria-label="Scroll to dance work content">
+          <svg viewBox="0 0 24 24" width="32" height="32" aria-hidden="true">
+            <path d="M12 16l-6-6h12l-6 6z" fill="currentColor" />
+          </svg>
+        </button>
+      </section>
+
+      <section class="dancework-content" id="dancework-content" data-nav-theme="light">
         <div class="construction-message">
           <p class="construction-text">This page is currently under construction.</p>
           <p class="construction-subtext">Please check back soon.</p>
@@ -59,5 +79,6 @@
     </main>
 
     <script src="common-navigation.js"></script>
+    <script src="hero-scroll-to-content.js"></script>
   </body>
 </html>

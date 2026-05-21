@@ -32,8 +32,8 @@ html {
 body {
   font-family: "Josefin Sans", sans-serif;
   line-height: 1.6;
-  color: #333333;
-  background: #f4efe8;
+  color: #000000;
+  background: #ffffff;
   overflow-x: hidden;
   display: flex;
   flex-direction: column;
@@ -48,32 +48,92 @@ main {
   flex: 1;
 }
 
-section {
+/* Hero */
+.dancework-hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  height: 100dvh;
+  overflow: hidden;
+}
+
+.dancework-hero-picture {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
   margin: 0;
   padding: 0;
 }
 
-h1 {
-  font-family: "Josefin Sans", sans-serif;
-  font-size: 2.5rem;
-  font-weight: 400;
-  margin-bottom: 2rem;
-  text-align: center;
-  padding: 2rem 1rem;
-  color: #000000;
-  letter-spacing: 0.05em;
+.dancework-hero-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
 }
 
-p {
-  margin-bottom: 1.5rem;
-  padding: 0 2rem;
-  font-size: 16px;
-  line-height: 1.6;
-  max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
-  font-family: "Josefin Sans", sans-serif;
-  color: #333333;
+@media (min-width: 769px) {
+  .dancework-hero-image {
+    object-position: center bottom;
+  }
+}
+
+.dancework-hero .hero-scroll-down {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 11;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  padding: 0;
+  background: transparent;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  pointer-events: auto;
+  opacity: 0.9;
+  transition: opacity 0.2s ease;
+}
+
+.dancework-hero .hero-scroll-down:hover {
+  opacity: 1;
+}
+
+.dancework-hero .hero-scroll-down:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 4px;
+}
+
+.dancework-hero .hero-scroll-down svg {
+  display: block;
+  animation: scroll-arrow-bounce 2s ease-in-out infinite;
+}
+
+@keyframes scroll-arrow-bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(10px);
+  }
+}
+
+/* Content below hero */
+.dancework-content {
+  background-color: #ffffff;
+  padding: 4rem 0;
+  flex: 1;
 }
 
 /* Construction message styling */
@@ -101,34 +161,6 @@ p {
   margin-bottom: 0;
 }
 
-/* Footer */
-footer {
-  background-color: #f4efe8;
-  padding: 2rem;
-  text-align: center;
-  margin-top: auto;
-  width: 100%;
-  border-top: none !important;
-}
-
-footer p {
-  font-family: "Josefin Sans", sans-serif;
-  font-size: 14px;
-  color: #666;
-  margin: 0.5rem 0;
-  line-height: 1.6;
-}
-
-footer p:first-child {
-  margin-top: 0;
-}
-
-footer p:last-child {
-  margin-bottom: 0;
-  font-size: 13px;
-  color: #999;
-}
-
 /* Links */
 a {
   color: #333333;
@@ -142,13 +174,28 @@ a:hover {
 
 /* Mobile Responsive */
 @media (max-width: 768px) {
-  h1 {
-    font-size: 2rem;
-    padding: 1.5rem 1rem;
+  .dancework-hero {
+    height: 100vh;
+    min-height: 100vh;
+    pointer-events: none;
   }
 
-  p {
-    padding: 0 1rem;
+  .dancework-hero-picture,
+  .dancework-hero-image {
+    pointer-events: none;
+  }
+
+  .dancework-hero .hero-scroll-down {
+    bottom: 1.5rem;
+    pointer-events: auto;
+  }
+
+  .dancework-hero-image {
+    object-position: center 35%;
+  }
+
+  .dancework-content {
+    padding: 2rem 0;
   }
 
   .construction-message {
@@ -163,12 +210,20 @@ a:hover {
     font-size: 0.9rem;
   }
 
-  footer {
-    padding: 1.5rem 1rem;
+  .nav-icon {
+    z-index: 9999 !important;
+    pointer-events: auto !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .dancework-hero .hero-scroll-down {
+    bottom: 1.25rem;
   }
 
-  footer p {
-    font-size: 13px;
+  .dancework-hero .hero-scroll-down svg {
+    width: 28px;
+    height: 28px;
   }
 }
 
@@ -177,4 +232,3 @@ html,
 body {
   overflow-x: hidden;
 }
-
