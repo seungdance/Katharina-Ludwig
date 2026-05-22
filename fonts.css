@@ -393,3 +393,15 @@
   src: url('fonts/inter/UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuI6fAZJhiI2B.woff2') format('woff2');
 }
 
+/* Heading Now — place any .woff2 from your kit in fonts/heading-now/ */
+@font-face {
+  font-family: 'Heading Now';
+  font-style: normal;
+  font-weight: 400 900;
+  font-display: swap;
+  src: url('fonts/heading-now/heading-now.woff2') format('woff2'),
+    url('fonts/heading-now/HeadingNow.woff2') format('woff2'),
+    url('fonts/heading-now/heading-now-71-77.woff2') format('woff2'),
+    url('fonts/heading-now/heading-now-71-extrabold.woff2') format('woff2');
+}
+
