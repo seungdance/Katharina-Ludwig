@@ -147,6 +147,14 @@ img {
   line-height: 1.4;
 }
 
+@media (min-width: 769px) {
+  .work-info-text {
+    left: 2rem;
+    transform: translateY(-50%);
+    text-align: left;
+  }
+}
+
 /* Content styling */
 main {
   max-width: none;
@@ -164,6 +172,187 @@ main {
   max-width: 1200px;
   margin: 0 auto;
   padding: 4rem 2rem;
+}
+
+/* Intro: credits sidebar + description / teaser */
+.intro-with-credits {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  grid-template-rows: auto auto;
+  align-items: stretch;
+  width: 100%;
+  background-color: #ffffff;
+}
+
+.credits-sidebar {
+  grid-column: 1;
+  grid-row: 1 / 3;
+  width: 100%;
+  background-color: #1a3055;
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+.intro-with-credits .description-section {
+  grid-column: 2;
+  grid-row: 1;
+  min-width: 0;
+}
+
+.intro-with-credits .trailer-section {
+  grid-column: 2;
+  grid-row: 2;
+  min-width: 0;
+  width: 100%;
+}
+
+.credits-sidebar__inner {
+  flex: 1;
+  padding: 3rem 1.5rem 4rem;
+  box-sizing: border-box;
+}
+
+.credits-sidebar h2 {
+  font-family: "League Spartan", sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0 0 2rem;
+  text-align: left;
+  color: #ffffff;
+  letter-spacing: 0.1em;
+}
+
+.credits-sidebar p {
+  margin: 0 0 1.5rem;
+  padding: 0;
+  max-width: none;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  letter-spacing: 0.06em;
+  text-align: left;
+  color: #ffffff;
+}
+
+.credits-sidebar .credits-role {
+  display: block;
+  font-family: "League Spartan", sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 0.1rem;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.credits-sidebar .credits-name {
+  display: block;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 1.2rem;
+  font-weight: 400;
+  margin-bottom: 0.65rem;
+  color: #ffffff;
+  letter-spacing: 0.06em;
+  line-height: 1.35;
+}
+
+.credits-sidebar .credits-group-heading {
+  margin-top: 2.5rem;
+}
+
+.credits-sidebar a {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+.credits-sidebar a:hover,
+.credits-sidebar a:visited {
+  color: #ffffff;
+}
+
+.intro-with-credits .description-section .section-content {
+  max-width: none;
+  margin: 0;
+  padding: 4rem 3.5rem 1rem 3rem;
+}
+
+.intro-with-credits .trailer-section .section-content {
+  padding: 0 3.5rem 4rem 3rem;
+}
+
+.intro-with-credits .trailer-section h2 {
+  margin-top: 0.5rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.intro-with-credits .teaser-video {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (min-width: 769px) {
+  .intro-with-credits .teaser-video {
+    max-width: 340px;
+  }
+}
+
+@media (max-width: 768px) {
+  .intro-with-credits {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .intro-with-credits .description-section {
+    order: 1;
+  }
+
+  .credits-sidebar {
+    order: 2;
+    grid-row: auto;
+    grid-column: auto;
+    width: 100%;
+  }
+
+  .intro-with-credits .trailer-section {
+    order: 3;
+  }
+
+  .intro-with-credits .trailer-section .section-content {
+    padding: 1.5rem 1rem 2.5rem;
+  }
+
+  .intro-with-credits .teaser-video {
+    margin-bottom: 1rem;
+  }
+
+  .credits-sidebar__inner {
+    padding: 2rem 1.25rem 2.5rem;
+  }
+
+  .credits-sidebar h2 {
+    font-size: 1.6rem;
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+
+  .credits-sidebar p {
+    font-size: 1.05rem;
+  }
+
+  .credits-sidebar .credits-role {
+    font-size: 1rem;
+  }
+
+  .credits-sidebar .credits-name {
+    font-size: 1.05rem;
+  }
+
+  .intro-with-credits .description-section .section-content {
+    padding: 2rem 1rem;
+  }
 }
 
 /* All Sections - White Background */
@@ -194,9 +383,29 @@ main {
   line-height: 1.8;
 }
 
+.description-section .teaser-note,
+.trailer-section .teaser-note {
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.intro-with-credits .trailer-section:has(.teaser-note) .section-content {
+  padding-bottom: 0;
+}
+
+.intro-with-credits + .some-photos-section > .section-content {
+  padding-top: 0;
+}
+
+@media (min-width: 769px) {
+  .intro-with-credits + .some-photos-section > .section-content {
+    padding-top: 3rem;
+  }
+}
+
 .teaser-video {
   position: relative;
-  margin: 0 auto;
+  margin: 0 auto 2rem;
 }
 
 .teaser-video__aspect {
@@ -268,7 +477,7 @@ main {
 
 @media (min-width: 769px) {
   .teaser-video {
-    max-width: 420px;
+    max-width: 340px;
   }
 }
 
@@ -383,9 +592,36 @@ main {
 
 /* Photos Sections */
 .some-photos-section h2,
-.more-photos-section h2 {
+.more-photos-section h2,
+.performance-dates-section h2 {
   margin-bottom: 3rem;
   text-align: center;
+}
+
+.performance-dates-section {
+  max-width: 1000px;
+  margin: 2.5rem auto 0;
+}
+
+.performance-dates-section a {
+  color: #000000;
+  text-decoration: underline;
+}
+
+.performance-dates-section a:hover,
+.performance-dates-section a:visited {
+  color: #000000;
+}
+
+.performance-dates-section .credit-item strong,
+.performance-dates-section .credit-item span {
+  font-size: 18px;
+  letter-spacing: 0.1em;
+  line-height: 1.8;
+}
+
+.performance-dates-section .credit-item strong {
+  margin-bottom: 0.75rem;
 }
 
 .photos-grid {
@@ -603,6 +839,12 @@ p {
   }
 
   .description-section p {
+    font-size: 17px;
+    letter-spacing: 0.08em;
+  }
+
+  .performance-dates-section .credit-item strong,
+  .performance-dates-section .credit-item span {
     font-size: 17px;
     letter-spacing: 0.08em;
   }
