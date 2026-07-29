@@ -179,6 +179,21 @@ img {
   padding: 0.2em 0.35em;
 }
 
+.work-premiere-note__link {
+  color: #ff3d9a;
+  text-decoration: none;
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 700;
+  font-size: inherit;
+  letter-spacing: 0.05em;
+  line-height: 1.25;
+}
+
+.work-premiere-note__link:hover {
+  color: #ff3d9a;
+  text-decoration: none;
+}
+
 .work-premiere-note__highlight {
   position: relative;
   display: inline;
