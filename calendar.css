@@ -38,6 +38,9 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  --calendar-turquoise: #48d1cc;
+  --calendar-turquoise-deep: #35a89c;
+  --calendar-pink: #ff3d9a;
 }
 
 /* Content styling */
@@ -183,9 +186,49 @@ h1 {
   padding-right: 0;
 }
 
-.calendar-events-column > p:not(.calendar-section-subtitle) + p:not(.calendar-section-subtitle) {
-  border-top: 1px solid #002d6b;
+.calendar-events-column > p:not(.calendar-section-subtitle):not(.calendar-year-title) + p:not(.calendar-section-subtitle):not(.calendar-year-title) {
+  border-top: 1px solid var(--calendar-turquoise);
   padding-top: 1.25rem;
+}
+
+.calendar-tickets-btn {
+  display: inline-block;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #ffffff;
+  background-color: var(--calendar-pink);
+  padding: 0.25em 0.65em;
+  margin-left: 0.55em;
+  border-radius: 2px;
+  vertical-align: middle;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.calendar-tickets-btn:hover {
+  color: #ffffff;
+  background-color: #e0207f;
+  text-decoration: none;
+}
+
+.calendar-year-title {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #000000;
+  padding: 0;
+  border: none;
+  border-bottom: none;
+  text-decoration: none;
+}
+
+.calendar-year-title:first-of-type,
+.calendar-own-work-header + .calendar-year-title {
+  margin-top: 0;
 }
 
 .calendar-own-work-header {
@@ -201,7 +244,8 @@ h1 {
   padding: 0 0 0.65rem;
   padding-left: 0;
   text-align: left;
-  border-bottom: 6px solid #002d6b;
+  color: var(--calendar-turquoise);
+  border-bottom: 6px solid var(--calendar-turquoise);
 }
 
 .calendar-events-wrap .calendar-section-title-own-work {
@@ -220,7 +264,7 @@ h1 {
   padding: 0 0 0.65rem;
   margin: 0 0 2.5rem;
   text-align: left;
-  border-bottom: 2px solid #002d6b;
+  border-bottom: 2px solid var(--calendar-turquoise);
 }
 
 .calendar-section-subtitle-past {
@@ -288,7 +332,7 @@ a {
 /* Internal piece pages (NUMBER 52, DOUBLE STANDARDS) */
 a.calendar-piece-link[href$="number52.html"],
 a.calendar-piece-link[href$="double-standards.html"] {
-  color: #000000;
+  color: var(--calendar-pink);
   display: inline-block;
   padding: 0.15em 0.35em;
   border-radius: 2px;
@@ -299,11 +343,11 @@ a.calendar-piece-link[href$="double-standards.html"] {
 a.calendar-piece-link[href$="number52.html"]:hover,
 a.calendar-piece-link[href$="double-standards.html"]:hover {
   color: #ffffff;
-  background-color: #000000;
+  background-color: var(--calendar-pink);
   text-decoration: none;
 }
 
-/* External links in calendar entries — black text, navy highlight on hover */
+/* External links in calendar entries */
 a.calendar-piece-link[href*="betastagefestival.ch"],
 a.calendar-piece-link[href*="dastanzfest.ch"],
 a.calendar-piece-link[href*="theaterhechtplatz.ch"],
@@ -316,7 +360,10 @@ a.calendar-piece-link[href*="brueckerei.com"],
 a.calendar-piece-link[href*="tanzhausbern.ch"],
 a.calendar-piece-link[href*="qah.koeln"],
 a.calendar-piece-link[href*="bejazz.ch"],
-a.calendar-piece-link[href*="tojo.ch"] {
+a.calendar-piece-link[href*="tojo.ch"],
+a.calendar-piece-link[href*="theater-roxy.ch"],
+a.calendar-piece-link[href*="impulstanz.com"],
+a.calendar-piece-link[href*="barnescrossing.de"] {
   color: #000000;
   display: inline-block;
   padding: 0.15em 0.35em;
@@ -337,9 +384,12 @@ a.calendar-piece-link[href*="brueckerei.com"]:hover,
 a.calendar-piece-link[href*="tanzhausbern.ch"]:hover,
 a.calendar-piece-link[href*="qah.koeln"]:hover,
 a.calendar-piece-link[href*="bejazz.ch"]:hover,
-a.calendar-piece-link[href*="tojo.ch"]:hover {
+a.calendar-piece-link[href*="tojo.ch"]:hover,
+a.calendar-piece-link[href*="theater-roxy.ch"]:hover,
+a.calendar-piece-link[href*="impulstanz.com"]:hover,
+a.calendar-piece-link[href*="barnescrossing.de"]:hover {
   color: #ffffff;
-  background-color: #001a4d;
+  background-color: var(--calendar-turquoise);
   text-decoration: none;
 }
 

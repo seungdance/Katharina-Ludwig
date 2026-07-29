@@ -90,6 +90,12 @@
     </style>
   </head>
   <body>
+    <svg class="visually-hidden-svg" width="0" height="0" aria-hidden="true" focusable="false">
+      <filter id="hand-drawn-edge" x="-8%" y="-8%" width="116%" height="116%">
+        <feTurbulence type="fractalNoise" baseFrequency="0.04" numOctaves="3" seed="7" result="noise" />
+        <feDisplacementMap in="SourceGraphic" in2="noise" scale="5" xChannelSelector="R" yChannelSelector="G" />
+      </filter>
+    </svg>
     <!-- Common Navigation Component -->
     <div class="nav-icon" onclick="toggleNav()" aria-label="Open menu" aria-expanded="false">
       <div class="menu-icon" aria-hidden="true">
@@ -199,6 +205,16 @@
           <div class="work-premiere">2025/2026</div>
           <div class="work-premiere work-duration">15 / 30 / 60 min</div>
         </div>
+        <div class="work-premiere-note">
+          <div class="work-premiere-note__text"><span class="work-premiere-note__highlight">PREMIERE full-evening</span><br /><span class="work-premiere-note__highlight">11. September 2026</span></div>
+          <a
+            class="work-premiere-tickets"
+            href="https://eventfrog.ch/de/p/gruppen/number-52-von-katharina-ludwig-tanzhaus-on-stage-7478047438370027261.html"
+            target="_blank"
+            rel="noopener noreferrer"
+            >TICKETS</a
+          >
+        </div>
       </section>
 
       <!-- New Structured Content -->
@@ -226,8 +242,6 @@
                 <strong class="credits-name">Ernestyna Orlowska</strong>
                 <span class="credits-role">Production</span>
                 <strong class="credits-name">Verein Long Legs</strong>
-                <span class="credits-role">Production Management</span>
-                <strong class="credits-name">Paula Alonso Gómez</strong>
                 <span class="credits-role credits-group-heading">Research</span>
                 <strong class="credits-name">Inkubator Fabriktheater Zürich January 2025</strong>
                 <strong class="credits-name">ATLAS, Impulstanzfestival Wien</strong>
@@ -246,6 +260,8 @@
                 <strong class="credits-name">Kulturfonds der Société Suisse des Auteurs (SSA)</strong>
                 <strong class="credits-name">Stiftung Anne-Marie Schindler</strong>
                 <strong class="credits-name">GVB Kulturstiftung</strong>
+                <strong class="credits-name">Ernst Göhner Stiftung</strong>
+                <strong class="credits-name">Schweizerische Interpretenstiftung SIS</strong>
               </p>
             </div>
           </aside>
@@ -369,65 +385,141 @@
           <div class="section-content">
             <h2>PERFORMANCE CALENDAR</h2>
 
-            <h3 class="calendar-subsection-title">SHORT OUTDOOR VERSION</h3>
+            <h3 class="calendar-group-title">UPCOMING</h3>
+            <h3 class="calendar-subsection-title">FULL EVENING SHOW (60 min)</h3>
             <p>
-              7 May 2026, 17:30 - 18:00h |
-              <a class="calendar-piece-link" href="https://dastanzfest.ch/companies/katharina-ludwig/">TANZFEST</a> Zug, CH (national
-              tour) - <strong><em>25 min outdoor version, GERMAN language</em></strong>
+              11 September 2026 | <a class="calendar-piece-link" href="https://tanzhausbern.ch/on-stage/">TANZhAUS Bern</a> - <strong><em>PREMIERE evening long version</em></strong>
+              <a
+                class="calendar-tickets-btn"
+                href="https://eventfrog.ch/de/p/gruppen/number-52-von-katharina-ludwig-tanzhaus-on-stage-7478047438370027261.html"
+                target="_blank"
+                rel="noopener noreferrer"
+                >TICKETS</a
+              >
             </p>
             <p>
-              9 May 2026, 16:00 - 16:15h |
-              <a class="calendar-piece-link" href="https://dastanzfest.ch/companies/katharina-ludwig/">FETE DE LA DANSE</a> Biel, CH
-              (national tour) - <strong><em>25 min outdoor version, FRENCH-GERMAN mixed language</em></strong>
+              12 September 2026 | <a class="calendar-piece-link" href="https://tanzhausbern.ch/on-stage/">TANZhAUS Bern</a> - <strong><em>evening long version</em></strong>
+              <a
+                class="calendar-tickets-btn"
+                href="https://eventfrog.ch/de/p/gruppen/number-52-von-katharina-ludwig-tanzhaus-on-stage-7478047438370027261.html"
+                target="_blank"
+                rel="noopener noreferrer"
+                >TICKETS</a
+              >
             </p>
             <p>
-              9 May 2026, 19:30 - 20:00h |
-              <a class="calendar-piece-link" href="https://dastanzfest.ch/companies/katharina-ludwig/">FETE DE LA DANSE</a> Fribourg, CH
-              (national tour) - <strong><em>25 min outdoor version, FRENCH language</em></strong>
+              13 September 2026 | <a class="calendar-piece-link" href="https://tanzhausbern.ch/on-stage/">TANZhAUS Bern</a> - <strong><em>evening long version</em></strong>
+              <a
+                class="calendar-tickets-btn"
+                href="https://eventfrog.ch/de/p/gruppen/number-52-von-katharina-ludwig-tanzhaus-on-stage-7478047438370027261.html"
+                target="_blank"
+                rel="noopener noreferrer"
+                >TICKETS</a
+              >
             </p>
             <p>
-              10 May 2026, 12:15 - 12:45h |
-              <a class="calendar-piece-link" href="https://dastanzfest.ch/companies/katharina-ludwig/">TANZFEST</a> St. Gallen, CH
-              (national tour) - <strong><em>25 min outdoor version, GERMAN language</em></strong>
+              17 - 19 November 2026 |
+              <a class="calendar-piece-link" href="https://www.thik.ch/">ThiK Theater</a> Baden (CH) - <strong><em>shows for local school classes</em></strong>
+            </p>
+            <p>
+              23 January 2027 |
+              <a class="calendar-piece-link" href="https://www.ewerk-freiburg.de/">E-Werk</a> Freiburg im Breisgau (D) - <strong><em>evening long version</em></strong>
+            </p>
+            <p>
+              31 January 2027 | Rostock (DE)
+            </p>
+
+            <h3 class="calendar-group-title">PAST</h3>
+            <h3 class="calendar-subsection-title">TRY-OUT</h3>
+            <p>
+              19 June 2026 |
+              <a class="calendar-piece-link" href="https://theaterhechtplatz.ch/produktionen/try-out-2026-katharina-ludwig/"
+                >Hecht Jetzt! Try-Out Festival</a
+              >
+              - Goldener Dachs Weinfelden, CH - <strong><em>try-out (60 min), GERMAN language</em></strong>
+            </p>
+            <p>
+              18 June 2026 |
+              <a class="calendar-piece-link" href="https://theaterhechtplatz.ch/produktionen/try-out-2026-katharina-ludwig/"
+                >Hecht Jetzt! Try-Out Festival</a
+              >
+              - Theater am Hechtplatz, Zurich, CH - <strong><em>try-out (60 min), GERMAN language</em></strong>
             </p>
             <h3 class="calendar-subsection-title"><em>RESIDENCY SHOWINGS</em></h3>
             <p>
               3 June 2026, 19h |
               <a class="calendar-piece-link" href="https://qah.koeln/menschen/katharina-ludwig/">Quartier am Hafen, Cologne</a> (D) - <strong><em>residency showing</em></strong>
             </p>
-            <h3 class="calendar-subsection-title">TRY-OUT SHOW (40 - 60 min)</h3>
             <p>
-              18 June 2026 |
-              <a class="calendar-piece-link" href="https://theaterhechtplatz.ch/produktionen/try-out-2026-katharina-ludwig/"
-                >Hecht Jetzt! Try-Out Festival</a
-              >
-              - Theater am Hechtplatz, Zurich, CH - <strong><em>try-out (40-60 min), GERMAN language</em></strong>
+              24 April 2026 |
+              <a class="calendar-piece-link" href="https://theater-roxy.ch/spielplan/archiv/detail/698/number-52/?p=2037">Roxy Birsfelden</a> (CH) - <strong><em>residency showing</em></strong>
             </p>
             <p>
-              19 June 2026 |
-              <a class="calendar-piece-link" href="https://theaterhechtplatz.ch/produktionen/try-out-2026-katharina-ludwig/"
-                >Hecht Jetzt! Try-Out Festival</a
-              >
-              - Goldener Dachs Weinfelden, CH - <strong><em>try-out (40-60 min), GERMAN language</em></strong>
-            </p>
-
-            <h3 class="calendar-subsection-title">FULL EVENING SHOW (60 min)</h3>
-            <p>
-              11 September 2026 | <a class="calendar-piece-link" href="https://tanzhausbern.ch/">TANZhAUS Bern</a> - <strong><em>PREMIERE evening long version</em></strong>
+              5 December 2025 |
+              <a class="calendar-piece-link" href="https://www.dansometre.ch/residences/serie9/katharina-ludwig/">Dansomètre Vevey</a> (CH) - <strong><em>residency showing</em></strong>
             </p>
             <p>
-              12 September 2026 | <a class="calendar-piece-link" href="https://tanzhausbern.ch/">TANZhAUS Bern</a> - <strong><em>evening long version</em></strong>
+              11 August 2025 |
+              <a class="calendar-piece-link" href="https://www.impulstanz.com/opendoors/aid2305/">ATLAS Sharings Impulstanz Festival Wien</a> - <strong><em>residency showing</em></strong>
+            </p>
+            <h3 class="calendar-subsection-title">OUTDOOR VERSION (30 min)</h3>
+            <p>
+              10 May 2026, 12:15 - 12:45h |
+              <a class="calendar-piece-link" href="https://dastanzfest.ch/companies/katharina-ludwig/">TANZFEST</a> St. Gallen, CH
+              (national tour) - <strong><em>GERMAN language</em></strong>
             </p>
             <p>
-              13 September 2026 | <a class="calendar-piece-link" href="https://tanzhausbern.ch/">TANZhAUS Bern</a> - <strong><em>evening long version</em></strong>
+              9 May 2026, 19:30 - 20:00h |
+              <a class="calendar-piece-link" href="https://dastanzfest.ch/companies/katharina-ludwig/">FETE DE LA DANSE</a> Fribourg, CH
+              (national tour) - <strong><em>FRENCH language</em></strong>
             </p>
             <p>
-              16 - 20 November 2026 |
-              <a class="calendar-piece-link" href="https://www.thik.ch/">ThiK Theater</a> Baden (CH) - <strong><em>shows for local school classes</em></strong>
+              9 May 2026, 16:00 - 16:15h |
+              <a class="calendar-piece-link" href="https://dastanzfest.ch/companies/katharina-ludwig/">FETE DE LA DANSE</a> Biel, CH
+              (national tour) - <strong><em>FRENCH-GERMAN mixed language</em></strong>
             </p>
             <p>
-              23 January 2027 |
-              <a class="calendar-piece-link" href="https://www.ewerk-freiburg.de/">E-Werk</a> Freiburg im Breisgau (D) - <strong><em>evening long version</em></strong>
+              7 May 2026, 17:30 - 18:00h |
+              <a class="calendar-piece-link" href="https://dastanzfest.ch/companies/katharina-ludwig/">TANZFEST</a> Zug, CH (national
+              tour) - <strong><em>GERMAN language</em></strong>
+            </p>
+            <h3 class="calendar-subsection-title">PREVIEW (30 min)</h3>
+            <p>
+              28 March 2026, 17h |
+              <a class="calendar-piece-link" href="https://www.betastagefestival.ch/ludwig/">BETA STAGE FESTIVAL</a> -
+              <a class="calendar-piece-link" href="https://tojo.ch/beta-stage-festival-2026-kombo-abend-i/">Tojo Theater, Bern, CH</a>
+            </p>
+            <p>
+              27 March 2026, 20:30h |
+              <a class="calendar-piece-link" href="https://www.betastagefestival.ch/ludwig/">BETA STAGE FESTIVAL</a> -
+              <a class="calendar-piece-link" href="https://tojo.ch/beta-stage-festival-2026-kombo-abend-i/">Tojo Theater, Bern, CH</a>
+            </p>
+            <h3 class="calendar-subsection-title">SHORT PIECE (15 min)</h3>
+            <p>
+              6 - 7 March 2026 | That’s Finta*tainment, Sous-Sol Bern and The Millers Theater Zurich (CH)
+            </p>
+            <p>
+              10 January 2026 | Kunst im Hof #5, Uettligen, Bern (CH)
+            </p>
+            <p>
+              6 July 2025 | ZANT Festival Roxy Ulm (DE)
+            </p>
+            <p>
+              24 May 2025 |
+              <a class="calendar-piece-link" href="https://barnescrossing.de/solo-duo/17-soloduofestival-nrw-friends/">Soloduo Festival by barnescrossing + friends</a>, Cologne (DE)
+            </p>
+            <p>
+              17 May 2025 | Open Stage Tanzfest Bern, PROGR Courtyard (CH)
+            </p>
+            <p>
+              18 April 2025 | Open Stage Nouveau Monde, Fribourg (CH)
+            </p>
+            <p>
+              2 April 2025 | Sauser &amp; Bärlauch,
+              <a class="calendar-piece-link" href="https://www.thik.ch/">ThiK Theater</a> im Kornhaus Baden (CH)
+            </p>
+            <p>
+              17 - 19 January 2025 | INKUBATOR, Fabriktheater Zürich (CH)
             </p>
           </div>
         </section>

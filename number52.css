@@ -149,6 +149,87 @@ img {
   margin-top: 0.4rem;
 }
 
+.work-premiere-note {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.work-premiere-note__text {
+  position: relative;
+  z-index: 1;
+  display: inline-block;
+  font-weight: 700;
+  font-size: 1.7rem;
+  color: #ff3d9a;
+  text-shadow: none;
+  font-family: "Josefin Sans", sans-serif;
+  letter-spacing: 0.05em;
+  line-height: 1.25;
+  background-color: transparent;
+  padding: 0.2em 0.35em;
+}
+
+.work-premiere-note__highlight {
+  position: relative;
+  display: inline;
+}
+
+.work-premiere-note__highlight::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: -4%;
+  right: -4%;
+  top: 8%;
+  bottom: 2%;
+  background-color: #ffffff;
+  border-radius: 255px 40px 225px 35px / 35px 225px 40px 255px;
+  transform: rotate(-1.2deg);
+  filter: url(#hand-drawn-edge);
+}
+
+.work-premiere-note__text::before {
+  display: none;
+}
+
+.visually-hidden-svg {
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+.work-premiere-tickets {
+  display: inline-block;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #ffffff;
+  background-color: #ff3d9a;
+  padding: 0.6em 1.35em;
+  border-radius: 2px;
+  transition: background-color 0.15s ease;
+}
+
+.work-premiere-tickets:hover {
+  color: #ffffff;
+  background-color: #e0207f;
+  text-decoration: none;
+}
+
 /* Content styling */
 main {
   max-width: none;
@@ -808,6 +889,27 @@ body.gallery-lightbox-open {
   margin-bottom: 0.75rem;
 }
 
+.timeline-calendar-section .calendar-group-title {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 1.35rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  text-align: left;
+  max-width: 1000px;
+  margin: 3.5rem auto 0.5rem;
+  padding: 0 2rem;
+  color: #ff3d9a;
+}
+
+.timeline-calendar-section .calendar-group-title:first-of-type {
+  margin-top: 0;
+}
+
+.timeline-calendar-section .calendar-group-title + .calendar-subsection-title {
+  margin-top: 1.25rem;
+}
+
 .timeline-calendar-section .calendar-subsection-title {
   font-family: "Josefin Sans", sans-serif;
   font-size: 1rem;
@@ -975,6 +1077,29 @@ a:hover {
 
 .timeline-calendar-section a:hover {
   color: #268f84;
+}
+
+.timeline-calendar-section a.calendar-tickets-btn {
+  display: inline-block;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #ffffff !important;
+  background-color: #ff3d9a;
+  padding: 0.25em 0.65em;
+  margin-left: 0.55em;
+  border-radius: 2px;
+  vertical-align: middle;
+  white-space: nowrap;
+  transition: background-color 0.15s ease;
+}
+
+.timeline-calendar-section a.calendar-tickets-btn:hover {
+  color: #ffffff !important;
+  background-color: #e0207f;
 }
 
 /* Magazine Layout */
@@ -1400,6 +1525,10 @@ a:hover {
     letter-spacing: 0.08em;
   }
 
+  .timeline-calendar-section .calendar-group-title {
+    padding: 0 1rem;
+  }
+
   .timeline-calendar-section .calendar-subsection-title {
     padding: 0 1rem 0.65rem;
   }
@@ -1726,6 +1855,23 @@ body {
     text-align: left;
     background: transparent;
     padding: 0;
+  }
+
+  .work-premiere-note {
+    bottom: 1.5rem;
+    left: 0.75rem;
+    right: 0.75rem;
+    transform: none;
+    white-space: normal;
+  }
+
+  .work-premiere-note__text {
+    font-size: 1.25rem;
+  }
+
+  .work-premiere-tickets {
+    font-size: 1rem;
+    padding: 0.55em 1.2em;
   }
 
   .work-title {
