@@ -387,6 +387,20 @@ main {
   line-height: 1.35;
 }
 
+.credits-sidebar .credits-name a {
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  letter-spacing: inherit;
+  text-decoration: none;
+}
+
+.credits-sidebar .credits-name a:hover {
+  color: inherit;
+  text-decoration: underline;
+}
+
 .credits-sidebar .credits-group-heading {
   margin-top: 2.5rem;
 }
