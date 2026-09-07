@@ -510,6 +510,25 @@ main {
   margin: 0 auto;
 }
 
+.video-container__portrait-frame {
+  max-width: 420px;
+  margin: 0 auto;
+}
+
+.video-container__aspect--portrait {
+  padding: 177.78% 0 0 0;
+  position: relative;
+}
+
+.video-container__aspect--portrait iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
 .teaser-video {
   position: relative;
   margin: 0 auto 3rem;
@@ -912,6 +931,7 @@ body.gallery-lightbox-open {
 .timeline-calendar-section h2 {
   margin-bottom: 3rem;
   text-align: center;
+  font-weight: 700;
 }
 
 .timeline-calendar-section p {
@@ -1129,6 +1149,79 @@ a:hover {
 .timeline-calendar-section a.calendar-tickets-btn:hover {
   color: #ffffff !important;
   background-color: #e0207f;
+}
+
+/* Press material folder — sits under the performance calendar */
+.press-material-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 1.75rem 2rem;
+  background-color: #35a89c;
+}
+
+.press-material-link {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.45rem;
+  max-width: 1000px;
+  padding: 0.7em 1.2em;
+  border-radius: 2px;
+  color: #ffffff;
+  text-decoration: none;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  line-height: 1.35;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.press-material-link:hover,
+.press-material-link:focus {
+  color: #ffffff;
+  text-decoration: none;
+  background-color: #ff3d9a;
+}
+
+.press-material-link__icon {
+  flex-shrink: 0;
+  font-size: 1.85rem;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 1;
+  transition: transform 0.15s ease;
+}
+
+.press-material-link:hover .press-material-link__icon,
+.press-material-link:focus .press-material-link__icon {
+  transform: scale(1.08);
+}
+
+.press-material-link__text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.15em;
+}
+
+.press-material-link__title {
+  display: inline;
+}
+
+.press-material-link__action {
+  font-weight: 400;
+  letter-spacing: 0.06em;
+}
+
+.press-material-link__meta {
+  font-size: 0.75em;
+  font-weight: 400;
+  letter-spacing: 0.08em;
 }
 
 /* Magazine Layout */
@@ -1562,6 +1655,21 @@ a:hover {
     padding: 0 1rem 0.65rem;
   }
 
+  .press-material-section {
+    padding: 1.35rem 1rem;
+  }
+
+  .press-material-link {
+    font-size: 0.95rem;
+    letter-spacing: 0.07em;
+    gap: 0.35rem;
+    padding: 0.55em 0.85em;
+  }
+
+  .press-material-link__icon {
+    font-size: 1.55rem;
+  }
+
   .description-section p {
     font-size: 17px;
     letter-spacing: 0.08em;
@@ -1795,6 +1903,7 @@ body {
 
 .videos-section h2 {
   margin-bottom: 3rem;
+  font-weight: 700;
 }
 
 .videos-section .video-item-title {
@@ -1803,6 +1912,28 @@ body {
 
 .videos-section .video-item-title:not(:first-of-type) {
   margin-top: 1rem;
+}
+
+.videos-section .video-caption {
+  margin: -0.5rem auto 1.5rem;
+  padding: 0;
+  max-width: none;
+  text-align: center;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 0.95rem;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  line-height: 1.5;
+  color: #333333;
+}
+
+.videos-section .video-caption a {
+  font-family: "Josefin Sans", sans-serif;
+  color: #35a89c;
+}
+
+.videos-section .video-caption a:hover {
+  color: #268f84;
 }
 
 /* Video Container Spacing */
