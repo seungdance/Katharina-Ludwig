@@ -1,6 +1,49 @@
 // Common Navigation JavaScript
 let navScrollPosition = 0;
 
+function homePageHref() {
+  const script = document.querySelector('script[src*="common-navigation.js"]');
+  const src = script ? script.getAttribute("src") || "" : "";
+  return src.replace(/common-navigation\.js(?:\?.*)?$/, "index.html") || "index.html";
+}
+
+function ensureSiteWordmark() {
+  if (document.querySelector(".site-wordmark")) {
+    return;
+  }
+
+  const link = document.createElement("a");
+  link.className = "site-wordmark";
+  link.href = homePageHref();
+  link.setAttribute("aria-label", "Katharina Ludwig, back to home");
+
+  const first = document.createElement("span");
+  first.textContent = "Katharina";
+  const second = document.createElement("span");
+  second.textContent = "Ludwig";
+  link.appendChild(first);
+  link.appendChild(second);
+
+  const navIcon = document.querySelector(".nav-icon");
+  if (navIcon) {
+    if (navIcon.classList.contains("nav-icon--on-title")) {
+      link.classList.add("site-wordmark--on-title");
+    } else if (navIcon.classList.contains("nav-icon--on-light")) {
+      link.classList.add("site-wordmark--on-light");
+    } else if (navIcon.classList.contains("nav-icon--on-dark")) {
+      link.classList.add("site-wordmark--on-dark");
+    }
+  }
+
+  document.body.insertBefore(link, document.body.firstChild);
+}
+
+if (document.body) {
+  ensureSiteWordmark();
+} else {
+  document.addEventListener("DOMContentLoaded", ensureSiteWordmark);
+}
+
 function setNavOpen(isOpen) {
   const navMenu = document.getElementById("navMenu");
   const navIcon = document.querySelector(".nav-icon");
@@ -27,6 +70,8 @@ function setNavOpen(isOpen) {
     document.body.style.top = "";
     window.scrollTo(0, navScrollPosition);
   }
+
+  updateNavChrome();
 }
 
 function toggleNav() {
@@ -72,7 +117,65 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   initNavIconContrast();
+  initNavChromeReveal();
 });
+
+/* Show the menu and name at the top of a page.
+   Further down, hide them while scrolling down and bring them back on scroll up.
+   The menu icon stays visible over the index hero photo. */
+let navChromeAnchorY = 0;
+
+function isIndexHeroBehindNav() {
+  const hero = document.querySelector('.hero-photo[data-nav-theme="title"]');
+  if (!hero) {
+    return false;
+  }
+
+  const rect = hero.getBoundingClientRect();
+  return rect.top <= 47 && rect.bottom >= 47;
+}
+
+function updateNavChrome() {
+  const y = Math.max(0, window.scrollY || 0);
+  const delta = y - navChromeAnchorY;
+  const onIndexHero = isIndexHeroBehindNav();
+
+  document.body.classList.toggle("is-index-hero", onIndexHero);
+
+  if (document.body.classList.contains("nav-open") || y <= 80) {
+    document.body.classList.remove("nav-chrome-hidden");
+    navChromeAnchorY = y;
+    return;
+  }
+
+  if (delta > 10) {
+    document.body.classList.add("nav-chrome-hidden");
+    navChromeAnchorY = y;
+  } else if (delta < -10) {
+    document.body.classList.remove("nav-chrome-hidden");
+    navChromeAnchorY = y;
+  }
+}
+
+function initNavChromeReveal() {
+  navChromeAnchorY = Math.max(0, window.scrollY || 0);
+  let ticking = false;
+
+  window.addEventListener(
+    "scroll",
+    function () {
+      if (ticking) {
+        return;
+      }
+      ticking = true;
+      requestAnimationFrame(function () {
+        ticking = false;
+        updateNavChrome();
+      });
+    },
+    { passive: true }
+  );
+}
 
 /* White icon on dark backgrounds, dark icon on light backgrounds */
 const DARK_HERO_SELECTORS =
@@ -83,6 +186,13 @@ function setNavIconContrast(navIcon, isLight) {
   navIcon.classList.toggle("nav-icon--on-dark", theme === "dark");
   navIcon.classList.toggle("nav-icon--on-light", theme === "light");
   navIcon.classList.toggle("nav-icon--on-title", theme === "title");
+
+  const wordmark = document.querySelector(".site-wordmark");
+  if (wordmark) {
+    wordmark.classList.toggle("site-wordmark--on-dark", theme === "dark");
+    wordmark.classList.toggle("site-wordmark--on-light", theme === "light");
+    wordmark.classList.toggle("site-wordmark--on-title", theme === "title");
+  }
 }
 
 function isPointInRect(x, y, rect) {

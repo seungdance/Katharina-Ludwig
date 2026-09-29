@@ -29,7 +29,7 @@ textarea {
   top: 24px;
   right: 24px;
   z-index: 1000;
-  color: #333;
+  color: #d4ff84;
   background: none !important;
   background-color: transparent !important;
   border-radius: 0;
@@ -37,7 +37,9 @@ textarea {
   backdrop-filter: none;
   transition:
     color 0.4s ease,
-    transform 0.3s ease;
+    transform 0.35s ease,
+    opacity 0.35s ease,
+    visibility 0s linear 0s;
   cursor: pointer;
   display: inline-flex;
   align-items: center;
@@ -48,13 +50,98 @@ textarea {
   padding: 14px;
 }
 
-/* Set by JS from background behind the icon */
-.nav-icon--on-dark {
-  color: #fff !important;
+/* Menu stays the index title lime on every background */
+.nav-icon--on-dark,
+.nav-icon--on-light,
+.nav-icon--on-title {
+  color: #d4ff84 !important;
 }
 
-.nav-icon--on-light {
-  color: #333 !important;
+/* Fixed home wordmark — same type as the index title, left aligned.
+   Box matches the menu icon (top 24px, 14px padding, 18px stripes). */
+a.site-wordmark {
+  position: fixed;
+  top: 24px;
+  left: 24px;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 46px;
+  margin: 0;
+  padding: 0;
+  font-family: "League Spartan", sans-serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  line-height: 0.88;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-align: left;
+  text-decoration: none;
+  color: #d4ff84;
+  transition:
+    color 0.4s ease,
+    transform 0.35s ease,
+    opacity 0.35s ease,
+    visibility 0s linear 0s;
+}
+
+/* Lower on the page: hide while scrolling down, show again on scroll up.
+   The menu icon stays visible over the index hero. */
+body.nav-chrome-hidden:not(.nav-open) .nav-icon,
+body.nav-chrome-hidden a.site-wordmark {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none !important;
+  transform: translateY(-16px);
+  transition:
+    color 0.4s ease,
+    transform 0.35s ease,
+    opacity 0.35s ease,
+    visibility 0s linear 0.35s;
+}
+
+body.is-index-hero:not(.nav-open) .nav-icon {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto !important;
+  transform: none;
+}
+
+a.site-wordmark span {
+  display: block;
+  white-space: nowrap;
+}
+
+a.site-wordmark.site-wordmark--on-dark,
+a.site-wordmark.site-wordmark--on-light,
+a.site-wordmark.site-wordmark--on-title {
+  color: #d4ff84;
+}
+
+body.nav-open .site-wordmark {
+  visibility: hidden;
+  pointer-events: none;
+}
+
+a.site-wordmark:hover,
+a.site-wordmark:focus,
+a.site-wordmark:focus-visible {
+  color: #d4ff84;
+  text-decoration: none;
+}
+
+a.site-wordmark:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 4px;
+}
+
+@media (max-width: 480px) {
+  a.site-wordmark {
+    left: 16px;
+    font-size: 0.95rem;
+    letter-spacing: 0.08em;
+  }
 }
 
 .nav-icon:hover {
