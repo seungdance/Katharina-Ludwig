@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>KATHARINA LUDWIG</title>
     <link rel="stylesheet" href="common-navigation.css" />
-    <link rel="stylesheet" href="index.css?v=news-section-1" />
+    <link rel="stylesheet" href="index.css?v=hero-photo-2" />
   </head>
   <body>
     <!-- Common Navigation Component -->
-    <div class="nav-icon nav-icon--on-dark" onclick="toggleNav()" aria-label="Open menu" aria-expanded="false">
+    <div class="nav-icon nav-icon--on-title" onclick="toggleNav()" aria-label="Open menu" aria-expanded="false">
       <div class="menu-icon" aria-hidden="true">
         <span class="menu-stripe"></span>
         <span class="menu-stripe"></span>
@@ -78,20 +78,27 @@
     <main>
       <!-- Hero: full-screen photo, video on scroll -->
       <div class="video-hero">
-        <section class="hero-photo" data-nav-theme="dark" aria-label="Home">
+        <section class="hero-photo" data-nav-theme="title" aria-label="Home">
           <div class="hero-photo-track">
             <img
               class="hero-photo__image"
-              src="https://res.cloudinary.com/dxefd3n1k/image/upload/v1776178453/220412_Orange_V02-4_zbh3pt.jpg"
-              alt="Katharina Ludwig in an orange scarf and grey coat, posed in a field at sunset"
+              src="https://res.cloudinary.com/dxefd3n1k/image/upload/v1790682313/website_Number52_Katharina_Ludwig_Mik_Matter_WEB_MIK1350_p8zkzz.jpg"
+              alt="Katharina Ludwig lying on a studio floor in a blue tracksuit, looking toward the camera under purple light"
               loading="eager"
               decoding="async" />
           </div>
           <div class="hero-photo-ui">
             <div class="name-overlay">
-              <a href="about.html" class="animated-name">KATHARINA LUDWIG</a>
+              <a href="about.html" class="animated-name" aria-label="Katharina Ludwig">
+                <span class="animated-name__line" aria-hidden="true">
+                  <span class="animated-name__letter" style="--i: 0">K</span><span class="animated-name__letter" style="--i: 1">A</span><span class="animated-name__letter" style="--i: 2">T</span><span class="animated-name__letter" style="--i: 3">H</span><span class="animated-name__letter" style="--i: 4">A</span><span class="animated-name__letter" style="--i: 5">R</span><span class="animated-name__letter" style="--i: 6">I</span><span class="animated-name__letter" style="--i: 7">N</span><span class="animated-name__letter" style="--i: 8">A</span>
+                </span>
+                <span class="animated-name__line" aria-hidden="true">
+                  <span class="animated-name__letter" style="--i: 9">L</span><span class="animated-name__letter" style="--i: 10">U</span><span class="animated-name__letter" style="--i: 11">D</span><span class="animated-name__letter" style="--i: 12">W</span><span class="animated-name__letter" style="--i: 13">I</span><span class="animated-name__letter" style="--i: 14">G</span>
+                </span>
+              </a>
             </div>
-            <button type="button" class="hero-scroll-down" aria-label="Scroll to video">
+            <button type="button" class="hero-scroll-down" aria-label="Scroll to news">
               <svg viewBox="0 0 24 24" width="32" height="32" aria-hidden="true">
                 <path
                   d="M12 16l-6-6h12l-6 6z"
@@ -101,10 +108,18 @@
           </div>
         </section>
 
-        <section class="news-section" data-nav-theme="light" aria-label="News">
+        <section class="news-section" id="news" data-nav-theme="light" aria-label="News">
           <div class="news-section__inner">
             <h2 class="news-section__title">NEWS</h2>
           </div>
+        </section>
+
+        <section class="closing-photo" data-nav-theme="dark" aria-label="Portrait">
+          <img
+            src="https://res.cloudinary.com/dxefd3n1k/image/upload/v1776178453/220412_Orange_V02-4_zbh3pt.jpg"
+            alt="Katharina Ludwig in an orange scarf and grey coat, posed in a field at sunset"
+            loading="lazy"
+            decoding="async" />
         </section>
 
         <section class="hero-video" id="hero-video" data-nav-theme="dark" aria-label="Video">
@@ -124,81 +139,12 @@
     <script src="https://player.vimeo.com/api/player.js"></script>
     <script>
       const scrollDownBtn = document.querySelector(".hero-scroll-down");
-      const heroVideo = document.getElementById("hero-video");
-      const heroPhoto = document.querySelector(".hero-photo");
-      const heroPhotoTrack = document.querySelector(".hero-photo-track");
-      const heroPhotoUi = document.querySelector(".hero-photo-ui");
-      const heroPhotoImage = document.querySelector(".hero-photo__image");
-      const desktopMq = window.matchMedia("(min-width: 769px)");
+      const newsSection = document.getElementById("news");
 
-      if (scrollDownBtn && heroVideo) {
+      if (scrollDownBtn && newsSection) {
         scrollDownBtn.addEventListener("click", function () {
-          heroVideo.scrollIntoView({ behavior: "smooth", block: "start" });
+          newsSection.scrollIntoView({ behavior: "smooth", block: "start" });
         });
-      }
-
-      function setHeroPhotoHeight() {
-        if (!heroPhoto || !heroPhotoImage) {
-          return;
-        }
-
-        if (!desktopMq.matches) {
-          heroPhoto.style.minHeight = "";
-          if (heroPhotoTrack) {
-            heroPhotoTrack.style.height = "";
-          }
-          return;
-        }
-
-        if (heroPhotoImage.complete && heroPhotoImage.naturalHeight > 0) {
-          const fullHeight = heroPhotoImage.offsetHeight;
-          const visibleHeight = fullHeight * 0.75;
-          if (heroPhotoTrack) {
-            heroPhotoTrack.style.height = visibleHeight + "px";
-          }
-          heroPhoto.style.minHeight = Math.max(visibleHeight, window.innerHeight) + "px";
-        }
-      }
-
-      function updateHeroPhotoUiPosition() {
-        if (!heroPhoto || !heroPhotoUi) {
-          return;
-        }
-
-        if (!desktopMq.matches) {
-          heroPhotoUi.classList.remove("is-at-end");
-          return;
-        }
-
-        const uiHeight = heroPhotoUi.offsetHeight || window.innerHeight;
-        const photoBottom = heroPhoto.getBoundingClientRect().bottom;
-        heroPhotoUi.classList.toggle("is-at-end", photoBottom <= uiHeight);
-      }
-
-      function refreshHeroPhotoLayout() {
-        setHeroPhotoHeight();
-        updateHeroPhotoUiPosition();
-      }
-
-      if (heroPhoto && heroPhotoImage) {
-        let layoutTicking = false;
-        function scheduleLayoutUpdate() {
-          if (layoutTicking) {
-            return;
-          }
-          layoutTicking = true;
-          requestAnimationFrame(function () {
-            layoutTicking = false;
-            updateHeroPhotoUiPosition();
-          });
-        }
-
-        heroPhotoImage.addEventListener("load", refreshHeroPhotoLayout);
-        refreshHeroPhotoLayout();
-        window.addEventListener("scroll", scheduleLayoutUpdate, { passive: true });
-        window.addEventListener("resize", refreshHeroPhotoLayout);
-        desktopMq.addEventListener("change", refreshHeroPhotoLayout);
-        window.addEventListener("load", refreshHeroPhotoLayout);
       }
 
       // Wait for Vimeo Player API to load

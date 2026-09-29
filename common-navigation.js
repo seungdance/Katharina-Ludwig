@@ -79,8 +79,10 @@ const DARK_HERO_SELECTORS =
   ".hero-photo, .hero-video, .hero-section, .about-video-hero, .hero, .reachout, .hero-media";
 
 function setNavIconContrast(navIcon, isLight) {
-  navIcon.classList.toggle("nav-icon--on-dark", !isLight);
-  navIcon.classList.toggle("nav-icon--on-light", isLight);
+  const theme = isLight === "title" ? "title" : isLight ? "light" : "dark";
+  navIcon.classList.toggle("nav-icon--on-dark", theme === "dark");
+  navIcon.classList.toggle("nav-icon--on-light", theme === "light");
+  navIcon.classList.toggle("nav-icon--on-title", theme === "title");
 }
 
 function isPointInRect(x, y, rect) {
@@ -168,7 +170,12 @@ function updateNavIconContrast() {
 
   const themedSection = findSmallestSectionAtPoint("[data-nav-theme]", x, y);
   if (themedSection) {
-    setNavIconContrast(navIcon, themedSection.dataset.navTheme === "light");
+    const theme = themedSection.dataset.navTheme;
+    if (theme === "title") {
+      setNavIconContrast(navIcon, "title");
+      return;
+    }
+    setNavIconContrast(navIcon, theme === "light");
     return;
   }
 

@@ -60,7 +60,7 @@ main {
   z-index: 1;
 }
 
-/* Mobile: single full-screen photo (no scroll-through) */
+/* Mobile: full-screen crop that keeps her face in frame */
 .video-hero .hero-photo {
   position: relative;
   width: 100%;
@@ -82,7 +82,7 @@ main {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center;
+  object-position: 22% center;
 }
 
 .hero-photo-ui {
@@ -92,47 +92,22 @@ main {
   pointer-events: none;
 }
 
-/* Desktop: fixed UI while scrolling photo; pins to photo end then scrolls away */
+.nav-icon--on-title {
+  color: #d4ff84 !important;
+}
+
+/* Desktop: stable full-screen crop of the lower part of the photo */
 @media (min-width: 769px) {
-  .video-hero .hero-photo {
-    height: auto;
-    min-height: 100vh;
-    min-height: 100dvh;
-    overflow: visible;
-  }
-
-  .hero-photo-track {
-    position: relative;
-    z-index: 1;
-    overflow: hidden;
-  }
-
   .video-hero .hero-photo-track .hero-photo__image {
-    position: static;
-    display: block;
-    width: 100%;
-    height: auto;
-    min-height: 150vh;
-    object-fit: cover;
-    object-position: center 37.5%;
-    transform: translateY(-25%);
+    object-position: center 78%;
   }
 
-  .hero-photo-ui {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    width: 100%;
-    height: 100vh;
-    height: 100dvh;
-    z-index: 50;
+  .animated-name__line:last-child {
+    margin-left: clamp(10rem, 54vw, 72rem);
   }
 
-  .hero-photo-ui.is-at-end {
-    position: absolute;
-    top: auto;
-    bottom: 0;
+  .hero-scroll-down {
+    z-index: 60;
   }
 }
 
@@ -183,36 +158,96 @@ main {
 /* Name overlay on photo */
 .hero-photo .name-overlay {
   position: absolute;
-  top: 58%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  top: 14%;
+  left: clamp(1.25rem, 3.5vw, 3.5rem);
+  right: auto;
+  transform: none;
   z-index: 10;
-  text-align: center;
-  width: auto;
+  text-align: left;
+  width: max-content;
+  max-width: calc(100% - 3rem);
   pointer-events: none;
 }
 
 .animated-name {
-  font-family: "Josefin Sans", sans-serif;
-  font-size: 4rem;
-  font-weight: 800;
-  color: white;
+  font-family: "League Spartan", sans-serif;
+  font-size: clamp(4rem, 8.6vw, 8.75rem);
+  font-weight: 700;
+  color: #d4ff84;
   text-decoration: none;
-  letter-spacing: 0.35em;
+  letter-spacing: 0;
+  --name-tracking: 0.16em;
+  line-height: 0.98;
   text-transform: uppercase;
   transition: none;
-  display: inline-block;
+  display: block;
+  text-align: left;
   opacity: 1;
   position: relative;
   pointer-events: auto;
-  text-shadow: none;
   animation: none;
 }
 
 .animated-name:hover {
-  color: white;
-  text-shadow: none;
+  color: #d4ff84;
   transform: none;
+}
+
+.animated-name__line {
+  display: block;
+  --enter-x: -72vw;
+  transform-origin: left center;
+  animation: name-line-jump 0.72s linear both;
+}
+
+.animated-name__line:last-child {
+  --enter-x: 72vw;
+  animation-delay: 0.18s;
+}
+
+.animated-name__letter {
+  display: inline-block;
+  margin-right: var(--name-tracking);
+}
+
+.animated-name__letter:last-child {
+  margin-right: 0;
+}
+
+@keyframes name-line-jump {
+  0% {
+    opacity: 0;
+    transform: translate(var(--enter-x), 10vh) rotate(8deg) scale(0.92);
+  }
+
+  16% {
+    opacity: 1;
+    transform: translate(calc(var(--enter-x) * 0.62), 6vh) rotate(6.5deg) scale(0.96);
+  }
+
+  40% {
+    transform: translate(calc(var(--enter-x) * 0.28), 2vh) rotate(4deg) scale(1);
+  }
+
+  64% {
+    transform: translate(calc(var(--enter-x) * 0.08), 0) rotate(2deg) scale(1.08);
+  }
+
+  84% {
+    opacity: 1;
+    transform: translate(0, -0.06em) rotate(0.6deg) scale(1.16);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0, 0) rotate(0deg) scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animated-name__line {
+    animation: none;
+  }
 }
 
 /* Scroll-down arrow on photo */
@@ -230,7 +265,7 @@ main {
   padding: 0;
   background: transparent;
   border: none;
-  color: #fff;
+  color: #d4ff84;
   cursor: pointer;
   pointer-events: auto;
   opacity: 0.9;
@@ -242,7 +277,7 @@ main {
 }
 
 .hero-scroll-down:focus-visible {
-  outline: 2px solid #fff;
+  outline: 2px solid #d4ff84;
   outline-offset: 4px;
 }
 
@@ -278,11 +313,21 @@ a:hover {
 /* Responsive */
 @media (max-width: 768px) {
   .hero-photo .name-overlay {
-    top: 58%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    top: 30%;
+    left: 1rem;
+    right: 1rem;
+    transform: translateY(-50%);
     width: auto;
-    max-width: 90%;
+    max-width: none;
+  }
+
+  .animated-name {
+    width: 100%;
+  }
+
+  .animated-name__line:last-child {
+    text-align: right;
+    transform-origin: right center;
   }
 
   /* Ensure navigation is above everything on mobile */
@@ -301,8 +346,9 @@ a:hover {
   }
 
   .animated-name {
-    font-size: 2.5rem;
-    letter-spacing: 0.28em;
+    font-size: clamp(2.75rem, 12vw, 3.8rem);
+    letter-spacing: 0;
+    line-height: 0.98;
   }
 
   .hero-scroll-down {
@@ -313,16 +359,19 @@ a:hover {
 /* Extra small screens */
 @media (max-width: 480px) {
   .hero-photo .name-overlay {
-    top: 58%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    top: 30%;
+    left: 0.85rem;
+    right: 0.85rem;
+    transform: translateY(-50%);
     width: auto;
-    max-width: 85%;
+    max-width: none;
   }
 
   .animated-name {
-    font-size: 1.8rem;
-    letter-spacing: 0.22em;
+    font-size: clamp(2.65rem, 12.8vw, 3.2rem);
+    letter-spacing: 0;
+    --name-tracking: 0.12em;
+    line-height: 0.98;
   }
 
   .hero-scroll-down {
@@ -378,6 +427,17 @@ a:hover {
   .news-section__inner {
     padding: 3rem 1.5rem;
   }
+}
+
+.closing-photo {
+  width: 100%;
+  background-color: #000;
+}
+
+.closing-photo img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1367 / 2048;
 }
 
 /* Prevent horizontal scrolling globally */
